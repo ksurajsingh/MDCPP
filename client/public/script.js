@@ -24,3 +24,22 @@ function showSection(id){
   });
   document.getElementById(id).classList.remove('hidden')
 }
+
+
+async function openChat(){
+  try{
+  console.log("Open chat triggered")
+  const screenText=document.body.innerText
+
+  const response=await fetch("http://localhost:3000/chat",{
+    method:"POST",
+    headers: { "Content-Type":"application/json"},
+    body: JSON.stringify({screenText })
+  });
+  const data=await response.json();
+  alert("🤖"+data.reply);
+  }
+  catch(err){
+    console.error("Error from /caht:",err);
+  }
+}

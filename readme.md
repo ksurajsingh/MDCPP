@@ -3,6 +3,7 @@
 - [ ] Interactive prediction tool  
 - [ ] Historical Data view  
 - [ ] Rainfall crop correlation analysis  
+- [ ] chatbot-readsScreen
   
 
 **sathwik review**  
