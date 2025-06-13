@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  text-align: center;
+  position: relative;
+  padding-top: 30px;
+}
+
+.gradient-text {
+  font-size: 3.5em;
+  background: linear-gradient(to right, #1e3c72, #8e44ad, #ff6ec4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.chatbot-btn {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  padding: 12px 18px;
+  background-color: #8e44ad;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.chatbot-btn:hover {
+  background-color: #6c3483;
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+.site-title {
+  margin-top: 30px;
+  text-align: center;
+}
+
+nav {
+  position: relative;
+  background-color: lightgreen;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: fit-content;
+  margin: 50px auto;
+}
+
+nav ol {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+nav li:hover {
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 0.5px;
+}
+
+#nav-selector {
+  position: absolute;
+  background-color: green;
+  height: 2px;
+  width: 40px;
+  transition: all 0.3s ease;
+  left: 10px;
+}
