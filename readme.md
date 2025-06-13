@@ -4,7 +4,7 @@
 -[ ]Historical Data view  
 -[ ]Rainfall crop correlation analysis  
   
-**sathwik review**
+**sathwik review**  
 -[ ]Data Collection  
 -[ ]Data Cleansing  
 -[ ]Training  
