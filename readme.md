@@ -9,7 +9,7 @@
 -[ ]Data Cleansing  
 -[ ]Training  
   
-**Can Start I G**
+**Can Start I G**  
 -[ ]Predictive pricemodelling [ TBD ]  
 -[ ]Location based prediction  
 -[ ]Scenario Simulation  
