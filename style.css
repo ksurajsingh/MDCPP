@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.hidden{
+  display: none;
+}
+
+.site-title{
+  margin-top: 30px;
+  text-align: center;
+}
+
+nav {
+  position: relative;
+  background-color: lightgreen;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  width: fit-content;
+  margin: 50px auto;
+}
+
+nav ol{
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+nav li:hover{
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 0.5px;
+}
+
+#nav-selector{
+  position: absolute;
+  background-color: green;
+  height: 2px;
+  width: 40px;
+  transition: all 0.3s ease;
+  left: 10px;
+}
