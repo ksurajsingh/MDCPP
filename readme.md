@@ -4,11 +4,13 @@
 - [ ] Historical Data view  
 - [ ] Rainfall crop correlation analysis  
   
+
 **sathwik review**  
 - [ ] Data Collection  
 - [ ] Data Cleansing  
 - [ ] Training  
   
+
 **Can Start I G**  
 - [ ] Predictive pricemodelling [ TBD ]  
 - [ ] Location based prediction  
