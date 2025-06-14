@@ -43,10 +43,6 @@ header {
   transform: scale(1.05);
 }
 
-.hidden {
-  display: none;
-}
-
 .site-title {
   margin-top: 30px;
   text-align: center;
@@ -57,34 +53,37 @@ nav {
   background-color: lightgreen;
   padding: 10px;
   border-radius: 10px;
-  text-align: center;
   width: fit-content;
   margin: 50px auto;
+  text-align: center;
 }
 
 nav ol {
   display: flex;
   list-style: none;
   gap: 40px;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  position: relative;
+  padding: 10px 5px;
 }
 
 nav li:hover {
   cursor: pointer;
   font-weight: bold;
   border-radius: 10px;
-  padding: 0.5px;
-}
-
-nav li {
-  position: relative;
-  padding: 8px 5px; /* reduce vertical padding */
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #nav-selector {
   position: absolute;
   background-color: green;
   height: 2px;
-  bottom: 5px; /* ✅ Moves it up from the bottom of the nav box */
+  bottom: 0;
   left: 0;
   width: 0;
   transition: all 0.3s ease;
