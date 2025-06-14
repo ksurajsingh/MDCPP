@@ -1,14 +1,29 @@
 // app.js
 import express from "express";
 import cors from "cors";
+import { fileURLToPath } from "url";
+import path from "path";
 import dotenv from "dotenv";
 //import priceRoutes from "./routes/prices.js";
+import pool from "./db.js";
 
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Resolve __dirname since you're using ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve static files from client/public
+// app.use(express.static(path.join(__dirname, "../client/public")));
+
+// Optional: fallback to index.html for SPA
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/public/index.html"));
+// });
 
 //app.use("/api/prices", priceRoutes);
 
