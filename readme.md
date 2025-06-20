@@ -1,26 +1,28 @@
 # TODO
 
-- [ ] Interactive prediction tool  
-- [ ] Historical Data view  
-- [ ] Rainfall crop correlation analysis  
-- [ ] chatbot-readsScreen
-  
+- [x] Interactive prediction tool
+- [ ] Historical Data view
+- [ ] Rainfall crop correlation analysis
 
-**sathwik review**  
-- [ ] Data Collection  
-- [ ] Data Cleansing  
-- [ ] Training  
-  
+- [ ] chatbot-readsScreen [ partial ]
 
-**Can Start I G**  
-- [ ] Predictive pricemodelling [ TBD ]  
-- [ ] Location based prediction  
-- [ ] Scenario Simulation  
-- [ ] Update hisotry trends as a Dashboard  
-- [ ] Market Behavior  
-- [ ] Monsoon forecasts  
-- [ ] Farmer Advicory  
-- [ ] Multilingual speech chat   
-- [ ] Visualisation  
-- [ ] about us  
-- [ ] diary  
+**sathwik review**
+
+- [x] Data Collection
+- [x] Data Cleansing
+- [x] Training
+
+**Can Start I G**
+
+- [ ] Predictive pricemodelling [ Partial implementation ]
+- [x] Location based prediction
+- [x] Scenario Simulation
+- [ ] Update hisotry trends as a Dashboard
+- [ ] Market Behavior
+- [ ] Monsoon forecasts
+- [ ] Farmer Advisory
+- [ ] Optimal Policy adivisory
+- [ ] Multilingual speech chat
+- [ ] Visualisation
+- [ ] about us
+- [ ] diary
