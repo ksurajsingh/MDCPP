@@ -13,6 +13,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+import predictRouter from "./src/routes/predict.route.js";
+app.use("/api/predict", predictRouter);
+
 // Resolve __dirname since you're using ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
