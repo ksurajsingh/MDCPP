@@ -2,9 +2,9 @@
 
 import { useState, useRef, useEffect } from "react";
 import "./index.css"; // Import the CSS file
-import Chatbot from "./Chatbot.js";
+import Chatbot from "./Chatbot.js"; // Import existing Chatbot
+import CropPriceChart from "./CropPriceChart.js"; // Import existing CropPriceChart
 import {
-  LineChart,
   Line,
   XAxis,
   YAxis,
@@ -12,97 +12,80 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-  BarChart,
   Bar,
   ComposedChart,
-  Area,
-  AreaChart,
 } from "recharts";
 
-// Your original CropPriceChart component - keeping all API functionality
-const CropPriceChart = () => {
-  const [priceData, setPriceData] = useState([]);
-  const [commodities, setCommodities] = useState([]);
+// Onion Analysis Component - New addition to align with backend
+const OnionAnalysis = () => {
+  const [onionData, setOnionData] = useState([]);
   const [districts, setDistricts] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [markets, setMarkets] = useState([]);
-  const [chartType, setChartType] = useState("line");
+  const [varieties, setVarieties] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [filters, setFilters] = useState({
-    commodity: "",
     district: "",
     market: "",
-    startDate: "",
-    endDate: "",
+    variety: "",
+    startYear: "",
+    endYear: "",
     groupBy: "month",
   });
 
-  // API base URL - matches your backend
   const API_BASE_URL = "http://localhost:5000/api";
 
-  // Fetch initial data
   useEffect(() => {
-    fetchCommodities();
-    fetchDistricts();
+    fetchOnionDistricts();
   }, []);
 
-  // Fetch markets when district changes
   useEffect(() => {
     if (filters.district) {
-      fetchMarkets();
-    } else {
-      setMarkets([]);
-      setFilters((prev) => ({ ...prev, market: "" }));
+      fetchOnionMarkets();
+      fetchOnionVarieties();
     }
   }, [filters.district]);
 
-  // Fetch price data when filters change
   useEffect(() => {
-    if (filters.commodity) {
-      fetchPriceData();
+    if (filters.district) {
+      fetchOnionPriceData();
     }
   }, [filters]);
 
-  const fetchMarkets = async () => {
+  const fetchOnionDistricts = async () => {
     try {
-      const selectedDistrict = districts.find(
-        (d) => d.name === filters.district,
-      );
-      if (selectedDistrict) {
-        const response = await fetch(
-          `${API_BASE_URL}/districts/${selectedDistrict.id}/markets`,
-        );
-        const data = await response.json();
-        setMarkets(data);
-      }
-    } catch (error) {
-      console.error("Error fetching markets:", error);
-      setMarkets([]);
-    }
-  };
-
-  const fetchCommodities = async () => {
-    try {
-      const response = await fetch(`${API_BASE_URL}/commodities`);
-      const data = await response.json();
-      setCommodities(data);
-    } catch (error) {
-      console.error("Error fetching commodities:", error);
-    }
-  };
-
-  const fetchDistricts = async () => {
-    try {
-      const response = await fetch(`${API_BASE_URL}/districts`);
+      const response = await fetch(`${API_BASE_URL}/onion/districts`);
       const data = await response.json();
       setDistricts(data);
     } catch (error) {
-      console.error("Error fetching districts:", error);
+      console.error("Error fetching onion districts:", error);
     }
   };
 
-  const fetchPriceData = async () => {
-    if (!filters.commodity) return;
+  const fetchOnionMarkets = async () => {
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/onion/districts/${filters.district}/markets`,
+      );
+      const data = await response.json();
+      setMarkets(data);
+    } catch (error) {
+      console.error("Error fetching onion markets:", error);
+    }
+  };
 
+  const fetchOnionVarieties = async () => {
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/onion/districts/${filters.district}/varieties`,
+      );
+      const data = await response.json();
+      setVarieties(data);
+    } catch (error) {
+      console.error("Error fetching onion varieties:", error);
+    }
+  };
+
+  const fetchOnionPriceData = async () => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
@@ -110,470 +93,190 @@ const CropPriceChart = () => {
         if (value) params.append(key, value);
       });
 
-      const response = await fetch(`${API_BASE_URL}/price-trends?${params}`);
+      const response = await fetch(
+        `${API_BASE_URL}/onion/price-trends?${params}`,
+      );
       const result = await response.json();
 
-      // Format data for charts - matching your backend response structure
-      const formattedData = result.data.map((item) => ({
-        ...item,
-        date: new Date(item.price_date).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "short",
-          ...(filters.groupBy === "day" && { day: "numeric" }),
-        }),
-        modal_price: Number.parseFloat(item.modal_price),
-        min_price: Number.parseFloat(item.min_price),
-        max_price: Number.parseFloat(item.max_price),
-        // Calculate average price from modal, min, max if not provided
-        avg_price: item.avg_price
-          ? Number.parseFloat(item.avg_price)
-          : (Number.parseFloat(item.modal_price) +
-              Number.parseFloat(item.min_price) +
-              Number.parseFloat(item.max_price)) /
-            3,
-        district_name: item.district_name,
-        market_name: item.market_name,
-        commodity_name: item.commodity_name,
-      }));
+      // Format data for visualization
+      const formattedData =
+        result.data?.map((item) => ({
+          ...item,
+          period:
+            item.period ||
+            `${item.year}-${String(item.month).padStart(2, "0")}`,
+          avg_price: Number.parseFloat(item.avg_price || item.modal_price || 0),
+          avg_rainfall: Number.parseFloat(
+            item.avg_rainfall || item.total_rainfall_3months || 0,
+          ),
+          avg_area: Number.parseFloat(item.avg_area || item.area_hectare || 0),
+          avg_yield: Number.parseFloat(
+            item.avg_yield || item.yield_tonne_per_hectare || 0,
+          ),
+        })) || [];
 
-      setPriceData(formattedData);
+      setOnionData(formattedData);
     } catch (error) {
-      console.error("Error fetching price data:", error);
-      setPriceData([]);
+      console.error("Error fetching onion price data:", error);
+      setOnionData([]);
     } finally {
       setLoading(false);
     }
   };
 
-  // Custom tooltip component
-  const CustomTooltip = ({ active, payload, label }) => {
-    if (active && payload && payload.length) {
-      return (
-        <div
-          style={{
-            backgroundColor: "white",
-            padding: "16px",
-            border: "1px solid #d1d5db",
-            borderRadius: "8px",
-            boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <p
-            style={{ fontWeight: "600", color: "#374151" }}
-          >{`Date: ${label}`}</p>
-          {payload.map((entry, index) => (
-            <p key={index} style={{ color: entry.color, fontSize: "14px" }}>
-              {`${entry.name}: ₹${entry.value?.toLocaleString()}`}
-            </p>
-          ))}
-        </div>
-      );
-    }
-    return null;
-  };
-
-  // Chart color scheme
-  const colors = {
-    modal_price: "#2563eb",
-    min_price: "#dc2626",
-    max_price: "#16a34a",
-    avg_price: "#ea580c",
-  };
-
-  // Render different chart types
-  const renderChart = () => {
-    const commonProps = {
-      data: priceData,
-      margin: { top: 20, right: 30, left: 20, bottom: 20 },
-    };
-
-    switch (chartType) {
-      case "line":
-        return (
-          <LineChart {...commonProps}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-            <XAxis
-              dataKey="date"
-              tick={{ fontSize: 12 }}
-              angle={-45}
-              textAnchor="end"
-              height={80}
-            />
-            <YAxis
-              tick={{ fontSize: 12 }}
-              tickFormatter={(value) => `₹${value}`}
-            />
-            <Tooltip content={<CustomTooltip />} />
-            <Legend />
-            <Line
-              type="monotone"
-              dataKey="modal_price"
-              stroke={colors.modal_price}
-              strokeWidth={3}
-              dot={{ fill: colors.modal_price, r: 4 }}
-              name="Modal Price"
-            />
-            <Line
-              type="monotone"
-              dataKey="min_price"
-              stroke={colors.min_price}
-              strokeWidth={2}
-              strokeDasharray="5 5"
-              dot={{ fill: colors.min_price, r: 3 }}
-              name="Min Price"
-            />
-            <Line
-              type="monotone"
-              dataKey="max_price"
-              stroke={colors.max_price}
-              strokeWidth={2}
-              strokeDasharray="5 5"
-              dot={{ fill: colors.max_price, r: 3 }}
-              name="Max Price"
-            />
-            <Line
-              type="monotone"
-              dataKey="avg_price"
-              stroke={colors.avg_price}
-              strokeWidth={2}
-              dot={{ fill: colors.avg_price, r: 3 }}
-              name="Average Price"
-            />
-          </LineChart>
-        );
-
-      case "bar":
-        return (
-          <BarChart {...commonProps}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-            <XAxis
-              dataKey="date"
-              tick={{ fontSize: 12 }}
-              angle={-45}
-              textAnchor="end"
-              height={80}
-            />
-            <YAxis
-              tick={{ fontSize: 12 }}
-              tickFormatter={(value) => `₹${value}`}
-            />
-            <Tooltip content={<CustomTooltip />} />
-            <Legend />
-            <Bar
-              dataKey="modal_price"
-              fill={colors.modal_price}
-              name="Modal Price"
-            />
-            <Bar dataKey="min_price" fill={colors.min_price} name="Min Price" />
-            <Bar dataKey="max_price" fill={colors.max_price} name="Max Price" />
-            <Bar
-              dataKey="avg_price"
-              fill={colors.avg_price}
-              name="Average Price"
-            />
-          </BarChart>
-        );
-
-      case "area":
-        return (
-          <AreaChart {...commonProps}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-            <XAxis
-              dataKey="date"
-              tick={{ fontSize: 12 }}
-              angle={-45}
-              textAnchor="end"
-              height={80}
-            />
-            <YAxis
-              tick={{ fontSize: 12 }}
-              tickFormatter={(value) => `₹${value}`}
-            />
-            <Tooltip content={<CustomTooltip />} />
-            <Legend />
-            <Area
-              type="monotone"
-              dataKey="max_price"
-              stackId="1"
-              stroke={colors.max_price}
-              fill={colors.max_price}
-              fillOpacity={0.3}
-              name="Max Price"
-            />
-            <Area
-              type="monotone"
-              dataKey="modal_price"
-              stackId="2"
-              stroke={colors.modal_price}
-              fill={colors.modal_price}
-              fillOpacity={0.6}
-              name="Modal Price"
-            />
-            <Area
-              type="monotone"
-              dataKey="min_price"
-              stackId="3"
-              stroke={colors.min_price}
-              fill={colors.min_price}
-              fillOpacity={0.8}
-              name="Min Price"
-            />
-          </AreaChart>
-        );
-
-      case "composed":
-        return (
-          <ComposedChart {...commonProps}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-            <XAxis
-              dataKey="date"
-              tick={{ fontSize: 12 }}
-              angle={-45}
-              textAnchor="end"
-              height={80}
-            />
-            <YAxis
-              tick={{ fontSize: 12 }}
-              tickFormatter={(value) => `₹${value}`}
-            />
-            <Tooltip content={<CustomTooltip />} />
-            <Legend />
-            <Area
-              type="monotone"
-              dataKey="max_price"
-              fill={colors.max_price}
-              fillOpacity={0.2}
-              stroke="none"
-              name="Max Price Range"
-            />
-            <Area
-              type="monotone"
-              dataKey="min_price"
-              fill="#ffffff"
-              stroke="none"
-            />
-            <Line
-              type="monotone"
-              dataKey="modal_price"
-              stroke={colors.modal_price}
-              strokeWidth={3}
-              dot={{ fill: colors.modal_price, r: 4 }}
-              name="Modal Price"
-            />
-            <Line
-              type="monotone"
-              dataKey="avg_price"
-              stroke={colors.avg_price}
-              strokeWidth={2}
-              strokeDasharray="8 8"
-              dot={{ fill: colors.avg_price, r: 3 }}
-              name="Average Price"
-            />
-          </ComposedChart>
-        );
-
-      default:
-        return null;
-    }
-  };
-
   return (
-    <div
-      className="w-full max-w-6xl mx-auto p-6 bg-white rounded-lg shadow-lg"
-      style={{
-        width: "100%",
-        maxWidth: "72rem",
-        margin: "0 auto",
-        padding: "1.5rem",
-        backgroundColor: "white",
-        borderRadius: "0.5rem",
-        boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
-      }}
-    >
-      <div className="mb-6" style={{ marginBottom: "1.5rem" }}>
-        <h2
-          className="text-2xl font-bold text-gray-800 mb-4"
-          style={{
-            fontSize: "1.5rem",
-            fontWeight: "bold",
-            color: "#1f2937",
-            marginBottom: "1rem",
-          }}
-        >
-          Crop Price Analysis
-        </h2>
+    <div style={{ padding: "1.5rem" }}>
+      <h2
+        style={{
+          fontSize: "1.5rem",
+          fontWeight: "bold",
+          marginBottom: "1rem",
+          color: "#1f2937",
+        }}
+      >
+        🧅 Onion Price Analysis
+      </h2>
+      <p style={{ color: "#6b7280", marginBottom: "1.5rem" }}>
+        Analyze onion price trends with rainfall correlation and production data
+      </p>
 
-        {/* Filters */}
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-4 mb-4"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "1rem",
-            marginBottom: "1rem",
-          }}
-        >
-          <select
-            value={filters.commodity}
-            onChange={(e) =>
-              setFilters({ ...filters, commodity: e.target.value })
-            }
-            style={{
-              padding: "0.5rem 0.75rem",
-              border: "1px solid #d1d5db",
-              borderRadius: "0.375rem",
-              outline: "none",
-            }}
-          >
-            <option value="">Select Commodity</option>
-            {commodities.map((commodity) => (
-              <option key={commodity.id} value={commodity.name}>
-                {commodity.name} ({commodity.data_points} records)
-              </option>
-            ))}
-          </select>
-
-          <select
-            value={filters.district}
-            onChange={(e) =>
-              setFilters({ ...filters, district: e.target.value, market: "" })
-            }
-            style={{
-              padding: "0.5rem 0.75rem",
-              border: "1px solid #d1d5db",
-              borderRadius: "0.375rem",
-              outline: "none",
-            }}
-          >
-            <option value="">All Districts</option>
-            {districts.map((district) => (
-              <option key={district.id} value={district.name}>
-                {district.name}, {district.state} ({district.data_points}{" "}
-                records)
-              </option>
-            ))}
-          </select>
-
-          <select
-            value={filters.market}
-            onChange={(e) => setFilters({ ...filters, market: e.target.value })}
-            disabled={!filters.district}
-            style={{
-              padding: "0.5rem 0.75rem",
-              border: "1px solid #d1d5db",
-              borderRadius: "0.375rem",
-              outline: "none",
-              opacity: !filters.district ? 0.5 : 1,
-            }}
-          >
-            <option value="">All Markets</option>
-            {markets.map((market) => (
-              <option key={market.id} value={market.name}>
-                {market.name} ({market.data_points} records)
-              </option>
-            ))}
-          </select>
-
-          <input
-            type="date"
-            value={filters.startDate}
-            onChange={(e) =>
-              setFilters({ ...filters, startDate: e.target.value })
-            }
-            style={{
-              padding: "0.5rem 0.75rem",
-              border: "1px solid #d1d5db",
-              borderRadius: "0.375rem",
-              outline: "none",
-            }}
-          />
-
-          <input
-            type="date"
-            value={filters.endDate}
-            onChange={(e) =>
-              setFilters({ ...filters, endDate: e.target.value })
-            }
-            style={{
-              padding: "0.5rem 0.75rem",
-              border: "1px solid #d1d5db",
-              borderRadius: "0.375rem",
-              outline: "none",
-            }}
-          />
-
-          <select
-            value={filters.groupBy}
-            onChange={(e) =>
-              setFilters({ ...filters, groupBy: e.target.value })
-            }
-            style={{
-              padding: "0.5rem 0.75rem",
-              border: "1px solid #d1d5db",
-              borderRadius: "0.375rem",
-              outline: "none",
-            }}
-          >
-            <option value="day">Daily</option>
-            <option value="month">Monthly</option>
-            <option value="quarter">Quarterly</option>
-            <option value="year">Yearly</option>
-          </select>
-
-          <select
-            value={chartType}
-            onChange={(e) => setChartType(e.target.value)}
-            style={{
-              padding: "0.5rem 0.75rem",
-              border: "1px solid #d1d5db",
-              borderRadius: "0.375rem",
-              outline: "none",
-            }}
-          >
-            <option value="line">Line Chart</option>
-            <option value="bar">Bar Chart</option>
-            <option value="area">Area Chart</option>
-            <option value="composed">Composed Chart</option>
-          </select>
-        </div>
-
-        {/* Chart Type Buttons */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "0.5rem",
-            marginBottom: "1rem",
-          }}
-        >
-          {["line", "bar", "area", "composed"].map((type) => (
-            <button
-              key={type}
-              onClick={() => setChartType(type)}
-              style={{
-                padding: "0.5rem 1rem",
-                borderRadius: "0.375rem",
-                fontSize: "0.875rem",
-                fontWeight: "500",
-                transition: "all 0.2s",
-                backgroundColor: chartType === type ? "#3b82f6" : "#e5e7eb",
-                color: chartType === type ? "white" : "#374151",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              {type.charAt(0).toUpperCase() + type.slice(1)} Chart
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Chart Container */}
+      {/* Filters */}
       <div
         style={{
-          backgroundColor: "#f9fafb",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: "1rem",
+          marginBottom: "1.5rem",
           padding: "1rem",
+          backgroundColor: "#f9fafb",
           borderRadius: "0.5rem",
+        }}
+      >
+        <select
+          value={filters.district}
+          onChange={(e) =>
+            setFilters({
+              ...filters,
+              district: e.target.value,
+              market: "",
+              variety: "",
+            })
+          }
+          style={{
+            padding: "0.5rem",
+            border: "1px solid #d1d5db",
+            borderRadius: "0.375rem",
+            outline: "none",
+            fontSize: "0.875rem",
+          }}
+        >
+          <option value="">Select District</option>
+          {districts.map((district, index) => (
+            <option key={index} value={district.district}>
+              {district.district} ({district.data_points} records)
+            </option>
+          ))}
+        </select>
+
+        <select
+          value={filters.market}
+          onChange={(e) => setFilters({ ...filters, market: e.target.value })}
+          disabled={!filters.district}
+          style={{
+            padding: "0.5rem",
+            border: "1px solid #d1d5db",
+            borderRadius: "0.375rem",
+            outline: "none",
+            fontSize: "0.875rem",
+            opacity: !filters.district ? 0.5 : 1,
+          }}
+        >
+          <option value="">All Markets</option>
+          {markets.map((market, index) => (
+            <option key={index} value={market.market_name}>
+              {market.market_name} ({market.data_points} records)
+            </option>
+          ))}
+        </select>
+
+        <select
+          value={filters.variety}
+          onChange={(e) => setFilters({ ...filters, variety: e.target.value })}
+          disabled={!filters.district}
+          style={{
+            padding: "0.5rem",
+            border: "1px solid #d1d5db",
+            borderRadius: "0.375rem",
+            outline: "none",
+            fontSize: "0.875rem",
+            opacity: !filters.district ? 0.5 : 1,
+          }}
+        >
+          <option value="">All Varieties</option>
+          {varieties.map((variety, index) => (
+            <option key={index} value={variety.variety}>
+              {variety.variety} ({variety.data_points} records)
+            </option>
+          ))}
+        </select>
+
+        <input
+          type="number"
+          placeholder="Start Year (e.g., 2020)"
+          value={filters.startYear}
+          onChange={(e) =>
+            setFilters({ ...filters, startYear: e.target.value })
+          }
+          style={{
+            padding: "0.5rem",
+            border: "1px solid #d1d5db",
+            borderRadius: "0.375rem",
+            outline: "none",
+            fontSize: "0.875rem",
+          }}
+        />
+
+        <input
+          type="number"
+          placeholder="End Year (e.g., 2024)"
+          value={filters.endYear}
+          onChange={(e) => setFilters({ ...filters, endYear: e.target.value })}
+          style={{
+            padding: "0.5rem",
+            border: "1px solid #d1d5db",
+            borderRadius: "0.375rem",
+            outline: "none",
+            fontSize: "0.875rem",
+          }}
+        />
+
+        <select
+          value={filters.groupBy}
+          onChange={(e) => setFilters({ ...filters, groupBy: e.target.value })}
+          style={{
+            padding: "0.5rem",
+            border: "1px solid #d1d5db",
+            borderRadius: "0.375rem",
+            outline: "none",
+            fontSize: "0.875rem",
+          }}
+        >
+          <option value="month">Monthly</option>
+          <option value="quarter">Quarterly</option>
+          <option value="year">Yearly</option>
+          <option value="season">Seasonal</option>
+        </select>
+      </div>
+
+      {/* Chart */}
+      <div
+        style={{
+          backgroundColor: "#ffffff",
+          padding: "1.5rem",
+          borderRadius: "0.5rem",
+          minHeight: "500px",
+          border: "1px solid #e5e7eb",
+          boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
         }}
       >
         {loading ? (
@@ -582,209 +285,430 @@ const CropPriceChart = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              height: "24rem",
+              height: "400px",
+              flexDirection: "column",
+              gap: "1rem",
             }}
           >
-            <div style={{ fontSize: "1.125rem", color: "#6b7280" }}>
-              Loading chart data...
-            </div>
+            <div style={{ fontSize: "2rem" }}>⏳</div>
+            <div style={{ color: "#6b7280" }}>Loading onion price data...</div>
           </div>
-        ) : priceData.length > 0 ? (
-          <ResponsiveContainer width="100%" height={400}>
-            {renderChart()}
-          </ResponsiveContainer>
+        ) : onionData.length > 0 ? (
+          <>
+            <h3
+              style={{
+                fontSize: "1.125rem",
+                fontWeight: "600",
+                marginBottom: "1rem",
+                color: "#1f2937",
+              }}
+            >
+              Price Trends & Rainfall Correlation
+            </h3>
+            <ResponsiveContainer width="100%" height={400}>
+              <ComposedChart data={onionData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis
+                  dataKey="period"
+                  tick={{ fontSize: 12 }}
+                  angle={-45}
+                  textAnchor="end"
+                  height={80}
+                />
+                <YAxis
+                  yAxisId="price"
+                  orientation="left"
+                  tick={{ fontSize: 12 }}
+                  tickFormatter={(value) => `₹${value}`}
+                />
+                <YAxis
+                  yAxisId="rainfall"
+                  orientation="right"
+                  tick={{ fontSize: 12 }}
+                  tickFormatter={(value) => `${value}mm`}
+                />
+                <Tooltip
+                  formatter={(value, name) => {
+                    if (name.includes("Price"))
+                      return [`₹${value?.toLocaleString()}`, name];
+                    if (name.includes("Rainfall")) return [`${value}mm`, name];
+                    return [value, name];
+                  }}
+                />
+                <Legend />
+                <Bar
+                  yAxisId="rainfall"
+                  dataKey="avg_rainfall"
+                  fill="#3b82f6"
+                  fillOpacity={0.3}
+                  name="Average Rainfall (mm)"
+                />
+                <Line
+                  yAxisId="price"
+                  type="monotone"
+                  dataKey="avg_price"
+                  stroke="#dc2626"
+                  strokeWidth={3}
+                  dot={{ fill: "#dc2626", r: 4 }}
+                  name="Average Price (₹/Quintal)"
+                />
+              </ComposedChart>
+            </ResponsiveContainer>
+
+            {/* Summary Statistics */}
+            <div
+              style={{
+                marginTop: "1.5rem",
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "1rem",
+              }}
+            >
+              <div
+                style={{
+                  backgroundColor: "#fef3c7",
+                  padding: "1rem",
+                  borderRadius: "0.5rem",
+                  textAlign: "center",
+                }}
+              >
+                <h4
+                  style={{
+                    fontSize: "0.875rem",
+                    fontWeight: "500",
+                    color: "#92400e",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  Avg Price
+                </h4>
+                <p
+                  style={{
+                    fontSize: "1.25rem",
+                    fontWeight: "600",
+                    color: "#78350f",
+                  }}
+                >
+                  ₹
+                  {onionData.length > 0
+                    ? Math.round(
+                        onionData.reduce(
+                          (sum, item) => sum + item.avg_price,
+                          0,
+                        ) / onionData.length,
+                      ).toLocaleString()
+                    : 0}
+                </p>
+              </div>
+              <div
+                style={{
+                  backgroundColor: "#dbeafe",
+                  padding: "1rem",
+                  borderRadius: "0.5rem",
+                  textAlign: "center",
+                }}
+              >
+                <h4
+                  style={{
+                    fontSize: "0.875rem",
+                    fontWeight: "500",
+                    color: "#1e40af",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  Avg Rainfall
+                </h4>
+                <p
+                  style={{
+                    fontSize: "1.25rem",
+                    fontWeight: "600",
+                    color: "#1e3a8a",
+                  }}
+                >
+                  {onionData.length > 0
+                    ? Math.round(
+                        onionData.reduce(
+                          (sum, item) => sum + item.avg_rainfall,
+                          0,
+                        ) / onionData.length,
+                      )
+                    : 0}
+                  mm
+                </p>
+              </div>
+              <div
+                style={{
+                  backgroundColor: "#dcfce7",
+                  padding: "1rem",
+                  borderRadius: "0.5rem",
+                  textAlign: "center",
+                }}
+              >
+                <h4
+                  style={{
+                    fontSize: "0.875rem",
+                    fontWeight: "500",
+                    color: "#166534",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  Data Points
+                </h4>
+                <p
+                  style={{
+                    fontSize: "1.25rem",
+                    fontWeight: "600",
+                    color: "#15803d",
+                  }}
+                >
+                  {onionData.length}
+                </p>
+              </div>
+            </div>
+          </>
         ) : (
           <div
             style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              height: "24rem",
+              height: "400px",
+              flexDirection: "column",
+              gap: "1rem",
             }}
           >
-            <div style={{ fontSize: "1.125rem", color: "#6b7280" }}>
-              {filters.commodity
+            <div style={{ fontSize: "2rem" }}>🧅</div>
+            <div style={{ color: "#6b7280", textAlign: "center" }}>
+              {filters.district
                 ? "No data available for selected filters"
-                : "Select a commodity to view price trends"}
+                : "Select a district to view onion price trends"}
             </div>
           </div>
         )}
       </div>
+    </div>
+  );
+};
 
-      {/* Chart Statistics */}
-      {priceData.length > 0 && (
-        <div style={{ marginTop: "1.5rem" }}>
+// Prediction Component - Placeholder for ML predictions
+const PredictionPage = () => {
+  const [predictionData, setPredictionData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [filters, setFilters] = useState({
+    commodity: "",
+    district: "",
+    days: 30,
+  });
+
+  const API_BASE_URL = "http://localhost:5000/api";
+
+  const handlePredict = async () => {
+    if (!filters.commodity || !filters.district) {
+      alert("Please select both commodity and district");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await fetch(`${API_BASE_URL}/predict`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(filters),
+      });
+
+      const data = await response.json();
+      setPredictionData(data);
+    } catch (error) {
+      console.error("Error making prediction:", error);
+      alert("Failed to generate prediction. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={{ padding: "2rem", textAlign: "center" }}>
+      <div style={{ marginBottom: "2rem" }}>
+        <h2
+          style={{
+            fontSize: "2rem",
+            fontWeight: "bold",
+            marginBottom: "1rem",
+            color: "#1f2937",
+          }}
+        >
+          🔮 Price Prediction
+        </h2>
+        <p
+          style={{
+            fontSize: "1.125rem",
+            color: "#6b7280",
+            maxWidth: "600px",
+            margin: "0 auto",
+          }}
+        >
+          Advanced ML models for crop price prediction. Get accurate forecasts
+          based on historical data and weather patterns.
+        </p>
+      </div>
+
+      <div
+        style={{
+          backgroundColor: "#f9fafb",
+          padding: "2rem",
+          borderRadius: "0.5rem",
+          maxWidth: "600px",
+          margin: "0 auto 2rem auto",
+          border: "1px solid #e5e7eb",
+        }}
+      >
+        <h3
+          style={{
+            fontSize: "1.25rem",
+            fontWeight: "600",
+            marginBottom: "1.5rem",
+            color: "#1f2937",
+          }}
+        >
+          Configure Prediction
+        </h3>
+
+        <div style={{ display: "grid", gap: "1rem", marginBottom: "1.5rem" }}>
+          <input
+            type="text"
+            placeholder="Enter commodity (e.g., Onion, Rice, Wheat)"
+            value={filters.commodity}
+            onChange={(e) =>
+              setFilters({ ...filters, commodity: e.target.value })
+            }
+            style={{
+              padding: "0.75rem",
+              border: "1px solid #d1d5db",
+              borderRadius: "0.375rem",
+              fontSize: "1rem",
+              outline: "none",
+            }}
+          />
+
+          <input
+            type="text"
+            placeholder="Enter district name"
+            value={filters.district}
+            onChange={(e) =>
+              setFilters({ ...filters, district: e.target.value })
+            }
+            style={{
+              padding: "0.75rem",
+              border: "1px solid #d1d5db",
+              borderRadius: "0.375rem",
+              fontSize: "1rem",
+              outline: "none",
+            }}
+          />
+
+          <select
+            value={filters.days}
+            onChange={(e) =>
+              setFilters({ ...filters, days: Number.parseInt(e.target.value) })
+            }
+            style={{
+              padding: "0.75rem",
+              border: "1px solid #d1d5db",
+              borderRadius: "0.375rem",
+              fontSize: "1rem",
+              outline: "none",
+            }}
+          >
+            <option value={7}>7 Days</option>
+            <option value={15}>15 Days</option>
+            <option value={30}>30 Days</option>
+            <option value={60}>60 Days</option>
+          </select>
+        </div>
+
+        <button
+          onClick={handlePredict}
+          disabled={loading}
+          style={{
+            backgroundColor: loading ? "#9ca3af" : "#3b82f6",
+            color: "white",
+            padding: "0.75rem 2rem",
+            borderRadius: "0.5rem",
+            border: "none",
+            fontSize: "1rem",
+            fontWeight: "600",
+            cursor: loading ? "not-allowed" : "pointer",
+            transition: "background-color 0.2s",
+          }}
+        >
+          {loading ? "Generating Prediction..." : "Generate Prediction"}
+        </button>
+      </div>
+
+      {predictionData && (
+        <div
+          style={{
+            backgroundColor: "white",
+            padding: "2rem",
+            borderRadius: "0.5rem",
+            border: "1px solid #e5e7eb",
+            boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1)",
+          }}
+        >
           <h3
             style={{
-              fontSize: "1.125rem",
+              fontSize: "1.25rem",
               fontWeight: "600",
+              marginBottom: "1rem",
               color: "#1f2937",
-              marginBottom: "1rem",
             }}
           >
-            Price Statistics
+            Prediction Results
           </h3>
-          <div
+          <pre
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: "1rem",
-              marginBottom: "1rem",
+              backgroundColor: "#f3f4f6",
+              padding: "1rem",
+              borderRadius: "0.375rem",
+              textAlign: "left",
+              overflow: "auto",
             }}
           >
-            {["modal_price", "min_price", "max_price", "avg_price"].map(
-              (priceType) => {
-                const values = priceData
-                  .map((item) => item[priceType])
-                  .filter(Boolean);
-                const avg = values.reduce((a, b) => a + b, 0) / values.length;
-                const min = Math.min(...values);
-                const max = Math.max(...values);
-
-                return (
-                  <div
-                    key={priceType}
-                    style={{
-                      backgroundColor: "white",
-                      padding: "1rem",
-                      borderRadius: "0.5rem",
-                      border: "1px solid #e5e7eb",
-                    }}
-                  >
-                    <h4
-                      style={{
-                        fontSize: "0.875rem",
-                        fontWeight: "500",
-                        color: "#6b7280",
-                        marginBottom: "0.5rem",
-                      }}
-                    >
-                      {priceType
-                        .replace("_", " ")
-                        .replace(/\b\w/g, (l) => l.toUpperCase())}
-                    </h4>
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "0.25rem",
-                      }}
-                    >
-                      <div style={{ fontSize: "0.75rem", color: "#6b7280" }}>
-                        Avg: ₹
-                        {avg.toLocaleString(undefined, {
-                          maximumFractionDigits: 0,
-                        })}
-                      </div>
-                      <div style={{ fontSize: "0.75rem", color: "#6b7280" }}>
-                        Range: ₹{min.toLocaleString()} - ₹{max.toLocaleString()}
-                      </div>
-                    </div>
-                  </div>
-                );
-              },
-            )}
-          </div>
-
-          {/* Additional Info */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-              gap: "1rem",
-            }}
-          >
-            <div
-              style={{
-                backgroundColor: "#dbeafe",
-                padding: "1rem",
-                borderRadius: "0.5rem",
-              }}
-            >
-              <h4
-                style={{
-                  fontSize: "0.875rem",
-                  fontWeight: "500",
-                  color: "#1e40af",
-                  marginBottom: "0.25rem",
-                }}
-              >
-                Data Points
-              </h4>
-              <p
-                style={{
-                  fontSize: "1.125rem",
-                  fontWeight: "600",
-                  color: "#1e3a8a",
-                }}
-              >
-                {priceData.length}
-              </p>
-            </div>
-            <div
-              style={{
-                backgroundColor: "#dcfce7",
-                padding: "1rem",
-                borderRadius: "0.5rem",
-              }}
-            >
-              <h4
-                style={{
-                  fontSize: "0.875rem",
-                  fontWeight: "500",
-                  color: "#166534",
-                  marginBottom: "0.25rem",
-                }}
-              >
-                Selected Filters
-              </h4>
-              <p
-                style={{
-                  fontSize: "0.875rem",
-                  color: "#15803d",
-                }}
-              >
-                {[
-                  filters.commodity && `Commodity: ${filters.commodity}`,
-                  filters.district && `District: ${filters.district}`,
-                  filters.market && `Market: ${filters.market}`,
-                  `Grouping: ${filters.groupBy}`,
-                ]
-                  .filter(Boolean)
-                  .join(", ")}
-              </p>
-            </div>
-            <div
-              style={{
-                backgroundColor: "#f3e8ff",
-                padding: "1rem",
-                borderRadius: "0.5rem",
-              }}
-            >
-              <h4
-                style={{
-                  fontSize: "0.875rem",
-                  fontWeight: "500",
-                  color: "#7c3aed",
-                  marginBottom: "0.25rem",
-                }}
-              >
-                Date Range
-              </h4>
-              <p
-                style={{
-                  fontSize: "0.875rem",
-                  color: "#8b5cf6",
-                }}
-              >
-                {priceData.length > 0
-                  ? `${priceData[0]?.date} to ${priceData[priceData.length - 1]?.date}`
-                  : "No data available"}
-              </p>
-            </div>
-          </div>
+            {JSON.stringify(predictionData, null, 2)}
+          </pre>
         </div>
       )}
+
+      <div
+        style={{
+          marginTop: "2rem",
+          padding: "1.5rem",
+          backgroundColor: "#eff6ff",
+          borderRadius: "0.5rem",
+          border: "1px solid #bfdbfe",
+        }}
+      >
+        <h4
+          style={{
+            fontSize: "1rem",
+            fontWeight: "600",
+            marginBottom: "0.5rem",
+            color: "#1e40af",
+          }}
+        >
+          🤖 How it works
+        </h4>
+        <p
+          style={{ fontSize: "0.875rem", color: "#1e3a8a", lineHeight: "1.6" }}
+        >
+          Our ML models analyze historical price data, weather patterns,
+          seasonal trends, and market dynamics to provide accurate price
+          predictions. The system considers monsoon patterns, rainfall data, and
+          production statistics to generate reliable forecasts.
+        </p>
+      </div>
     </div>
   );
 };
@@ -1642,12 +1566,12 @@ function App() {
   const selectorRef = useRef(null);
   const navRefs = useRef({});
 
+  // Updated sections array - removed "upload", "data", and "news"
   const sections = [
     "home",
     "prediction",
-    "upload",
     "visualisation",
-    "data",
+    "onion-analysis",
     "about",
     "our-team",
   ];
@@ -1666,73 +1590,11 @@ function App() {
       case "home":
         return <HomePage />;
       case "prediction":
-        return (
-          <div style={{ textAlign: "center", padding: "2rem" }}>
-            <h2
-              style={{
-                fontSize: "1.875rem",
-                fontWeight: "bold",
-                marginBottom: "1rem",
-              }}
-            >
-              Price Prediction
-            </h2>
-            <p
-              style={{
-                fontSize: "1.125rem",
-                color: "#6b7280",
-              }}
-            >
-              Advanced ML models for crop price prediction coming soon.
-            </p>
-          </div>
-        );
-      case "upload":
-        return (
-          <div style={{ textAlign: "center", padding: "2rem" }}>
-            <h2
-              style={{
-                fontSize: "1.875rem",
-                fontWeight: "bold",
-                marginBottom: "1rem",
-              }}
-            >
-              Data Upload
-            </h2>
-            <p
-              style={{
-                fontSize: "1.125rem",
-                color: "#6b7280",
-              }}
-            >
-              Upload your crop data for analysis.
-            </p>
-          </div>
-        );
+        return <PredictionPage />;
       case "visualisation":
         return <CropPriceChart />;
-      case "data":
-        return (
-          <div style={{ textAlign: "center", padding: "2rem" }}>
-            <h2
-              style={{
-                fontSize: "1.875rem",
-                fontWeight: "bold",
-                marginBottom: "1rem",
-              }}
-            >
-              Data Management
-            </h2>
-            <p
-              style={{
-                fontSize: "1.125rem",
-                color: "#6b7280",
-              }}
-            >
-              Manage and explore your agricultural data.
-            </p>
-          </div>
-        );
+      case "onion-analysis":
+        return <OnionAnalysis />;
       case "about":
         return <AboutPage />;
       case "our-team":
@@ -1836,8 +1698,8 @@ function App() {
         </div>
       </header>
 
-      {/* Chatbot Component */}
-      <Chatbot 
+      {/* Chatbot Component - Using existing Chatbot.js */}
+      <Chatbot
         isOpen={isChatbotOpen}
         onClose={() => setIsChatbotOpen(false)}
         currentSection={activeSection}
@@ -1890,13 +1752,11 @@ function App() {
                 >
                   {section === "visualisation"
                     ? "Visualisation"
-                    : section
-                        .split("-")
-                        .map(
-                          (word) =>
-                            word.charAt(0).toUpperCase() + word.slice(1),
-                        )
-                        .join(" ")}
+                    : section === "onion-analysis"
+                      ? "Onion Analysis"
+                      : section === "our-team"
+                        ? "Our Team"
+                        : section.charAt(0).toUpperCase() + section.slice(1)}
                 </button>
               ))}
             </div>
