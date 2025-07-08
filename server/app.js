@@ -10,13 +10,38 @@ import pool from "./db.js";
 
 dotenv.config();
 
-// Gemini API configuration
+// API configuration
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.GEMINI_API;
 const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent";
+const NEWS_API_KEY = process.env.NEWS_API_KEY || "your-news-api-key"; // You can get free key from newsapi.org
+const NEWS_API_URL = "https://newsapi.org/v2/everything";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Function to fetch crop-related news
+async function fetchCropNews(query = "crop prices agriculture India", days = 7) {
+  try {
+    const fromDate = new Date();
+    fromDate.setDate(fromDate.getDate() - days);
+    
+    const response = await fetch(`${NEWS_API_URL}?q=${encodeURIComponent(query)}&from=${fromDate.toISOString().split('T')[0]}&sortBy=publishedAt&language=en&apiKey=${NEWS_API_KEY}`, {
+      timeout: 10000
+    });
+    
+    if (!response.ok) {
+      console.error(`News API error: ${response.status}`);
+      return null;
+    }
+    
+    const data = await response.json();
+    return data.articles || [];
+  } catch (error) {
+    console.error("Error fetching news:", error);
+    return null;
+  }
+}
 
 import predictRouter from "./src/routes/predict.route.js";
 app.use("/api/predict", predictRouter);
@@ -392,7 +417,7 @@ app.post("/api/bulk-insert", async (req, res) => {
 // Chatbot endpoint using Gemini API
 app.post("/api/chat", async (req, res) => {
   try {
-    const { message, context, chatHistory } = req.body;
+    const { message, context, chatHistory, userLanguage } = req.body;
 
     if (!GEMINI_API_KEY) {
       return res.status(500).json({ 
@@ -409,6 +434,25 @@ app.post("/api/chat", async (req, res) => {
       ).join('\n') + '\n\n';
     }
 
+    // Determine response language based on user input
+    const responseLanguage = userLanguage === 'kn-IN' ? 'Kannada' : 'English';
+    
+    // Check if user is asking for news or current information
+    const newsKeywords = ['news', 'latest', 'current', 'recent', 'today', 'this week', 'this month', 'update', 'trend', 'market'];
+    const isAskingForNews = newsKeywords.some(keyword => message.toLowerCase().includes(keyword));
+    
+    let newsContext = "";
+    if (isAskingForNews) {
+      console.log("Fetching crop news...");
+      const news = await fetchCropNews("crop prices agriculture India", 7);
+      if (news && news.length > 0) {
+        const recentNews = news.slice(0, 3).map(article => 
+          `- ${article.title} (${article.publishedAt.split('T')[0]})`
+        ).join('\n');
+        newsContext = `\n\nRecent crop-related news:\n${recentNews}`;
+      }
+    }
+    
     const prompt = `You are "My Crops", a helpful AI assistant for a Crop Price Prediction system. 
 
 Context about the system:
@@ -422,15 +466,23 @@ Current user context: ${context || 'User is interacting with the crop price pred
 Previous conversation:
 ${conversationHistory}
 
-User message: ${message}
+User message: ${message}${newsContext}
 
 IMPORTANT: 
 - Keep responses concise and human-like
 - Only give detailed explanations when specifically asked for deep analysis
 - Be friendly, helpful, and to the point
 - Respond directly to the user's question without generic greetings
-- If the user asks the same question, provide a different perspective or ask for clarification`;
+- If the user asks the same question, provide a different perspective or ask for clarification
+- The user is speaking in ${responseLanguage}
+- ALWAYS respond in the same language as the user's message
+- If userLanguage is 'kn-IN', respond in Kannada
+- If userLanguage is 'en-US', respond in English
+- Support both Kannada and English languages naturally
+- If news context is provided, incorporate relevant recent information into your response
+- For news-related queries, mention specific crops, regions, or price trends mentioned in the news`;
 
+    console.log("Sending request to Gemini API...");
     const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
       method: "POST",
       headers: {
@@ -446,10 +498,13 @@ IMPORTANT:
             ]
           }
         ]
-      })
+      }),
+      timeout: 30000 // 30 second timeout
     });
 
+    console.log("Gemini API response status:", response.status);
     const data = await response.json();
+    console.log("Gemini API response data:", JSON.stringify(data, null, 2));
     
     if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
       console.error("Gemini API error:", data);
@@ -460,6 +515,7 @@ IMPORTANT:
     }
 
     const reply = data.candidates[0].content.parts[0].text;
+    console.log("Generated reply:", reply);
     
     res.json({ 
       success: true,
@@ -472,6 +528,34 @@ IMPORTANT:
     res.status(500).json({ 
       error: "Internal server error",
       reply: "I'm sorry, something went wrong. Please try again later."
+    });
+  }
+});
+
+// News endpoint for crop-related news
+app.get("/api/news/crops", async (req, res) => {
+  try {
+    const { query = "crop prices agriculture India", days = 7 } = req.query;
+    const news = await fetchCropNews(query, parseInt(days));
+    
+    if (!news) {
+      return res.status(500).json({ 
+        error: "Failed to fetch news",
+        message: "Unable to retrieve crop news at the moment."
+      });
+    }
+    
+    res.json({
+      success: true,
+      articles: news.slice(0, 10), // Return top 10 articles
+      totalFound: news.length
+    });
+    
+  } catch (error) {
+    console.error("News endpoint error:", error);
+    res.status(500).json({ 
+      error: "Internal server error",
+      message: "Failed to fetch crop news."
     });
   }
 });

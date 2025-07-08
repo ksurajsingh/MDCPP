@@ -6,7 +6,7 @@ const Chatbot = ({ isOpen, onClose, currentSection }) => {
     {
       id: 1,
       type: 'bot',
-      content: 'Hello! I\'m My Crops, your AI assistant for the Crop Price Prediction system. I can help you with price analysis, predictions, data visualization, and more. How can I assist you today?',
+      content: 'Hello! I\'m your AI assistant for the crop price prediction system. I can help you with price analysis, predictions, data visualization, and more. How can I assist you today?',
       timestamp: new Date()
     }
   ]);
@@ -14,6 +14,7 @@ const Chatbot = ({ isOpen, onClose, currentSection }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState('en-US'); // 'kn-IN' for Kannada, 'en-US' for English
   const messagesEndRef = useRef(null);
   const recognitionRef = useRef(null);
   const speechRef = useRef(null);
@@ -33,7 +34,7 @@ const Chatbot = ({ isOpen, onClose, currentSection }) => {
       recognitionRef.current = new SpeechRecognition();
       recognitionRef.current.continuous = false;
       recognitionRef.current.interimResults = false;
-      recognitionRef.current.lang = 'en-US';
+      recognitionRef.current.lang = currentLanguage; // Dynamic language support
 
       recognitionRef.current.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
@@ -52,9 +53,19 @@ const Chatbot = ({ isOpen, onClose, currentSection }) => {
     }
   }, []);
 
+  // Function to detect if text contains Kannada characters
+  const detectLanguage = (text) => {
+    // Kannada Unicode range: 0C80-0CFF
+    const kannadaRegex = /[\u0C80-\u0CFF]/;
+    return kannadaRegex.test(text) ? 'kn-IN' : 'en-US';
+  };
+
   const sendMessage = async () => {
     if (!inputMessage.trim() || isLoading) return;
 
+    // Detect language from user input
+    const detectedLanguage = detectLanguage(inputMessage);
+    
     const userMessage = {
       id: Date.now(),
       type: 'user',
@@ -74,8 +85,9 @@ const Chatbot = ({ isOpen, onClose, currentSection }) => {
         },
         body: JSON.stringify({
           message: inputMessage,
-          context: `User is currently on the ${currentSection} section of the crop price prediction system.`,
-          chatHistory: messages.slice(-10) // Send last 10 messages for context
+          context: `User is currently on the ${currentSection} section of the crop price prediction system. User is speaking in ${detectedLanguage === 'kn-IN' ? 'Kannada' : 'English'}.`,
+          chatHistory: messages.slice(-10), // Send last 10 messages for context
+          userLanguage: detectedLanguage // Send detected language to server
         })
       });
 
@@ -89,8 +101,8 @@ const Chatbot = ({ isOpen, onClose, currentSection }) => {
             timestamp: new Date()
           };
           setMessages(prev => [...prev, botMessage]);
-          // Auto-speak bot responses
-          speakMessage(data.reply);
+          // Auto-speak bot responses in detected language
+          speakMessage(data.reply, detectedLanguage);
         } else {
         const errorMessage = {
           id: Date.now() + 1,
@@ -123,12 +135,19 @@ const Chatbot = ({ isOpen, onClose, currentSection }) => {
 
   const startListening = () => {
     if (recognitionRef.current && !isListening) {
+      // Update recognition language before starting
+      recognitionRef.current.lang = currentLanguage;
       setIsListening(true);
       recognitionRef.current.start();
     }
   };
 
-  const speakMessage = (text) => {
+  const toggleLanguage = () => {
+    const newLang = currentLanguage === 'kn-IN' ? 'en-US' : 'kn-IN';
+    setCurrentLanguage(newLang);
+  };
+
+  const speakMessage = (text, language = currentLanguage) => {
     if ('speechSynthesis' in window) {
       if (speechRef.current) {
         speechSynthesis.cancel();
@@ -138,6 +157,7 @@ const Chatbot = ({ isOpen, onClose, currentSection }) => {
       utterance.rate = 0.9;
       utterance.pitch = 1;
       utterance.volume = 0.8;
+      utterance.lang = language; // Use detected language for speech
       
       utterance.onstart = () => setIsSpeaking(true);
       utterance.onend = () => setIsSpeaking(false);
@@ -169,6 +189,13 @@ const Chatbot = ({ isOpen, onClose, currentSection }) => {
           <div className="chatbot-title">
             <span className="chatbot-icon">🌾</span>
             <span>My Crops</span>
+            <button 
+              className="language-toggle"
+              onClick={toggleLanguage}
+              title={`Switch to ${currentLanguage === 'kn-IN' ? 'English' : 'Kannada'}`}
+            >
+              {currentLanguage === 'kn-IN' ? '🇺🇸' : '🇮🇳'}
+            </button>
           </div>
           <button className="chatbot-close" onClick={onClose}>
             ×
