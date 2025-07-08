@@ -1,12 +1,12 @@
-State,District,Year,Area (Hectare),Yield (Tonne/Hectare)
-Karnataka, Belgaum,2018,72014,1.26
-Karnataka, Belgaum,2019,83238,1
-Karnataka, Belgaum,2020,84751,1.03
-Karnataka, Belgaum,2021,99446,0.98
-Karnataka, Belgaum,2022,96859,1.01
-Karnataka, Belgaum,2023,94622.19,1.02
-Karnataka, Belgaum,2024,95568.41,1.03
+﻿State,District,Year,Area (Hectare),Yield (Tonne/Hectare)
 Karnataka, Belgaum,2025,96524.09,1.04
+Karnataka, Bidar,2025,215400.22,1.38
+Karnataka, Dharwad,2025,38644.53,0.89
+Karnataka, Gadag,2025,626.42,1.22
+Karnataka,Haveri,2025,13630.2,0.69
+,,,,
+,,,,
+,,,,
 Karnataka, Bidar,2018,125173,0.82
 Karnataka, Bidar,2019,194801,1.18
 Karnataka, Bidar,2020,174816,1.33
@@ -14,7 +14,7 @@ Karnataka, Bidar,2021,203783,1.34
 Karnataka, Bidar,2022,248597,1.34
 Karnataka, Bidar,2023,211155.99,1.35
 Karnataka, Bidar,2024,213267.55,1.36
-Karnataka, Bidar,2025,215400.22,1.38
+,,,,
 Karnataka, Dharwad,2018,34554,0.79
 Karnataka, Dharwad,2019,32399,1.02
 Karnataka, Dharwad,2020,30001,1.08
@@ -22,7 +22,7 @@ Karnataka, Dharwad,2021,39900,0.68
 Karnataka, Dharwad,2022,42623,0.83
 Karnataka, Dharwad,2023,37883.08,0.87
 Karnataka, Dharwad,2024,38261.91,0.88
-Karnataka, Dharwad,2025,38644.53,0.89
+,,,,
 Karnataka, Gadag,2018,45,0.98
 Karnataka, Gadag,2019,64,1.13
 Karnataka, Gadag,2020,59,1.22
@@ -30,7 +30,7 @@ Karnataka, Gadag,2021,438,1.15
 Karnataka, Gadag,2022,1327,1.18
 Karnataka, Gadag,2023,614.08,1.2
 Karnataka, Gadag,2024,620.22,1.21
-Karnataka, Gadag,2025,626.42,1.22
+,,,,
 Karnataka,Haveri,2018,6608,0.71
 Karnataka,Haveri,2019,6024,0.5
 Karnataka,Haveri,2020,7221,0.99
@@ -38,4 +38,5 @@ Karnataka,Haveri,2021,17229,0.7
 Karnataka,Haveri,2022,15238,0.33
 Karnataka,Haveri,2023,13361.63,0.68
 Karnataka,Haveri,2024,13495.24,0.69
-Karnataka,Haveri,2025,13630.2,0.69
+,,,,
+

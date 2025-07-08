@@ -350,6 +350,511 @@ app.get("/api/price-comparison", async (req, res) => {
   }
 });
 
+//////////////////////onion
+
+// Enhanced API endpoints for onion-specific data visualization
+
+// 1. Get all districts for onion data
+app.get("/api/onion/districts", async (req, res) => {
+  try {
+    const result = await pool.query(`
+      SELECT DISTINCT district, COUNT(*) as data_points
+      FROM onion_prices
+      GROUP BY district
+      ORDER BY district
+    `);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// 2. Get markets by district for onion
+app.get("/api/onion/districts/:district/markets", async (req, res) => {
+  try {
+    const { district } = req.params;
+    const result = await pool.query(
+      `
+      SELECT DISTINCT market_name, COUNT(*) as data_points
+      FROM onion_prices
+      WHERE district = $1
+      GROUP BY market_name
+      ORDER BY market_name
+      `,
+      [district],
+    );
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// 3. Get onion varieties by district
+app.get("/api/onion/districts/:district/varieties", async (req, res) => {
+  try {
+    const { district } = req.params;
+    const result = await pool.query(
+      `
+      SELECT DISTINCT variety, COUNT(*) as data_points
+      FROM onion_prices
+      WHERE district = $1
+      GROUP BY variety
+      ORDER BY variety
+      `,
+      [district],
+    );
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// 4. Get onion price trends with rainfall correlation
+app.get("/api/onion/price-trends", async (req, res) => {
+  try {
+    const {
+      district,
+      market,
+      variety,
+      startYear,
+      endYear,
+      startMonth,
+      endMonth,
+      groupBy = "month",
+    } = req.query;
+
+    let query = `
+      SELECT 
+        op.district,
+        op.market_name,
+        op.variety,
+        op.modal_price_rs_per_quintal,
+        op.year,
+        op.month,
+        op.rainfall_minus1,
+        op.rainfall_minus2,
+        op.rainfall_minus3,
+        op.total_rainfall_3months,
+        op.area_hectare,
+        op.yield_tonne_per_hectare
+      FROM onion_prices op
+      WHERE 1=1
+    `;
+
+    const params = [];
+    let paramCount = 0;
+
+    if (district) {
+      paramCount++;
+      query += ` AND op.district = $${paramCount}`;
+      params.push(district);
+    }
+
+    if (market) {
+      paramCount++;
+      query += ` AND op.market_name = $${paramCount}`;
+      params.push(market);
+    }
+
+    if (variety) {
+      paramCount++;
+      query += ` AND op.variety = $${paramCount}`;
+      params.push(variety);
+    }
+
+    if (startYear) {
+      paramCount++;
+      query += ` AND op.year >= $${paramCount}`;
+      params.push(parseInt(startYear));
+    }
+
+    if (endYear) {
+      paramCount++;
+      query += ` AND op.year <= $${paramCount}`;
+      params.push(parseInt(endYear));
+    }
+
+    if (startMonth) {
+      paramCount++;
+      query += ` AND op.month >= $${paramCount}`;
+      params.push(parseInt(startMonth));
+    }
+
+    if (endMonth) {
+      paramCount++;
+      query += ` AND op.month <= $${paramCount}`;
+      params.push(parseInt(endMonth));
+    }
+
+    query += ` ORDER BY op.year ASC, op.month ASC`;
+
+    const result = await pool.query(query, params);
+
+    // Group data based on groupBy parameter
+    let processedData = formatOnionPriceData(result.rows);
+
+    if (groupBy !== "month") {
+      processedData = groupOnionPriceData(processedData, groupBy);
+    }
+
+    res.json({
+      data: processedData,
+      totalRecords: result.rows.length,
+      filters: {
+        district,
+        market,
+        variety,
+        startYear,
+        endYear,
+        startMonth,
+        endMonth,
+        groupBy,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// 5. Get rainfall data for correlation analysis
+app.get("/api/onion/rainfall-data", async (req, res) => {
+  try {
+    const { district, startYear, endYear } = req.query;
+
+    let query = `
+      SELECT 
+        district,
+        year,
+        month,
+        rainfall_mm,
+        rainfall_lag_1,
+        rainfall_lag_2,
+        rainfall_lag_3,
+        rainfall_3mo_sum
+      FROM onion_rainfall
+      WHERE 1=1
+    `;
+
+    const params = [];
+    let paramCount = 0;
+
+    if (district) {
+      paramCount++;
+      query += ` AND district = $${paramCount}`;
+      params.push(district);
+    }
+
+    if (startYear) {
+      paramCount++;
+      query += ` AND year >= $${paramCount}`;
+      params.push(parseInt(startYear));
+    }
+
+    if (endYear) {
+      paramCount++;
+      query += ` AND year <= $${paramCount}`;
+      params.push(parseInt(endYear));
+    }
+
+    query += ` ORDER BY year ASC, month ASC`;
+
+    const result = await pool.query(query, params);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// 6. Get production data
+app.get("/api/onion/production-data", async (req, res) => {
+  try {
+    const { district, startYear, endYear } = req.query;
+
+    let query = `
+      SELECT 
+        district,
+        year,
+        area_hectare,
+        yield_tonne_per_hectare
+      FROM onion_production
+      WHERE 1=1
+    `;
+
+    const params = [];
+    let paramCount = 0;
+
+    if (district) {
+      paramCount++;
+      query += ` AND district = $${paramCount}`;
+      params.push(district);
+    }
+
+    if (startYear) {
+      paramCount++;
+      query += ` AND year >= $${paramCount}`;
+      params.push(parseInt(startYear));
+    }
+
+    if (endYear) {
+      paramCount++;
+      query += ` AND year <= $${paramCount}`;
+      params.push(parseInt(endYear));
+    }
+
+    query += ` ORDER BY year ASC`;
+
+    const result = await pool.query(query, params);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// 7. Get variety distribution by district
+app.get("/api/onion/variety-distribution", async (req, res) => {
+  try {
+    const { district } = req.query;
+
+    let query = `
+      SELECT 
+        district,
+        local,
+        onion,
+        other,
+        puna,
+        pusa_red,
+        telagi,
+        white
+      FROM onion_varieties
+      WHERE 1=1
+    `;
+
+    const params = [];
+    let paramCount = 0;
+
+    if (district) {
+      paramCount++;
+      query += ` AND district = $${paramCount}`;
+      params.push(district);
+    }
+
+    query += ` ORDER BY district`;
+
+    const result = await pool.query(query, params);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// 8. Get price-rainfall correlation data
+app.get("/api/onion/price-rainfall-correlation", async (req, res) => {
+  try {
+    const { district, variety, year } = req.query;
+
+    let query = `
+      SELECT 
+        op.district,
+        op.market_name,
+        op.variety,
+        op.modal_price_rs_per_quintal,
+        op.year,
+        op.month,
+        op.rainfall_minus1,
+        op.rainfall_minus2,
+        op.rainfall_minus3,
+        op.total_rainfall_3months,
+        COALESCE(or.rainfall_mm, 0) as current_rainfall
+      FROM onion_prices op
+      LEFT JOIN onion_rainfall or ON (
+        op.district = or.district AND 
+        op.year = or.year AND 
+        op.month = or.month
+      )
+      WHERE 1=1
+    `;
+
+    const params = [];
+    let paramCount = 0;
+
+    if (district) {
+      paramCount++;
+      query += ` AND op.district = $${paramCount}`;
+      params.push(district);
+    }
+
+    if (variety) {
+      paramCount++;
+      query += ` AND op.variety = $${paramCount}`;
+      params.push(variety);
+    }
+
+    if (year) {
+      paramCount++;
+      query += ` AND op.year = $${paramCount}`;
+      params.push(parseInt(year));
+    }
+
+    query += ` ORDER BY op.year ASC, op.month ASC`;
+
+    const result = await pool.query(query, params);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// 9. Get summary statistics
+app.get("/api/onion/summary-stats", async (req, res) => {
+  try {
+    const { district, year } = req.query;
+
+    let query = `
+      SELECT 
+        district,
+        year,
+        variety,
+        AVG(modal_price_rs_per_quintal) as avg_price,
+        MIN(modal_price_rs_per_quintal) as min_price,
+        MAX(modal_price_rs_per_quintal) as max_price,
+        STDDEV(modal_price_rs_per_quintal) as price_volatility,
+        COUNT(*) as data_points,
+        AVG(total_rainfall_3months) as avg_rainfall_3mo,
+        AVG(area_hectare) as avg_area,
+        AVG(yield_tonne_per_hectare) as avg_yield
+      FROM onion_prices
+      WHERE 1=1
+    `;
+
+    const params = [];
+    let paramCount = 0;
+
+    if (district) {
+      paramCount++;
+      query += ` AND district = $${paramCount}`;
+      params.push(district);
+    }
+
+    if (year) {
+      paramCount++;
+      query += ` AND year = $${paramCount}`;
+      params.push(parseInt(year));
+    }
+
+    query += ` GROUP BY district, year, variety ORDER BY district, year, variety`;
+
+    const result = await pool.query(query, params);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// Helper function to format onion price data
+function formatOnionPriceData(rows) {
+  return rows.map((row) => ({
+    district: row.district,
+    market_name: row.market_name,
+    variety: row.variety,
+    modal_price: parseFloat(row.modal_price_rs_per_quintal),
+    year: row.year,
+    month: row.month,
+    date: `${row.year}-${String(row.month).padStart(2, "0")}-01`,
+    rainfall_minus1: row.rainfall_minus1,
+    rainfall_minus2: row.rainfall_minus2,
+    rainfall_minus3: row.rainfall_minus3,
+    total_rainfall_3months: row.total_rainfall_3months,
+    area_hectare: row.area_hectare,
+    yield_tonne_per_hectare: row.yield_tonne_per_hectare,
+  }));
+}
+
+// Helper function to group onion price data
+function groupOnionPriceData(data, groupBy) {
+  const grouped = {};
+
+  data.forEach((item) => {
+    let key;
+
+    switch (groupBy) {
+      case "quarter":
+        const quarter = Math.floor((item.month - 1) / 3) + 1;
+        key = `${item.year}-Q${quarter}`;
+        break;
+      case "year":
+        key = item.year.toString();
+        break;
+      case "season":
+        // Define onion seasons (adjust based on your region)
+        const season =
+          item.month >= 11 || item.month <= 2
+            ? "Rabi"
+            : item.month >= 3 && item.month <= 6
+              ? "Summer"
+              : "Kharif";
+        key = `${item.year}-${season}`;
+        break;
+      default:
+        key = `${item.year}-${String(item.month).padStart(2, "0")}`;
+    }
+
+    if (!grouped[key]) {
+      grouped[key] = {
+        period: key,
+        prices: [],
+        rainfall_data: [],
+        area_data: [],
+        yield_data: [],
+      };
+    }
+
+    grouped[key].prices.push(item.modal_price);
+    if (item.total_rainfall_3months) {
+      grouped[key].rainfall_data.push(item.total_rainfall_3months);
+    }
+    if (item.area_hectare) {
+      grouped[key].area_data.push(item.area_hectare);
+    }
+    if (item.yield_tonne_per_hectare) {
+      grouped[key].yield_data.push(item.yield_tonne_per_hectare);
+    }
+  });
+
+  // Calculate averages
+  return Object.values(grouped).map((group) => ({
+    period: group.period,
+    avg_price:
+      group.prices.length > 0
+        ? group.prices.reduce((a, b) => a + b, 0) / group.prices.length
+        : 0,
+    min_price: group.prices.length > 0 ? Math.min(...group.prices) : 0,
+    max_price: group.prices.length > 0 ? Math.max(...group.prices) : 0,
+    avg_rainfall:
+      group.rainfall_data.length > 0
+        ? group.rainfall_data.reduce((a, b) => a + b, 0) /
+          group.rainfall_data.length
+        : 0,
+    avg_area:
+      group.area_data.length > 0
+        ? group.area_data.reduce((a, b) => a + b, 0) / group.area_data.length
+        : 0,
+    avg_yield:
+      group.yield_data.length > 0
+        ? group.yield_data.reduce((a, b) => a + b, 0) / group.yield_data.length
+        : 0,
+    data_points: group.prices.length,
+  }));
+}
+
 // 7. Bulk insert endpoint (for importing Excel data)
 app.post("/api/bulk-insert", async (req, res) => {
   const client = await pool.connect();
