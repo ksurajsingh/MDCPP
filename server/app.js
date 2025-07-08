@@ -12,7 +12,8 @@ dotenv.config();
 
 // API configuration
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.GEMINI_API;
-const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent";
+const GEMINI_API_URL =
+  "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent";
 const NEWS_API_KEY = process.env.NEWS_API_KEY || "your-news-api-key"; // You can get free key from newsapi.org
 const NEWS_API_URL = "https://newsapi.org/v2/everything";
 
@@ -21,20 +22,26 @@ app.use(cors());
 app.use(express.json());
 
 // Function to fetch crop-related news
-async function fetchCropNews(query = "crop prices agriculture India", days = 7) {
+async function fetchCropNews(
+  query = "crop prices agriculture India",
+  days = 7,
+) {
   try {
     const fromDate = new Date();
     fromDate.setDate(fromDate.getDate() - days);
-    
-    const response = await fetch(`${NEWS_API_URL}?q=${encodeURIComponent(query)}&from=${fromDate.toISOString().split('T')[0]}&sortBy=publishedAt&language=en&apiKey=${NEWS_API_KEY}`, {
-      timeout: 10000
-    });
-    
+
+    const response = await fetch(
+      `${NEWS_API_URL}?q=${encodeURIComponent(query)}&from=${fromDate.toISOString().split("T")[0]}&sortBy=publishedAt&language=en&apiKey=${NEWS_API_KEY}`,
+      {
+        timeout: 10000,
+      },
+    );
+
     if (!response.ok) {
       console.error(`News API error: ${response.status}`);
       return null;
     }
-    
+
     const data = await response.json();
     return data.articles || [];
   } catch (error) {
@@ -925,39 +932,61 @@ app.post("/api/chat", async (req, res) => {
     const { message, context, chatHistory, userLanguage } = req.body;
 
     if (!GEMINI_API_KEY) {
-      return res.status(500).json({ 
+      return res.status(500).json({
         error: "Gemini API key not configured",
-        reply: "I'm sorry, the AI service is not configured at the moment. Please try again later."
+        reply:
+          "I'm sorry, the AI service is not configured at the moment. Please try again later.",
       });
     }
 
     // Build conversation history
     let conversationHistory = "";
     if (chatHistory && chatHistory.length > 0) {
-      conversationHistory = chatHistory.map(msg => 
-        `${msg.type === 'user' ? 'User' : 'My Crops'}: ${msg.content}`
-      ).join('\n') + '\n\n';
+      conversationHistory =
+        chatHistory
+          .map(
+            (msg) =>
+              `${msg.type === "user" ? "User" : "My Crops"}: ${msg.content}`,
+          )
+          .join("\n") + "\n\n";
     }
 
     // Determine response language based on user input
-    const responseLanguage = userLanguage === 'kn-IN' ? 'Kannada' : 'English';
-    
+    const responseLanguage = userLanguage === "kn-IN" ? "Kannada" : "English";
+
     // Check if user is asking for news or current information
-    const newsKeywords = ['news', 'latest', 'current', 'recent', 'today', 'this week', 'this month', 'update', 'trend', 'market'];
-    const isAskingForNews = newsKeywords.some(keyword => message.toLowerCase().includes(keyword));
-    
+    const newsKeywords = [
+      "news",
+      "latest",
+      "current",
+      "recent",
+      "today",
+      "this week",
+      "this month",
+      "update",
+      "trend",
+      "market",
+    ];
+    const isAskingForNews = newsKeywords.some((keyword) =>
+      message.toLowerCase().includes(keyword),
+    );
+
     let newsContext = "";
     if (isAskingForNews) {
       console.log("Fetching crop news...");
       const news = await fetchCropNews("crop prices agriculture India", 7);
       if (news && news.length > 0) {
-        const recentNews = news.slice(0, 3).map(article => 
-          `- ${article.title} (${article.publishedAt.split('T')[0]})`
-        ).join('\n');
+        const recentNews = news
+          .slice(0, 3)
+          .map(
+            (article) =>
+              `- ${article.title} (${article.publishedAt.split("T")[0]})`,
+          )
+          .join("\n");
         newsContext = `\n\nRecent crop-related news:\n${recentNews}`;
       }
     }
-    
+
     const prompt = `You are "My Crops", a helpful AI assistant for a Crop Price Prediction system. 
 
 Context about the system:
@@ -966,7 +995,7 @@ Context about the system:
 - The system helps farmers and traders make informed decisions about crop prices
 - Available features include price visualization, prediction tools, and market analysis
 
-Current user context: ${context || 'User is interacting with the crop price prediction system'}
+Current user context: ${context || "User is interacting with the crop price prediction system"}
 
 Previous conversation:
 ${conversationHistory}
@@ -998,41 +1027,45 @@ IMPORTANT:
           {
             parts: [
               {
-                text: prompt
-              }
-            ]
-          }
-        ]
+                text: prompt,
+              },
+            ],
+          },
+        ],
       }),
-      timeout: 30000 // 30 second timeout
+      timeout: 30000, // 30 second timeout
     });
 
     console.log("Gemini API response status:", response.status);
     const data = await response.json();
     console.log("Gemini API response data:", JSON.stringify(data, null, 2));
-    
-    if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
+
+    if (
+      !data.candidates ||
+      !data.candidates[0] ||
+      !data.candidates[0].content
+    ) {
       console.error("Gemini API error:", data);
-      return res.status(500).json({ 
+      return res.status(500).json({
         error: "Failed to get response from AI",
-        reply: "I'm sorry, I'm having trouble processing your request right now. Please try again."
+        reply:
+          "I'm sorry, I'm having trouble processing your request right now. Please try again.",
       });
     }
 
     const reply = data.candidates[0].content.parts[0].text;
     console.log("Generated reply:", reply);
-    
-    res.json({ 
+
+    res.json({
       success: true,
       reply: reply,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
-
   } catch (error) {
     console.error("Chatbot error:", error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: "Internal server error",
-      reply: "I'm sorry, something went wrong. Please try again later."
+      reply: "I'm sorry, something went wrong. Please try again later.",
     });
   }
 });
@@ -1042,25 +1075,24 @@ app.get("/api/news/crops", async (req, res) => {
   try {
     const { query = "crop prices agriculture India", days = 7 } = req.query;
     const news = await fetchCropNews(query, parseInt(days));
-    
+
     if (!news) {
-      return res.status(500).json({ 
+      return res.status(500).json({
         error: "Failed to fetch news",
-        message: "Unable to retrieve crop news at the moment."
+        message: "Unable to retrieve crop news at the moment.",
       });
     }
-    
+
     res.json({
       success: true,
       articles: news.slice(0, 10), // Return top 10 articles
-      totalFound: news.length
+      totalFound: news.length,
     });
-    
   } catch (error) {
     console.error("News endpoint error:", error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: "Internal server error",
-      message: "Failed to fetch crop news."
+      message: "Failed to fetch crop news.",
     });
   }
 });
