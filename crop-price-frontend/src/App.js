@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import "./index.css"; // Import the CSS file
+import Chatbot from "./Chatbot.js";
 import {
   LineChart,
   Line,
@@ -1637,6 +1638,7 @@ const TeamPage = () => {
 // Main App Component
 function App() {
   const [activeSection, setActiveSection] = useState("home");
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const selectorRef = useRef(null);
   const navRefs = useRef({});
 
@@ -1813,7 +1815,7 @@ function App() {
               </h1>
             </div>
             <button
-              onClick={() => alert("Chatbot coming soon!")}
+              onClick={() => setIsChatbotOpen(true)}
               style={{
                 backgroundColor: "#3b82f6",
                 color: "white",
@@ -1833,6 +1835,13 @@ function App() {
           </div>
         </div>
       </header>
+
+      {/* Chatbot Component */}
+      <Chatbot 
+        isOpen={isChatbotOpen}
+        onClose={() => setIsChatbotOpen(false)}
+        currentSection={activeSection}
+      />
 
       {/* Navigation */}
       <nav

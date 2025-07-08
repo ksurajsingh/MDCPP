@@ -4,10 +4,15 @@ import cors from "cors";
 import { fileURLToPath } from "url";
 import path from "path";
 import dotenv from "dotenv";
+import fetch from "node-fetch";
 //import priceRoutes from "./routes/prices.js";
 import pool from "./db.js";
 
 dotenv.config();
+
+// Gemini API configuration
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.GEMINI_API;
+const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent";
 
 const app = express();
 app.use(cors());
@@ -381,6 +386,93 @@ app.post("/api/bulk-insert", async (req, res) => {
     res.status(500).json({ error: "Failed to insert data" });
   } finally {
     client.release();
+  }
+});
+
+// Chatbot endpoint using Gemini API
+app.post("/api/chat", async (req, res) => {
+  try {
+    const { message, context, chatHistory } = req.body;
+
+    if (!GEMINI_API_KEY) {
+      return res.status(500).json({ 
+        error: "Gemini API key not configured",
+        reply: "I'm sorry, the AI service is not configured at the moment. Please try again later."
+      });
+    }
+
+    // Build conversation history
+    let conversationHistory = "";
+    if (chatHistory && chatHistory.length > 0) {
+      conversationHistory = chatHistory.map(msg => 
+        `${msg.type === 'user' ? 'User' : 'My Crops'}: ${msg.content}`
+      ).join('\n') + '\n\n';
+    }
+
+    const prompt = `You are "My Crops", a helpful AI assistant for a Crop Price Prediction system. 
+
+Context about the system:
+- This is a monsoon-driven crop price prediction platform
+- Users can view historical price data, make predictions, and analyze trends
+- The system helps farmers and traders make informed decisions about crop prices
+- Available features include price visualization, prediction tools, and market analysis
+
+Current user context: ${context || 'User is interacting with the crop price prediction system'}
+
+Previous conversation:
+${conversationHistory}
+
+User message: ${message}
+
+IMPORTANT: 
+- Keep responses concise and human-like
+- Only give detailed explanations when specifically asked for deep analysis
+- Be friendly, helpful, and to the point
+- Respond directly to the user's question without generic greetings
+- If the user asks the same question, provide a different perspective or ask for clarification`;
+
+    const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        contents: [
+          {
+            parts: [
+              {
+                text: prompt
+              }
+            ]
+          }
+        ]
+      })
+    });
+
+    const data = await response.json();
+    
+    if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
+      console.error("Gemini API error:", data);
+      return res.status(500).json({ 
+        error: "Failed to get response from AI",
+        reply: "I'm sorry, I'm having trouble processing your request right now. Please try again."
+      });
+    }
+
+    const reply = data.candidates[0].content.parts[0].text;
+    
+    res.json({ 
+      success: true,
+      reply: reply,
+      timestamp: new Date().toISOString()
+    });
+
+  } catch (error) {
+    console.error("Chatbot error:", error);
+    res.status(500).json({ 
+      error: "Internal server error",
+      reply: "I'm sorry, something went wrong. Please try again later."
+    });
   }
 });
 
