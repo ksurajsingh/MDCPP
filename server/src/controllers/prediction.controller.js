@@ -1,9 +1,10 @@
 import { spawn } from "child_process";
 import path from "path";
 import { fileURLToPath } from "url";
+import db from "../../db.js"; // Assuming your db connection is here
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename); // Fixed: was **dirname
+const __dirname = path.dirname(__filename);
 
 // Paths
 const venvPython = path.resolve(__dirname, "../mlModels/venv/bin/python");
@@ -19,10 +20,45 @@ const districtData = {
   Haveri: { area: 13630.2, yield: 0.69 },
 };
 
+// Function to get rainfall data from database
+async function getRainfallFromDB(district, year, month) {
+  try {
+    const query = `
+      SELECT 
+        rainfall_lag_1,
+        rainfall_lag_2,
+        rainfall_lag_3,
+        rainfall_3mo_sum
+      FROM soy_rainfall 
+      WHERE LOWER(district) = LOWER($1) 
+        AND year = $2 
+        AND month = $3
+      LIMIT 1
+    `;
+
+    const result = await db.query(query, [district, year, month]);
+
+    if (result.rows.length === 0) {
+      return null;
+    }
+
+    const row = result.rows[0];
+    return {
+      minus1: parseFloat(row.rainfall_lag_1),
+      minus2: parseFloat(row.rainfall_lag_2),
+      minus3: parseFloat(row.rainfall_lag_3),
+      total3Months: parseFloat(row.rainfall_3mo_sum),
+    };
+  } catch (error) {
+    console.error("Database query error:", error);
+    return null;
+  }
+}
+
 export const predictSingle = async (req, res) => {
   try {
     const { year, month, district, rainfall } = req.body;
-    console.log(req);
+    console.log(req.body);
 
     // Input validation
     if (!year || !month || !district) {
@@ -51,13 +87,33 @@ export const predictSingle = async (req, res) => {
       });
     }
 
-    // Use provided rainfall data or defaults
-    const rainfallData = rainfall || {
-      minus1: 100.0,
-      minus2: 85.0,
-      minus3: 90.0,
-      total3Months: 275.0,
-    };
+    // Try to get rainfall data from database first
+    let rainfallData = null;
+    let dataSource = "default";
+
+    if (rainfall) {
+      // Use provided rainfall data if available
+      rainfallData = rainfall;
+      dataSource = "provided";
+    } else {
+      // Query database for rainfall data
+      const dbRainfall = await getRainfallFromDB(district, yearNum, monthNum);
+      if (dbRainfall) {
+        rainfallData = dbRainfall;
+        dataSource = "database";
+      }
+    }
+
+    // Use defaults if no data found
+    if (!rainfallData) {
+      rainfallData = {
+        minus1: 100.0,
+        minus2: 85.0,
+        minus3: 90.0,
+        total3Months: 275.0,
+      };
+      dataSource = "default";
+    }
 
     const features = [
       yearNum,
@@ -126,7 +182,7 @@ export const predictSingle = async (req, res) => {
         }
 
         const prediction = parseFloat(parsed.prediction);
-        const confidence = parseFloat(parsed.confidence) || 0; // More reasonable fallback
+        const confidence = parseFloat(parsed.confidence) || 0;
 
         if (isNaN(prediction)) {
           return res.status(500).json({ error: "Invalid prediction value" });
@@ -146,6 +202,8 @@ export const predictSingle = async (req, res) => {
           metadata: {
             features: features,
             district_info: districtInfo,
+            rainfall_data_source: dataSource, // Shows where the data came from
+            rainfall_data: rainfallData,
           },
         });
       } catch (err) {
