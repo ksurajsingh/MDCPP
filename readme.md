@@ -1,5 +1,24 @@
 # TODO
 
+
+
+## SEE [ To understand for write up ]
+
+- [ ] prediction parameters 
+- [ ] prediction metrics and model metrics ( parameters )
+- [ ] use case - with range of usage .
+- [ ] features + archietecture 
+
+## bugs 
+
+- [ ] `predict-soyabean` display 
+  - [ ] proper user input for prediction 
+  - [ ] drop downs for values 
+- [ ] fix this page 
+
+
+## PREVIOUS GOALS
+
 - [x] Interactive prediction tool
 - [ ] Historical Data view
 - [ ] Rainfall crop correlation analysis

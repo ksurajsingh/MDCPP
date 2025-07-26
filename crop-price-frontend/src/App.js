@@ -608,6 +608,38 @@ const PredictionPage = () => {
             }}
           />
 
+          <input
+            type="number"
+            placeholder="Enter year (e.g., 2023)"
+            value={filters.year}
+            onChange={(e) =>
+              setFilters({ ...filters, year: e.target.value })
+            }
+            style={{
+              padding: "0.75rem",
+              border: "1px solid #d1d5db",
+              borderRadius: "0.375rem",
+              fontSize: "1rem",
+              outline: "none",
+            }}
+          />
+
+          <input
+            type="number"
+            placeholder="Enter month (1–12)"
+            value={filters.month}
+            onChange={(e) =>
+              setFilters({ ...filters, month: e.target.value })
+            }
+            style={{
+              padding: "0.75rem",
+              border: "1px solid #d1d5db",
+              borderRadius: "0.375rem",
+              fontSize: "1rem",
+              outline: "none",
+            }}
+          />
+
           <select
             value={filters.days}
             onChange={(e) =>
