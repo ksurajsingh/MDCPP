@@ -11,7 +11,7 @@
 
 ## bugs 
 
-- [ ] `predict-soyabean` display 
+- [x] `predict-soyabean` display 
   - [x] proper user input for prediction 
   - [ ] drop downs for values 
 - [ ] fix this page 
