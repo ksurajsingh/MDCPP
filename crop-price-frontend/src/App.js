@@ -495,8 +495,10 @@ const PredictionPage = () => {
   const [predictionData, setPredictionData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [filters, setFilters] = useState({
-    commodity: "",
-    district: "",
+    commodity: "Soyabean",
+    district: "Bidar",
+    year: 2028,
+    month: 5,
     days: 30,
   });
 
@@ -576,7 +578,7 @@ const PredictionPage = () => {
         </h3>
 
         <div style={{ display: "grid", gap: "1rem", marginBottom: "1.5rem" }}>
-          <input
+          <select
             type="text"
             placeholder="Enter commodity (e.g., Onion, Rice, Wheat)"
             value={filters.commodity}
@@ -590,9 +592,13 @@ const PredictionPage = () => {
               fontSize: "1rem",
               outline: "none",
             }}
-          />
+          >
+           <option value="Soyabean">SOYABEAN</option>
+           <option value="Onion">ONION</option>
+           <option value="Cotton">COTTON</option>
+          </select>
 
-          <input
+          <select
             type="text"
             placeholder="Enter district name"
             value={filters.district}
@@ -606,9 +612,15 @@ const PredictionPage = () => {
               fontSize: "1rem",
               outline: "none",
             }}
-          />
+          >
+            <option value="Belgaum">BELGAUM</option>
+            <option value="Bidar">BIDAR</option>
+            <option value="Dharwad">DHARWAD</option>
+            <option value="Gadag">GADAG</option>
+            <option value="Haveri">HAVERI</option>
+          </select>
 
-          <input
+          <select
             type="number"
             placeholder="Enter year (e.g., 2023)"
             value={filters.year}
@@ -622,11 +634,19 @@ const PredictionPage = () => {
               fontSize: "1rem",
               outline: "none",
             }}
-          />
+          >
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2024">2024</option>  {/* Testing purposes only */}
+          </select>
 
-          <input
+          <select
             type="number"
             placeholder="Enter month (1–12)"
+            min='1'
+            max='12'
             value={filters.month}
             onChange={(e) =>
               setFilters({ ...filters, month: e.target.value })
@@ -638,7 +658,20 @@ const PredictionPage = () => {
               fontSize: "1rem",
               outline: "none",
             }}
-          />
+          >
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+            <option value='6'>6</option>
+            <option value='7'>7</option>
+            <option value='8'>8</option>
+            <option value='9'>9</option>
+            <option value='10'>10</option>
+            <option value='11'>11</option>
+            <option value='12'>12</option>
+          </select>
 
           <select
             value={filters.days}

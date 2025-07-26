@@ -11,9 +11,9 @@
 
 ## bugs 
 
-- [x] `predict-soyabean` display 
+- [x] `predict-soyabean` display [ v0.1.0 ] [ SOYABEAN-PREDICTION now works perfectly]
   - [x] proper user input for prediction 
-  - [ ] drop downs for values 
+  - [x] drop downs for values 
 - [ ] fix this page 
 
 
