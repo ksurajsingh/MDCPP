@@ -12,7 +12,7 @@
 ## bugs 
 
 - [ ] `predict-soyabean` display 
-  - [ ] proper user input for prediction 
+  - [x] proper user input for prediction 
   - [ ] drop downs for values 
 - [ ] fix this page 
 

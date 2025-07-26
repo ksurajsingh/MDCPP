@@ -2,12 +2,15 @@ import { spawn } from "child_process";
 import path from "path";
 import { fileURLToPath } from "url";
 import db from "../../db.js"; // Assuming your db connection is here
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Paths
-const venvPython = path.resolve(__dirname, "../mlModels/venv/bin/python");
+const venvPython = process.env.VENV_PYTHON || path.resolve(__dirname, "../mlModels/venv/bin/python");
 const scriptDir = path.resolve(__dirname, "../mlModels");
 const scriptPath = path.join(scriptDir, "predict.py");
 
@@ -153,10 +156,22 @@ export const predictSingle = async (req, res) => {
       error += data.toString();
     });
 
+
+    let responded = false;
+
+    function safeRespond(fn) {
+      if (!responded) {
+        responded = true;
+        fn();
+      }
+    }
+
     // Handle timeout
     const timeoutId = setTimeout(() => {
       py.kill();
-      return res.status(500).json({ error: "Python script timeout" });
+      safeRespond(()=>{
+        res.status(500).json({ error: "Python script timeout" });
+      });
     }, timeout);
 
     py.on("close", (code) => {
@@ -164,54 +179,68 @@ export const predictSingle = async (req, res) => {
 
       if (code !== 0) {
         console.error(`Python script failed with code ${code}: ${error}`);
-        return res.status(500).json({
-          error: "Python script failed",
-          details: error || `Process exited with code ${code}`,
+        safeRespond(()=>{
+            res.status(500).json({
+            error: "Python script failed",
+            details: error || `Process exited with code ${code}`,
+          });
         });
       }
 
       if (!result.trim()) {
-        return res.status(500).json({ error: "No output from Python script" });
+        safeRespond(()=>{
+          res.status(500).json({ error: "No output from Python script" });
+        });
       }
 
       try {
         const parsed = JSON.parse(result);
 
         if (parsed.error) {
-          return res.status(500).json({ error: parsed.error });
+          safeRespond(()=>{
+            res.status(500).json({ error: parsed.error });
+          });
         }
 
         const prediction = parseFloat(parsed.prediction);
         const confidence = parseFloat(parsed.confidence) || 0;
 
         if (isNaN(prediction)) {
-          return res.status(500).json({ error: "Invalid prediction value" });
+          safeRespond(()=>{
+            res.status(500).json({ error: "Invalid prediction value" });
+          });
         }
 
-        res.json({
-          success: true,
-          prediction: {
-            value: prediction,
-            confidence: confidence,
-            formatted: `${prediction.toFixed(1)} ± 367`,
-            district: district,
-            year: yearNum,
-            month: monthNum,
-          },
-          raw: parsed,
-          metadata: {
-            features: features,
-            district_info: districtInfo,
-            rainfall_data_source: dataSource, // Shows where the data came from
-            rainfall_data: rainfallData,
-          },
+        safeRespond(()=>{
+
+          res.json({
+            success: true,
+            prediction: {
+              value: prediction,
+              confidence: confidence,
+              formatted: `${prediction.toFixed(1)} ± 367`,
+              district: district,
+              year: yearNum,
+              month: monthNum,
+            },
+            raw: parsed,
+            metadata: {
+              features: features,
+              district_info: districtInfo,
+              rainfall_data_source: dataSource, // Shows where the data came from
+              rainfall_data: rainfallData,
+            },
+          });
+
         });
       } catch (err) {
         console.error("JSON parsing error:", err, "Raw result:", result);
-        return res.status(500).json({
+        safeRespond(()=>{
+          res.status(500).json({
           error: "Invalid JSON from Python script",
           raw: result,
           details: err.message,
+          });
         });
       }
     });
@@ -219,16 +248,20 @@ export const predictSingle = async (req, res) => {
     py.on("error", (err) => {
       clearTimeout(timeoutId);
       console.error("Python process error:", err);
-      return res.status(500).json({
+      safeRespond(()=>{
+        res.status(500).json({
         error: "Failed to start Python process",
         details: err.message,
+        });
       });
     });
   } catch (err) {
     console.error("Server error:", err);
-    return res.status(500).json({
+    safeRespond(()=>{
+      res.status(500).json({
       error: "Server error",
       details: err.message,
+      });
     });
   }
 };
