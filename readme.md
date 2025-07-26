@@ -1,7 +1,7 @@
 # TODO
 
-> 🚨 **Important:** Fix onion prediction
-> 🚨 **Important:** Fix cotton prediction
+> 🚨 **Important:** Fix onion prediction   
+> 🚨 **Important:** Fix cotton prediction   
 
 
 ## SEE [ To understand for write up ]
