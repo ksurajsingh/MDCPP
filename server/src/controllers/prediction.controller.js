@@ -156,6 +156,14 @@ export const predictSingle = async (req, res) => {
       error += data.toString();
     });
 
+    py.stdout.on("data", (data) => {
+      console.log("Python stdout:", data.toString());
+    });
+
+    py.stderr.on("data", (data) => {
+      console.error("Python stderr:", data.toString());
+    });
+
 
     let responded = false;
 
