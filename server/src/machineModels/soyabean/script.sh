@@ -60,9 +60,7 @@ CREATE INDEX IF NOT EXISTS idx_soy_rainfall_district_year ON soy_rainfall(distri
 TRUNCATE TABLE soy_rainfall RESTART IDENTITY;
 
 -- Import data
-COPY soy_rainfall(district, year, month, rainfall_mm, rainfall_lag_1, rainfall_lag_2, rainfall_lag_3, rainfall_3mo_sum)
-FROM '$CSV_FILE'
-WITH (FORMAT csv, HEADER true, DELIMITER ',', NULL '');
+\copy soy_rainfall(district, year, month, rainfall_mm, rainfall_lag_1, rainfall_lag_2, rainfall_lag_3, rainfall_3mo_sum) FROM '$CSV_FILE' WITH (FORMAT csv, HEADER true, DELIMITER ',', NULL '');
 
 -- Show results
 SELECT COUNT(*) as total_records FROM soy_rainfall;
