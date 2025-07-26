@@ -3,7 +3,6 @@
 > 🚨 **Important:** Fix onion prediction   
 > 🚨 **Important:** Fix cotton prediction   
 
-
 ## SEE [ To understand for write up ]
 
 - [ ] prediction parameters 
@@ -11,9 +10,10 @@
 - [ ] use case - with range of usage .
 - [ ] features + archietecture 
 
+## Core Features
 
-## PREVIOUS GOALS
-
+- [ ] ⚠️ Multilingual speech chat [PARTIAL]
+- [ ] ⚠️ Visualisation [PARTIAL]
 - [ ] Historical Data view
 - [ ] Rainfall crop correlation analysis
 - [ ] Predictive pricemodelling 
@@ -23,8 +23,7 @@
   - [ ] Monsoon forecasts
   - [ ] Farmer Advisory
   - [ ] Optimal Policy adivisory 
-- [ ] Multilingual speech chat [PARTIAL]
-- [ ] Visualisation [PARTIAL]
+
 
 
 - [x] `predict-soyabean` display  [ v0.1.0 ] [ SOYABEAN-PREDICTION now works perfectly]
