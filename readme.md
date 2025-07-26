@@ -1,5 +1,7 @@
 # TODO
 
+> 🚨 **Important:** Fix onion prediction
+> 🚨 **Important:** Fix cotton prediction
 
 
 ## SEE [ To understand for write up ]
@@ -9,39 +11,29 @@
 - [ ] use case - with range of usage .
 - [ ] features + archietecture 
 
-## bugs 
-
-- [x] `predict-soyabean` display [ v0.1.0 ] [ SOYABEAN-PREDICTION now works perfectly]
-  - [x] proper user input for prediction 
-  - [x] drop downs for values 
-- [ ] fix this page 
-
 
 ## PREVIOUS GOALS
 
-- [x] Interactive prediction tool
 - [ ] Historical Data view
 - [ ] Rainfall crop correlation analysis
+- [ ] Predictive pricemodelling 
+- [ ] Update history trends as a Dashboard
+- [ ] news
+  - [ ] Market Behavior
+  - [ ] Monsoon forecasts
+  - [ ] Farmer Advisory
+  - [ ] Optimal Policy adivisory 
+- [ ] Multilingual speech chat [PARTIAL]
+- [ ] Visualisation [PARTIAL]
 
-- [ ] chatbot-readsScreen [ partial ]
 
-**sathwik review**
-
+- [x] `predict-soyabean` display  [ v0.1.0 ] [ SOYABEAN-PREDICTION now works perfectly]
+  - [x] proper user input for prediction 
+  - [x] drop downs for values 
+- [x] Interactive prediction tool [ v0.0.1 ] [ BASE ]
+- [x] Location based prediction
+- [x] Scenario Simulation
+- [x] about us
 - [x] Data Collection
 - [x] Data Cleansing
 - [x] Training
-
-**Can Start I G**
-
-- [ ] Predictive pricemodelling [ Partial implementation ]
-- [x] Location based prediction
-- [x] Scenario Simulation
-- [ ] Update hisotry trends as a Dashboard
-- [ ] Market Behavior
-- [ ] Monsoon forecasts
-- [ ] Farmer Advisory
-- [ ] Optimal Policy adivisory
-- [ ] Multilingual speech chat
-- [ ] Visualisation
-- [ ] about us
-- [ ] diary
