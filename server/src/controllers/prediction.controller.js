@@ -1,3 +1,5 @@
+//this is just for onion cos i do wanna rename is
+//
 import { spawn } from "child_process";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -10,7 +12,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Paths
-const venvPython = process.env.VENV_PYTHON || path.resolve(__dirname, "../mlModels/venv/bin/python");
+const venvPython =
+  process.env.VENV_PYTHON ||
+  path.resolve(__dirname, "../mlModels/venv/bin/python");
 const scriptDir = path.resolve(__dirname, "../mlModels");
 const scriptPath = path.join(scriptDir, "predict.py");
 
@@ -164,7 +168,6 @@ export const predictSingle = async (req, res) => {
       console.error("Python stderr:", data.toString());
     });
 
-
     let responded = false;
 
     function safeRespond(fn) {
@@ -177,7 +180,7 @@ export const predictSingle = async (req, res) => {
     // Handle timeout
     const timeoutId = setTimeout(() => {
       py.kill();
-      safeRespond(()=>{
+      safeRespond(() => {
         res.status(500).json({ error: "Python script timeout" });
       });
     }, timeout);
@@ -187,8 +190,8 @@ export const predictSingle = async (req, res) => {
 
       if (code !== 0) {
         console.error(`Python script failed with code ${code}: ${error}`);
-        safeRespond(()=>{
-            res.status(500).json({
+        safeRespond(() => {
+          res.status(500).json({
             error: "Python script failed",
             details: error || `Process exited with code ${code}`,
           });
@@ -196,7 +199,7 @@ export const predictSingle = async (req, res) => {
       }
 
       if (!result.trim()) {
-        safeRespond(()=>{
+        safeRespond(() => {
           res.status(500).json({ error: "No output from Python script" });
         });
       }
@@ -205,7 +208,7 @@ export const predictSingle = async (req, res) => {
         const parsed = JSON.parse(result);
 
         if (parsed.error) {
-          safeRespond(()=>{
+          safeRespond(() => {
             res.status(500).json({ error: parsed.error });
           });
         }
@@ -214,13 +217,12 @@ export const predictSingle = async (req, res) => {
         const confidence = parseFloat(parsed.confidence) || 0;
 
         if (isNaN(prediction)) {
-          safeRespond(()=>{
+          safeRespond(() => {
             res.status(500).json({ error: "Invalid prediction value" });
           });
         }
 
-        safeRespond(()=>{
-
+        safeRespond(() => {
           res.json({
             success: true,
             prediction: {
@@ -239,15 +241,14 @@ export const predictSingle = async (req, res) => {
               rainfall_data: rainfallData,
             },
           });
-
         });
       } catch (err) {
         console.error("JSON parsing error:", err, "Raw result:", result);
-        safeRespond(()=>{
+        safeRespond(() => {
           res.status(500).json({
-          error: "Invalid JSON from Python script",
-          raw: result,
-          details: err.message,
+            error: "Invalid JSON from Python script",
+            raw: result,
+            details: err.message,
           });
         });
       }
@@ -256,19 +257,19 @@ export const predictSingle = async (req, res) => {
     py.on("error", (err) => {
       clearTimeout(timeoutId);
       console.error("Python process error:", err);
-      safeRespond(()=>{
+      safeRespond(() => {
         res.status(500).json({
-        error: "Failed to start Python process",
-        details: err.message,
+          error: "Failed to start Python process",
+          details: err.message,
         });
       });
     });
   } catch (err) {
     console.error("Server error:", err);
-    safeRespond(()=>{
+    safeRespond(() => {
       res.status(500).json({
-      error: "Server error",
-      details: err.message,
+        error: "Server error",
+        details: err.message,
       });
     });
   }
