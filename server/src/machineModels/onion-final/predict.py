@@ -32,15 +32,38 @@ def predict_single(features):
         model_path = os.path.join(script_dir, 'onion.pkl')
         
         # Load the model
-        print(model_path)
         model = joblib.load(model_path)
         if model is None:
             return {'error': 'Could not load model'}
         
         # Parse features
-        district = features[0]
-        market = features[1]
-        variety = features[2]
+        districtEncodes={
+                'Belagaum':'0',
+                'Bidar':'1',
+                'Dharwad':'2',
+                'Gadag':'3',
+                'Haveri':'4'
+                }
+        marketEncodes={
+                 'Belgaum':'0',
+                 'Dharwar':'1',
+                 'Gadag':'2', 
+                 'Haveri':'3', 
+                 'Hubli (Amaragol)':'4', 
+                 'Ranebennur':'5' 
+                }
+        varietyEncodes={
+                'Pusa-Red':'0',
+                'White':'1',
+                'Puna':'2',
+                'Telagi':'3',
+                'Onion':'4',
+                'Other':'5',
+                'Local':'6'
+                }
+        district = districtEncodes[features[0]]
+        market = marketEncodes[features[1]]
+        variety = varietyEncodes[features[2]]
         year = int(features[3])
         month = int(features[4])
         rainfall_minus1 = float(features[5])

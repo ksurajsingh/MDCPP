@@ -1,6 +1,5 @@
 # TODO
 
-> 🚨 **Important:** Fix onion prediction   
 > 🚨 **Important:** Fix cotton prediction   
 
 ## SEE [ To understand for write up ]
@@ -26,10 +25,11 @@
 
 
 
-- [x] `predict-soyabean` display  [ v0.1.0 ] [ SOYABEAN-PREDICTION now works perfectly]
+- [x] `predict-Onion` basic parameter-encoding       [ v0.2.0 ] [ ONION NOW WOKRS ]
+- [x] `predict-soyabean` display                     [ v0.1.0 ] [ SOYABEAN-PREDICTION now works perfectly]
   - [x] proper user input for prediction 
   - [x] drop downs for values 
-- [x] Interactive prediction tool [ v0.0.1 ] [ BASE ]
+- [x] Interactive prediction tool                    [ v0.0.1 ] [ BASE ]
 - [x] Location based prediction
 - [x] Scenario Simulation
 - [x] about us
