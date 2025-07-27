@@ -1,0 +1,242 @@
+[
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "area_hectare": 8485.19,
+    "yield_tonne_per_hectare": 10286.86
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "area_hectare": 8792.35,
+    "yield_tonne_per_hectare": 10075.29
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "area_hectare": 8297.42,
+    "yield_tonne_per_hectare": 9809.27
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "area_hectare": 8213.26,
+    "yield_tonne_per_hectare": 10236.06
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "area_hectare": 8679.89,
+    "yield_tonne_per_hectare": 10141.04
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "area_hectare": 8181.04,
+    "yield_tonne_per_hectare": 10298.4
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "area_hectare": 8878.67,
+    "yield_tonne_per_hectare": 9843.13
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "area_hectare": 8319.59,
+    "yield_tonne_per_hectare": 9825.74
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "area_hectare": 8424.79,
+    "yield_tonne_per_hectare": 10030.88
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "area_hectare": 8534.52,
+    "yield_tonne_per_hectare": 9890.54
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "area_hectare": 9278.64,
+    "yield_tonne_per_hectare": 5853.59
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "area_hectare": 8985.27,
+    "yield_tonne_per_hectare": 5935.03
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "area_hectare": 9135.69,
+    "yield_tonne_per_hectare": 6085.37
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "area_hectare": 8900.42,
+    "yield_tonne_per_hectare": 5988.11
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "area_hectare": 9260.8,
+    "yield_tonne_per_hectare": 5820.18
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "area_hectare": 9274.68,
+    "yield_tonne_per_hectare": 5864.72
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "area_hectare": 8776.89,
+    "yield_tonne_per_hectare": 6144.14
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "area_hectare": 9603.26,
+    "yield_tonne_per_hectare": 6093.71
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "area_hectare": 8996.71,
+    "yield_tonne_per_hectare": 5838.57
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "area_hectare": 9345.05,
+    "yield_tonne_per_hectare": 5961.52
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "area_hectare": 32305.03,
+    "yield_tonne_per_hectare": 6677.07
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "area_hectare": 32010.76,
+    "yield_tonne_per_hectare": 6843.03
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "area_hectare": 32764.13,
+    "yield_tonne_per_hectare": 6744.13
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "area_hectare": 32941.84,
+    "yield_tonne_per_hectare": 6687.04
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "area_hectare": 33730.83,
+    "yield_tonne_per_hectare": 6552.71
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "area_hectare": 35150.58,
+    "yield_tonne_per_hectare": 6789.26
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "area_hectare": 35049.57,
+    "yield_tonne_per_hectare": 6837.22
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "area_hectare": 33902.69,
+    "yield_tonne_per_hectare": 6848.06
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "area_hectare": 32192.4,
+    "yield_tonne_per_hectare": 6557.17
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "area_hectare": 32047.15,
+    "yield_tonne_per_hectare": 6609
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "area_hectare": 2766.85,
+    "yield_tonne_per_hectare": 5901.91
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "area_hectare": 2889.98,
+    "yield_tonne_per_hectare": 5932.57
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "area_hectare": 2736.71,
+    "yield_tonne_per_hectare": 5999.33
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "area_hectare": 2697.53,
+    "yield_tonne_per_hectare": 6092.5
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "area_hectare": 2678.96,
+    "yield_tonne_per_hectare": 6158.81
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "area_hectare": 2874.17,
+    "yield_tonne_per_hectare": 5875.83
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "area_hectare": 2659.65,
+    "yield_tonne_per_hectare": 6097.26
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "area_hectare": 2855.88,
+    "yield_tonne_per_hectare": 6066.22
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "area_hectare": 2873.9,
+    "yield_tonne_per_hectare": 5831.06
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "area_hectare": 2758.4,
+    "yield_tonne_per_hectare": 5846.08
+  }
+]

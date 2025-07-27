@@ -1,0 +1,42 @@
+[
+  {
+    "district": "Belagavi",
+    "local": null,
+    "onion": null,
+    "other": null,
+    "puna": null,
+    "pusa_red": 1646,
+    "telagi": null,
+    "white": 305
+  },
+  {
+    "district": "Dharwad",
+    "local": 1156,
+    "onion": null,
+    "other": 228,
+    "puna": 1797,
+    "pusa_red": null,
+    "telagi": 1421,
+    "white": null
+  },
+  {
+    "district": "Gadag",
+    "local": null,
+    "onion": 317,
+    "other": 66,
+    "puna": null,
+    "pusa_red": null,
+    "telagi": null,
+    "white": null
+  },
+  {
+    "district": "Haveri",
+    "local": 486,
+    "onion": null,
+    "other": null,
+    "puna": null,
+    "pusa_red": null,
+    "telagi": null,
+    "white": null
+  }
+]

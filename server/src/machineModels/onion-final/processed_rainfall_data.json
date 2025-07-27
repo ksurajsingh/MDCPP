@@ -1,0 +1,4762 @@
+[
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 1,
+    "rainfall_mm": 0.34,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": null
+  },
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 2,
+    "rainfall_mm": 0.48,
+    "rainfall_lag_1": 0.34,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 0.34
+  },
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 3,
+    "rainfall_mm": 8.1,
+    "rainfall_lag_1": 0.48,
+    "rainfall_lag_2": 0.34,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 0.8200000000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 4,
+    "rainfall_mm": 13.66,
+    "rainfall_lag_1": 8.1,
+    "rainfall_lag_2": 0.48,
+    "rainfall_lag_3": 0.34,
+    "rainfall_3mo_sum": 8.92
+  },
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 5,
+    "rainfall_mm": 88.99,
+    "rainfall_lag_1": 13.66,
+    "rainfall_lag_2": 8.1,
+    "rainfall_lag_3": 0.48,
+    "rainfall_3mo_sum": 22.24
+  },
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 6,
+    "rainfall_mm": 449.83,
+    "rainfall_lag_1": 88.99,
+    "rainfall_lag_2": 13.66,
+    "rainfall_lag_3": 8.1,
+    "rainfall_3mo_sum": 110.74999999999999
+  },
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 7,
+    "rainfall_mm": 448.42,
+    "rainfall_lag_1": 449.83,
+    "rainfall_lag_2": 88.99,
+    "rainfall_lag_3": 13.66,
+    "rainfall_3mo_sum": 552.4799999999999
+  },
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 8,
+    "rainfall_mm": 223.24,
+    "rainfall_lag_1": 448.42,
+    "rainfall_lag_2": 449.83,
+    "rainfall_lag_3": 88.99,
+    "rainfall_3mo_sum": 987.24
+  },
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 9,
+    "rainfall_mm": 126.24,
+    "rainfall_lag_1": 223.24,
+    "rainfall_lag_2": 448.42,
+    "rainfall_lag_3": 449.83,
+    "rainfall_3mo_sum": 1121.49
+  },
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 10,
+    "rainfall_mm": 51.47,
+    "rainfall_lag_1": 126.24,
+    "rainfall_lag_2": 223.24,
+    "rainfall_lag_3": 448.42,
+    "rainfall_3mo_sum": 797.9000000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 11,
+    "rainfall_mm": 16.11,
+    "rainfall_lag_1": 51.47,
+    "rainfall_lag_2": 126.24,
+    "rainfall_lag_3": 223.24,
+    "rainfall_3mo_sum": 400.95
+  },
+  {
+    "district": "Belagavi",
+    "year": 2018,
+    "month": 12,
+    "rainfall_mm": 3.46,
+    "rainfall_lag_1": 16.11,
+    "rainfall_lag_2": 51.47,
+    "rainfall_lag_3": 126.24,
+    "rainfall_3mo_sum": 193.82
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 1,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 3.46,
+    "rainfall_lag_2": 16.11,
+    "rainfall_lag_3": 51.47,
+    "rainfall_3mo_sum": 71.03999999999999
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 3.46,
+    "rainfall_lag_3": 16.11,
+    "rainfall_3mo_sum": 19.57
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 3,
+    "rainfall_mm": 8.51,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 3.46,
+    "rainfall_3mo_sum": 3.46
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 4,
+    "rainfall_mm": 19.16,
+    "rainfall_lag_1": 8.51,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 8.51
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 5,
+    "rainfall_mm": 3.8,
+    "rainfall_lag_1": 19.16,
+    "rainfall_lag_2": 8.51,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 27.67
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 6,
+    "rainfall_mm": 251.3,
+    "rainfall_lag_1": 3.8,
+    "rainfall_lag_2": 19.16,
+    "rainfall_lag_3": 8.51,
+    "rainfall_3mo_sum": 31.47
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 7,
+    "rainfall_mm": 536.71,
+    "rainfall_lag_1": 251.3,
+    "rainfall_lag_2": 3.8,
+    "rainfall_lag_3": 19.16,
+    "rainfall_3mo_sum": 274.26000000000005
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 8,
+    "rainfall_mm": 822.13,
+    "rainfall_lag_1": 536.71,
+    "rainfall_lag_2": 251.3,
+    "rainfall_lag_3": 3.8,
+    "rainfall_3mo_sum": 791.81
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 9,
+    "rainfall_mm": 329.51,
+    "rainfall_lag_1": 822.13,
+    "rainfall_lag_2": 536.71,
+    "rainfall_lag_3": 251.3,
+    "rainfall_3mo_sum": 1610.14
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 10,
+    "rainfall_mm": 331.28,
+    "rainfall_lag_1": 329.51,
+    "rainfall_lag_2": 822.13,
+    "rainfall_lag_3": 536.71,
+    "rainfall_3mo_sum": 1688.35
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 11,
+    "rainfall_mm": 14.81,
+    "rainfall_lag_1": 331.28,
+    "rainfall_lag_2": 329.51,
+    "rainfall_lag_3": 822.13,
+    "rainfall_3mo_sum": 1482.92
+  },
+  {
+    "district": "Belagavi",
+    "year": 2019,
+    "month": 12,
+    "rainfall_mm": 2.28,
+    "rainfall_lag_1": 14.81,
+    "rainfall_lag_2": 331.28,
+    "rainfall_lag_3": 329.51,
+    "rainfall_3mo_sum": 675.5999999999999
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 1,
+    "rainfall_mm": 0.23,
+    "rainfall_lag_1": 2.28,
+    "rainfall_lag_2": 14.81,
+    "rainfall_lag_3": 331.28,
+    "rainfall_3mo_sum": 348.36999999999995
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 0.23,
+    "rainfall_lag_2": 2.28,
+    "rainfall_lag_3": 14.81,
+    "rainfall_3mo_sum": 17.32
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 3,
+    "rainfall_mm": 14.15,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 0.23,
+    "rainfall_lag_3": 2.28,
+    "rainfall_3mo_sum": 2.51
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 4,
+    "rainfall_mm": 35.42,
+    "rainfall_lag_1": 14.15,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 0.23,
+    "rainfall_3mo_sum": 14.38
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 5,
+    "rainfall_mm": 28.22,
+    "rainfall_lag_1": 35.42,
+    "rainfall_lag_2": 14.15,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 49.57
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 6,
+    "rainfall_mm": 407.91,
+    "rainfall_lag_1": 28.22,
+    "rainfall_lag_2": 35.42,
+    "rainfall_lag_3": 14.15,
+    "rainfall_3mo_sum": 77.79
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 7,
+    "rainfall_mm": 508.03,
+    "rainfall_lag_1": 407.91,
+    "rainfall_lag_2": 28.22,
+    "rainfall_lag_3": 35.42,
+    "rainfall_3mo_sum": 471.55
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 8,
+    "rainfall_mm": 618.2,
+    "rainfall_lag_1": 508.03,
+    "rainfall_lag_2": 407.91,
+    "rainfall_lag_3": 28.22,
+    "rainfall_3mo_sum": 944.1600000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 9,
+    "rainfall_mm": 375.14,
+    "rainfall_lag_1": 618.2,
+    "rainfall_lag_2": 508.03,
+    "rainfall_lag_3": 407.91,
+    "rainfall_3mo_sum": 1534.14
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 10,
+    "rainfall_mm": 252.1,
+    "rainfall_lag_1": 375.14,
+    "rainfall_lag_2": 618.2,
+    "rainfall_lag_3": 508.03,
+    "rainfall_3mo_sum": 1501.37
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 11,
+    "rainfall_mm": 0.3,
+    "rainfall_lag_1": 252.1,
+    "rainfall_lag_2": 375.14,
+    "rainfall_lag_3": 618.2,
+    "rainfall_3mo_sum": 1245.44
+  },
+  {
+    "district": "Belagavi",
+    "year": 2020,
+    "month": 12,
+    "rainfall_mm": 2.62,
+    "rainfall_lag_1": 0.3,
+    "rainfall_lag_2": 252.1,
+    "rainfall_lag_3": 375.14,
+    "rainfall_3mo_sum": 627.54
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 1,
+    "rainfall_mm": 9.55,
+    "rainfall_lag_1": 2.62,
+    "rainfall_lag_2": 0.3,
+    "rainfall_lag_3": 252.1,
+    "rainfall_3mo_sum": 255.01999999999998
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 2,
+    "rainfall_mm": 9.35,
+    "rainfall_lag_1": 9.55,
+    "rainfall_lag_2": 2.62,
+    "rainfall_lag_3": 0.3,
+    "rainfall_3mo_sum": 12.470000000000002
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 3,
+    "rainfall_mm": 2.34,
+    "rainfall_lag_1": 9.35,
+    "rainfall_lag_2": 9.55,
+    "rainfall_lag_3": 2.62,
+    "rainfall_3mo_sum": 21.52
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 4,
+    "rainfall_mm": 30.21,
+    "rainfall_lag_1": 2.34,
+    "rainfall_lag_2": 9.35,
+    "rainfall_lag_3": 9.55,
+    "rainfall_3mo_sum": 21.240000000000002
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 5,
+    "rainfall_mm": 247.17,
+    "rainfall_lag_1": 30.21,
+    "rainfall_lag_2": 2.34,
+    "rainfall_lag_3": 9.35,
+    "rainfall_3mo_sum": 41.9
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 6,
+    "rainfall_mm": 500.07,
+    "rainfall_lag_1": 247.17,
+    "rainfall_lag_2": 30.21,
+    "rainfall_lag_3": 2.34,
+    "rainfall_3mo_sum": 279.71999999999997
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 7,
+    "rainfall_mm": 693.98,
+    "rainfall_lag_1": 500.07,
+    "rainfall_lag_2": 247.17,
+    "rainfall_lag_3": 30.21,
+    "rainfall_3mo_sum": 777.45
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 8,
+    "rainfall_mm": 130.63,
+    "rainfall_lag_1": 693.98,
+    "rainfall_lag_2": 500.07,
+    "rainfall_lag_3": 247.17,
+    "rainfall_3mo_sum": 1441.22
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 9,
+    "rainfall_mm": 207.25,
+    "rainfall_lag_1": 130.63,
+    "rainfall_lag_2": 693.98,
+    "rainfall_lag_3": 500.07,
+    "rainfall_3mo_sum": 1324.68
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 10,
+    "rainfall_mm": 129.2,
+    "rainfall_lag_1": 207.25,
+    "rainfall_lag_2": 130.63,
+    "rainfall_lag_3": 693.98,
+    "rainfall_3mo_sum": 1031.8600000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 11,
+    "rainfall_mm": 87.11,
+    "rainfall_lag_1": 129.2,
+    "rainfall_lag_2": 207.25,
+    "rainfall_lag_3": 130.63,
+    "rainfall_3mo_sum": 467.08
+  },
+  {
+    "district": "Belagavi",
+    "year": 2021,
+    "month": 12,
+    "rainfall_mm": 63.67,
+    "rainfall_lag_1": 87.11,
+    "rainfall_lag_2": 129.2,
+    "rainfall_lag_3": 207.25,
+    "rainfall_3mo_sum": 423.56
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 1,
+    "rainfall_mm": 0.23,
+    "rainfall_lag_1": 63.67,
+    "rainfall_lag_2": 87.11,
+    "rainfall_lag_3": 129.2,
+    "rainfall_3mo_sum": 279.98
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 0.23,
+    "rainfall_lag_2": 63.67,
+    "rainfall_lag_3": 87.11,
+    "rainfall_3mo_sum": 151.01
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 3,
+    "rainfall_mm": 12.39,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 0.23,
+    "rainfall_lag_3": 63.67,
+    "rainfall_3mo_sum": 63.9
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 4,
+    "rainfall_mm": 50.03,
+    "rainfall_lag_1": 12.39,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 0.23,
+    "rainfall_3mo_sum": 12.620000000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 5,
+    "rainfall_mm": 68.26,
+    "rainfall_lag_1": 50.03,
+    "rainfall_lag_2": 12.39,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 62.42
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 6,
+    "rainfall_mm": 257.24,
+    "rainfall_lag_1": 68.26,
+    "rainfall_lag_2": 50.03,
+    "rainfall_lag_3": 12.39,
+    "rainfall_3mo_sum": 130.68
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 7,
+    "rainfall_mm": 509.97,
+    "rainfall_lag_1": 257.24,
+    "rainfall_lag_2": 68.26,
+    "rainfall_lag_3": 50.03,
+    "rainfall_3mo_sum": 375.53
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 8,
+    "rainfall_mm": 340.32,
+    "rainfall_lag_1": 509.97,
+    "rainfall_lag_2": 257.24,
+    "rainfall_lag_3": 68.26,
+    "rainfall_3mo_sum": 835.47
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 9,
+    "rainfall_mm": 243.02,
+    "rainfall_lag_1": 340.32,
+    "rainfall_lag_2": 509.97,
+    "rainfall_lag_3": 257.24,
+    "rainfall_3mo_sum": 1107.53
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 10,
+    "rainfall_mm": 160.19,
+    "rainfall_lag_1": 243.02,
+    "rainfall_lag_2": 340.32,
+    "rainfall_lag_3": 509.97,
+    "rainfall_3mo_sum": 1093.31
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 11,
+    "rainfall_mm": 2.19,
+    "rainfall_lag_1": 160.19,
+    "rainfall_lag_2": 243.02,
+    "rainfall_lag_3": 340.32,
+    "rainfall_3mo_sum": 743.53
+  },
+  {
+    "district": "Belagavi",
+    "year": 2022,
+    "month": 12,
+    "rainfall_mm": 3.93,
+    "rainfall_lag_1": 2.19,
+    "rainfall_lag_2": 160.19,
+    "rainfall_lag_3": 243.02,
+    "rainfall_3mo_sum": 405.4
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 1,
+    "rainfall_mm": 0.02,
+    "rainfall_lag_1": 3.93,
+    "rainfall_lag_2": 2.19,
+    "rainfall_lag_3": 160.19,
+    "rainfall_3mo_sum": 166.31
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 0.02,
+    "rainfall_lag_2": 3.93,
+    "rainfall_lag_3": 2.19,
+    "rainfall_3mo_sum": 6.140000000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 3,
+    "rainfall_mm": 0.05,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 0.02,
+    "rainfall_lag_3": 3.93,
+    "rainfall_3mo_sum": 3.95
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 4,
+    "rainfall_mm": 12.14,
+    "rainfall_lag_1": 0.05,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 0.02,
+    "rainfall_3mo_sum": 0.07
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 5,
+    "rainfall_mm": 32.34,
+    "rainfall_lag_1": 12.14,
+    "rainfall_lag_2": 0.05,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 12.190000000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 6,
+    "rainfall_mm": 129.46,
+    "rainfall_lag_1": 32.34,
+    "rainfall_lag_2": 12.14,
+    "rainfall_lag_3": 0.05,
+    "rainfall_3mo_sum": 44.53
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 7,
+    "rainfall_mm": 715.38,
+    "rainfall_lag_1": 129.46,
+    "rainfall_lag_2": 32.34,
+    "rainfall_lag_3": 12.14,
+    "rainfall_3mo_sum": 173.94
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 8,
+    "rainfall_mm": 99.44,
+    "rainfall_lag_1": 715.38,
+    "rainfall_lag_2": 129.46,
+    "rainfall_lag_3": 32.34,
+    "rainfall_3mo_sum": 877.1800000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 9,
+    "rainfall_mm": 198.56,
+    "rainfall_lag_1": 99.44,
+    "rainfall_lag_2": 715.38,
+    "rainfall_lag_3": 129.46,
+    "rainfall_3mo_sum": 944.28
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 10,
+    "rainfall_mm": 37.2,
+    "rainfall_lag_1": 198.56,
+    "rainfall_lag_2": 99.44,
+    "rainfall_lag_3": 715.38,
+    "rainfall_3mo_sum": 1013.38
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 11,
+    "rainfall_mm": 30.76,
+    "rainfall_lag_1": 37.2,
+    "rainfall_lag_2": 198.56,
+    "rainfall_lag_3": 99.44,
+    "rainfall_3mo_sum": 335.2
+  },
+  {
+    "district": "Belagavi",
+    "year": 2023,
+    "month": 12,
+    "rainfall_mm": 0.82,
+    "rainfall_lag_1": 30.76,
+    "rainfall_lag_2": 37.2,
+    "rainfall_lag_3": 198.56,
+    "rainfall_3mo_sum": 266.52
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 1,
+    "rainfall_mm": 3.1,
+    "rainfall_lag_1": 0.82,
+    "rainfall_lag_2": 30.76,
+    "rainfall_lag_3": 37.2,
+    "rainfall_3mo_sum": 68.78
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 3.1,
+    "rainfall_lag_2": 0.82,
+    "rainfall_lag_3": 30.76,
+    "rainfall_3mo_sum": 34.68
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 3,
+    "rainfall_mm": 0.21,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 3.1,
+    "rainfall_lag_3": 0.82,
+    "rainfall_3mo_sum": 3.92
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 4,
+    "rainfall_mm": 47.02,
+    "rainfall_lag_1": 0.21,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 3.1,
+    "rainfall_3mo_sum": 3.31
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 5,
+    "rainfall_mm": 76.21,
+    "rainfall_lag_1": 47.02,
+    "rainfall_lag_2": 0.21,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 47.230000000000004
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 6,
+    "rainfall_mm": 368.08,
+    "rainfall_lag_1": 76.21,
+    "rainfall_lag_2": 47.02,
+    "rainfall_lag_3": 0.21,
+    "rainfall_3mo_sum": 123.43999999999998
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 7,
+    "rainfall_mm": 937.57,
+    "rainfall_lag_1": 368.08,
+    "rainfall_lag_2": 76.21,
+    "rainfall_lag_3": 47.02,
+    "rainfall_3mo_sum": 491.30999999999995
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 8,
+    "rainfall_mm": 364.65,
+    "rainfall_lag_1": 937.57,
+    "rainfall_lag_2": 368.08,
+    "rainfall_lag_3": 76.21,
+    "rainfall_3mo_sum": 1381.8600000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 9,
+    "rainfall_mm": 291.38,
+    "rainfall_lag_1": 364.65,
+    "rainfall_lag_2": 937.57,
+    "rainfall_lag_3": 368.08,
+    "rainfall_3mo_sum": 1670.3
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 10,
+    "rainfall_mm": 325.1,
+    "rainfall_lag_1": 291.38,
+    "rainfall_lag_2": 364.65,
+    "rainfall_lag_3": 937.57,
+    "rainfall_3mo_sum": 1593.6
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 11,
+    "rainfall_mm": 6.35,
+    "rainfall_lag_1": 325.1,
+    "rainfall_lag_2": 291.38,
+    "rainfall_lag_3": 364.65,
+    "rainfall_3mo_sum": 981.13
+  },
+  {
+    "district": "Belagavi",
+    "year": 2024,
+    "month": 12,
+    "rainfall_mm": 8.83,
+    "rainfall_lag_1": 6.35,
+    "rainfall_lag_2": 325.1,
+    "rainfall_lag_3": 291.38,
+    "rainfall_3mo_sum": 622.83
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "month": 1,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 8.83,
+    "rainfall_lag_2": 6.35,
+    "rainfall_lag_3": 325.1,
+    "rainfall_3mo_sum": 340.28000000000003
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "month": 2,
+    "rainfall_mm": 0.06,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 8.83,
+    "rainfall_lag_3": 6.35,
+    "rainfall_3mo_sum": 15.18
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "month": 3,
+    "rainfall_mm": 4.17,
+    "rainfall_lag_1": 0.06,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 8.83,
+    "rainfall_3mo_sum": 8.89
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "month": 4,
+    "rainfall_mm": 35.28,
+    "rainfall_lag_1": 4.17,
+    "rainfall_lag_2": 0.06,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 4.2299999999999995
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "month": 5,
+    "rainfall_mm": 845.4,
+    "rainfall_lag_1": 35.28,
+    "rainfall_lag_2": 4.17,
+    "rainfall_lag_3": 0.06,
+    "rainfall_3mo_sum": 39.510000000000005
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "month": 7,
+    "rainfall_mm": 447.6,
+    "rainfall_lag_1": 845.4,
+    "rainfall_lag_2": 35.28,
+    "rainfall_lag_3": 4.17,
+    "rainfall_3mo_sum": 884.8499999999999
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "month": 8,
+    "rainfall_mm": 897.56,
+    "rainfall_lag_1": 447.6,
+    "rainfall_lag_2": 845.4,
+    "rainfall_lag_3": 35.28,
+    "rainfall_3mo_sum": 1328.28
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "month": 9,
+    "rainfall_mm": 438.92,
+    "rainfall_lag_1": 897.56,
+    "rainfall_lag_2": 447.6,
+    "rainfall_lag_3": 845.4,
+    "rainfall_3mo_sum": 2190.56
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "month": 10,
+    "rainfall_mm": 394.94,
+    "rainfall_lag_1": 438.92,
+    "rainfall_lag_2": 897.56,
+    "rainfall_lag_3": 447.6,
+    "rainfall_3mo_sum": 1784.08
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "month": 11,
+    "rainfall_mm": 344.47,
+    "rainfall_lag_1": 394.94,
+    "rainfall_lag_2": 438.92,
+    "rainfall_lag_3": 897.56,
+    "rainfall_3mo_sum": 1731.42
+  },
+  {
+    "district": "Belagavi",
+    "year": 2025,
+    "month": 12,
+    "rainfall_mm": 156.96,
+    "rainfall_lag_1": 344.47,
+    "rainfall_lag_2": 394.94,
+    "rainfall_lag_3": 438.92,
+    "rainfall_3mo_sum": 1178.3300000000002
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 1,
+    "rainfall_mm": 148.48,
+    "rainfall_lag_1": 156.96,
+    "rainfall_lag_2": 344.47,
+    "rainfall_lag_3": 394.94,
+    "rainfall_3mo_sum": 896.3700000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 2,
+    "rainfall_mm": 139.72,
+    "rainfall_lag_1": 148.48,
+    "rainfall_lag_2": 156.96,
+    "rainfall_lag_3": 344.47,
+    "rainfall_3mo_sum": 649.9100000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 3,
+    "rainfall_mm": 139.43,
+    "rainfall_lag_1": 139.72,
+    "rainfall_lag_2": 148.48,
+    "rainfall_lag_3": 156.96,
+    "rainfall_3mo_sum": 445.15999999999997
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 4,
+    "rainfall_mm": 142.57,
+    "rainfall_lag_1": 139.43,
+    "rainfall_lag_2": 139.72,
+    "rainfall_lag_3": 148.48,
+    "rainfall_3mo_sum": 427.63
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 5,
+    "rainfall_mm": 174.26,
+    "rainfall_lag_1": 142.57,
+    "rainfall_lag_2": 139.43,
+    "rainfall_lag_3": 139.72,
+    "rainfall_3mo_sum": 421.72
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 6,
+    "rainfall_mm": 545.91,
+    "rainfall_lag_1": 174.26,
+    "rainfall_lag_2": 142.57,
+    "rainfall_lag_3": 139.43,
+    "rainfall_3mo_sum": 456.26
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 7,
+    "rainfall_mm": 505.43,
+    "rainfall_lag_1": 545.91,
+    "rainfall_lag_2": 174.26,
+    "rainfall_lag_3": 142.57,
+    "rainfall_3mo_sum": 862.74
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 8,
+    "rainfall_mm": 957.32,
+    "rainfall_lag_1": 505.43,
+    "rainfall_lag_2": 545.91,
+    "rainfall_lag_3": 174.26,
+    "rainfall_3mo_sum": 1225.6
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 9,
+    "rainfall_mm": 499.01,
+    "rainfall_lag_1": 957.32,
+    "rainfall_lag_2": 505.43,
+    "rainfall_lag_3": 545.91,
+    "rainfall_3mo_sum": 2008.6599999999999
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 10,
+    "rainfall_mm": 455.11,
+    "rainfall_lag_1": 499.01,
+    "rainfall_lag_2": 957.32,
+    "rainfall_lag_3": 505.43,
+    "rainfall_3mo_sum": 1961.76
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 11,
+    "rainfall_mm": 404.41,
+    "rainfall_lag_1": 455.11,
+    "rainfall_lag_2": 499.01,
+    "rainfall_lag_3": 957.32,
+    "rainfall_3mo_sum": 1911.44
+  },
+  {
+    "district": "Belagavi",
+    "year": 2026,
+    "month": 12,
+    "rainfall_mm": 217.26,
+    "rainfall_lag_1": 404.41,
+    "rainfall_lag_2": 455.11,
+    "rainfall_lag_3": 499.01,
+    "rainfall_3mo_sum": 1358.53
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 1,
+    "rainfall_mm": 208.74,
+    "rainfall_lag_1": 217.26,
+    "rainfall_lag_2": 404.41,
+    "rainfall_lag_3": 455.11,
+    "rainfall_3mo_sum": 1076.7800000000002
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 2,
+    "rainfall_mm": 199.99,
+    "rainfall_lag_1": 208.74,
+    "rainfall_lag_2": 217.26,
+    "rainfall_lag_3": 404.41,
+    "rainfall_3mo_sum": 830.4100000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 3,
+    "rainfall_mm": 199.69,
+    "rainfall_lag_1": 199.99,
+    "rainfall_lag_2": 208.74,
+    "rainfall_lag_3": 217.26,
+    "rainfall_3mo_sum": 625.99
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 4,
+    "rainfall_mm": 202.83,
+    "rainfall_lag_1": 199.69,
+    "rainfall_lag_2": 199.99,
+    "rainfall_lag_3": 208.74,
+    "rainfall_3mo_sum": 608.4200000000001
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 5,
+    "rainfall_mm": 234.52,
+    "rainfall_lag_1": 202.83,
+    "rainfall_lag_2": 199.69,
+    "rainfall_lag_3": 199.99,
+    "rainfall_3mo_sum": 602.51
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 6,
+    "rainfall_mm": 605,
+    "rainfall_lag_1": 234.52,
+    "rainfall_lag_2": 202.83,
+    "rainfall_lag_3": 199.69,
+    "rainfall_3mo_sum": 637.04
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 7,
+    "rainfall_mm": 565.48,
+    "rainfall_lag_1": 605,
+    "rainfall_lag_2": 234.52,
+    "rainfall_lag_3": 202.83,
+    "rainfall_3mo_sum": 1042.35
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 8,
+    "rainfall_mm": 1017.37,
+    "rainfall_lag_1": 565.48,
+    "rainfall_lag_2": 605,
+    "rainfall_lag_3": 234.52,
+    "rainfall_3mo_sum": 1405
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 9,
+    "rainfall_mm": 559.06,
+    "rainfall_lag_1": 1017.37,
+    "rainfall_lag_2": 565.48,
+    "rainfall_lag_3": 605,
+    "rainfall_3mo_sum": 2187.85
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 10,
+    "rainfall_mm": 515.16,
+    "rainfall_lag_1": 559.06,
+    "rainfall_lag_2": 1017.37,
+    "rainfall_lag_3": 565.48,
+    "rainfall_3mo_sum": 2141.91
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 11,
+    "rainfall_mm": 464.46,
+    "rainfall_lag_1": 515.16,
+    "rainfall_lag_2": 559.06,
+    "rainfall_lag_3": 1017.37,
+    "rainfall_3mo_sum": 2091.5899999999997
+  },
+  {
+    "district": "Belagavi",
+    "year": 2027,
+    "month": 12,
+    "rainfall_mm": 277.31,
+    "rainfall_lag_1": 464.46,
+    "rainfall_lag_2": 515.16,
+    "rainfall_lag_3": 559.06,
+    "rainfall_3mo_sum": 1538.6799999999998
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 1,
+    "rainfall_mm": 1.84,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": null
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 2,
+    "rainfall_mm": 2.17,
+    "rainfall_lag_1": 1.84,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 1.84
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 3,
+    "rainfall_mm": 12.46,
+    "rainfall_lag_1": 2.17,
+    "rainfall_lag_2": 1.84,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 4.01
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 4,
+    "rainfall_mm": 25.65,
+    "rainfall_lag_1": 12.46,
+    "rainfall_lag_2": 2.17,
+    "rainfall_lag_3": 1.84,
+    "rainfall_3mo_sum": 16.470000000000002
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 5,
+    "rainfall_mm": 120.33,
+    "rainfall_lag_1": 25.65,
+    "rainfall_lag_2": 12.46,
+    "rainfall_lag_3": 2.17,
+    "rainfall_3mo_sum": 40.28
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 6,
+    "rainfall_mm": 239.16,
+    "rainfall_lag_1": 120.33,
+    "rainfall_lag_2": 25.65,
+    "rainfall_lag_3": 12.46,
+    "rainfall_3mo_sum": 158.44
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 7,
+    "rainfall_mm": 194.14,
+    "rainfall_lag_1": 239.16,
+    "rainfall_lag_2": 120.33,
+    "rainfall_lag_3": 25.65,
+    "rainfall_3mo_sum": 385.14
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 8,
+    "rainfall_mm": 115.31,
+    "rainfall_lag_1": 194.14,
+    "rainfall_lag_2": 239.16,
+    "rainfall_lag_3": 120.33,
+    "rainfall_3mo_sum": 553.63
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 9,
+    "rainfall_mm": 118.36,
+    "rainfall_lag_1": 115.31,
+    "rainfall_lag_2": 194.14,
+    "rainfall_lag_3": 239.16,
+    "rainfall_3mo_sum": 548.61
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 10,
+    "rainfall_mm": 42.58,
+    "rainfall_lag_1": 118.36,
+    "rainfall_lag_2": 115.31,
+    "rainfall_lag_3": 194.14,
+    "rainfall_3mo_sum": 427.81
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 11,
+    "rainfall_mm": 6.23,
+    "rainfall_lag_1": 42.58,
+    "rainfall_lag_2": 118.36,
+    "rainfall_lag_3": 115.31,
+    "rainfall_3mo_sum": 276.25
+  },
+  {
+    "district": "Dharwad",
+    "year": 2018,
+    "month": 12,
+    "rainfall_mm": 3.14,
+    "rainfall_lag_1": 6.23,
+    "rainfall_lag_2": 42.58,
+    "rainfall_lag_3": 118.36,
+    "rainfall_3mo_sum": 167.17000000000002
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 1,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 3.14,
+    "rainfall_lag_2": 6.23,
+    "rainfall_lag_3": 42.58,
+    "rainfall_3mo_sum": 51.95
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 2,
+    "rainfall_mm": 0.03,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 3.14,
+    "rainfall_lag_3": 6.23,
+    "rainfall_3mo_sum": 9.370000000000001
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 3,
+    "rainfall_mm": 6.82,
+    "rainfall_lag_1": 0.03,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 3.14,
+    "rainfall_3mo_sum": 3.17
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 4,
+    "rainfall_mm": 30.35,
+    "rainfall_lag_1": 6.82,
+    "rainfall_lag_2": 0.03,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 6.8500000000000005
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 5,
+    "rainfall_mm": 17.97,
+    "rainfall_lag_1": 30.35,
+    "rainfall_lag_2": 6.82,
+    "rainfall_lag_3": 0.03,
+    "rainfall_3mo_sum": 37.2
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 6,
+    "rainfall_mm": 150.14,
+    "rainfall_lag_1": 17.97,
+    "rainfall_lag_2": 30.35,
+    "rainfall_lag_3": 6.82,
+    "rainfall_3mo_sum": 55.14
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 7,
+    "rainfall_mm": 257.39,
+    "rainfall_lag_1": 150.14,
+    "rainfall_lag_2": 17.97,
+    "rainfall_lag_3": 30.35,
+    "rainfall_3mo_sum": 198.45999999999998
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 8,
+    "rainfall_mm": 456.49,
+    "rainfall_lag_1": 257.39,
+    "rainfall_lag_2": 150.14,
+    "rainfall_lag_3": 17.97,
+    "rainfall_3mo_sum": 425.5
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 9,
+    "rainfall_mm": 190.66,
+    "rainfall_lag_1": 456.49,
+    "rainfall_lag_2": 257.39,
+    "rainfall_lag_3": 150.14,
+    "rainfall_3mo_sum": 864.02
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 10,
+    "rainfall_mm": 286.03,
+    "rainfall_lag_1": 190.66,
+    "rainfall_lag_2": 456.49,
+    "rainfall_lag_3": 257.39,
+    "rainfall_3mo_sum": 904.54
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 11,
+    "rainfall_mm": 23.85,
+    "rainfall_lag_1": 286.03,
+    "rainfall_lag_2": 190.66,
+    "rainfall_lag_3": 456.49,
+    "rainfall_3mo_sum": 933.18
+  },
+  {
+    "district": "Dharwad",
+    "year": 2019,
+    "month": 12,
+    "rainfall_mm": 2.69,
+    "rainfall_lag_1": 23.85,
+    "rainfall_lag_2": 286.03,
+    "rainfall_lag_3": 190.66,
+    "rainfall_3mo_sum": 500.53999999999996
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 1,
+    "rainfall_mm": 1.27,
+    "rainfall_lag_1": 2.69,
+    "rainfall_lag_2": 23.85,
+    "rainfall_lag_3": 286.03,
+    "rainfall_3mo_sum": 312.57
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 1.27,
+    "rainfall_lag_2": 2.69,
+    "rainfall_lag_3": 23.85,
+    "rainfall_3mo_sum": 27.810000000000002
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 3,
+    "rainfall_mm": 11.04,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 1.27,
+    "rainfall_lag_3": 2.69,
+    "rainfall_3mo_sum": 3.96
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 4,
+    "rainfall_mm": 70.46,
+    "rainfall_lag_1": 11.04,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 1.27,
+    "rainfall_3mo_sum": 12.309999999999999
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 5,
+    "rainfall_mm": 55.48,
+    "rainfall_lag_1": 70.46,
+    "rainfall_lag_2": 11.04,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 81.5
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 6,
+    "rainfall_mm": 209.26,
+    "rainfall_lag_1": 55.48,
+    "rainfall_lag_2": 70.46,
+    "rainfall_lag_3": 11.04,
+    "rainfall_3mo_sum": 136.98
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 7,
+    "rainfall_mm": 361.31,
+    "rainfall_lag_1": 209.26,
+    "rainfall_lag_2": 55.48,
+    "rainfall_lag_3": 70.46,
+    "rainfall_3mo_sum": 335.2
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 8,
+    "rainfall_mm": 343.15,
+    "rainfall_lag_1": 361.31,
+    "rainfall_lag_2": 209.26,
+    "rainfall_lag_3": 55.48,
+    "rainfall_3mo_sum": 626.05
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 9,
+    "rainfall_mm": 286.66,
+    "rainfall_lag_1": 343.15,
+    "rainfall_lag_2": 361.31,
+    "rainfall_lag_3": 209.26,
+    "rainfall_3mo_sum": 913.72
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 10,
+    "rainfall_mm": 204.92,
+    "rainfall_lag_1": 286.66,
+    "rainfall_lag_2": 343.15,
+    "rainfall_lag_3": 361.31,
+    "rainfall_3mo_sum": 991.1199999999999
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 11,
+    "rainfall_mm": 1.46,
+    "rainfall_lag_1": 204.92,
+    "rainfall_lag_2": 286.66,
+    "rainfall_lag_3": 343.15,
+    "rainfall_3mo_sum": 834.73
+  },
+  {
+    "district": "Dharwad",
+    "year": 2020,
+    "month": 12,
+    "rainfall_mm": 1.96,
+    "rainfall_lag_1": 1.46,
+    "rainfall_lag_2": 204.92,
+    "rainfall_lag_3": 286.66,
+    "rainfall_3mo_sum": 493.04
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 1,
+    "rainfall_mm": 11.71,
+    "rainfall_lag_1": 1.96,
+    "rainfall_lag_2": 1.46,
+    "rainfall_lag_3": 204.92,
+    "rainfall_3mo_sum": 208.33999999999997
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 2,
+    "rainfall_mm": 12.44,
+    "rainfall_lag_1": 11.71,
+    "rainfall_lag_2": 1.96,
+    "rainfall_lag_3": 1.46,
+    "rainfall_3mo_sum": 15.130000000000003
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 3,
+    "rainfall_mm": 3.4,
+    "rainfall_lag_1": 12.44,
+    "rainfall_lag_2": 11.71,
+    "rainfall_lag_3": 1.96,
+    "rainfall_3mo_sum": 26.11
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 4,
+    "rainfall_mm": 33.64,
+    "rainfall_lag_1": 3.4,
+    "rainfall_lag_2": 12.44,
+    "rainfall_lag_3": 11.71,
+    "rainfall_3mo_sum": 27.55
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 5,
+    "rainfall_mm": 212.61,
+    "rainfall_lag_1": 33.64,
+    "rainfall_lag_2": 3.4,
+    "rainfall_lag_3": 12.44,
+    "rainfall_3mo_sum": 49.48
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 6,
+    "rainfall_mm": 273.55,
+    "rainfall_lag_1": 212.61,
+    "rainfall_lag_2": 33.64,
+    "rainfall_lag_3": 3.4,
+    "rainfall_3mo_sum": 249.65
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 7,
+    "rainfall_mm": 323.33,
+    "rainfall_lag_1": 273.55,
+    "rainfall_lag_2": 212.61,
+    "rainfall_lag_3": 33.64,
+    "rainfall_3mo_sum": 519.8000000000001
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 8,
+    "rainfall_mm": 89.46,
+    "rainfall_lag_1": 323.33,
+    "rainfall_lag_2": 273.55,
+    "rainfall_lag_3": 212.61,
+    "rainfall_3mo_sum": 809.49
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 9,
+    "rainfall_mm": 146.94,
+    "rainfall_lag_1": 89.46,
+    "rainfall_lag_2": 323.33,
+    "rainfall_lag_3": 273.55,
+    "rainfall_3mo_sum": 686.3399999999999
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 10,
+    "rainfall_mm": 119.8,
+    "rainfall_lag_1": 146.94,
+    "rainfall_lag_2": 89.46,
+    "rainfall_lag_3": 323.33,
+    "rainfall_3mo_sum": 559.73
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 11,
+    "rainfall_mm": 102.69,
+    "rainfall_lag_1": 119.8,
+    "rainfall_lag_2": 146.94,
+    "rainfall_lag_3": 89.46,
+    "rainfall_3mo_sum": 356.2
+  },
+  {
+    "district": "Dharwad",
+    "year": 2021,
+    "month": 12,
+    "rainfall_mm": 33.5,
+    "rainfall_lag_1": 102.69,
+    "rainfall_lag_2": 119.8,
+    "rainfall_lag_3": 146.94,
+    "rainfall_3mo_sum": 369.43
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 1,
+    "rainfall_mm": 0.05,
+    "rainfall_lag_1": 33.5,
+    "rainfall_lag_2": 102.69,
+    "rainfall_lag_3": 119.8,
+    "rainfall_3mo_sum": 255.99
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 0.05,
+    "rainfall_lag_2": 33.5,
+    "rainfall_lag_3": 102.69,
+    "rainfall_3mo_sum": 136.24
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 3,
+    "rainfall_mm": 10.41,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 0.05,
+    "rainfall_lag_3": 33.5,
+    "rainfall_3mo_sum": 33.55
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 4,
+    "rainfall_mm": 47.32,
+    "rainfall_lag_1": 10.41,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 0.05,
+    "rainfall_3mo_sum": 10.46
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 5,
+    "rainfall_mm": 103.64,
+    "rainfall_lag_1": 47.32,
+    "rainfall_lag_2": 10.41,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 57.730000000000004
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 6,
+    "rainfall_mm": 141.54,
+    "rainfall_lag_1": 103.64,
+    "rainfall_lag_2": 47.32,
+    "rainfall_lag_3": 10.41,
+    "rainfall_3mo_sum": 161.37
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 7,
+    "rainfall_mm": 292.93,
+    "rainfall_lag_1": 141.54,
+    "rainfall_lag_2": 103.64,
+    "rainfall_lag_3": 47.32,
+    "rainfall_3mo_sum": 292.5
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 8,
+    "rainfall_mm": 214.45,
+    "rainfall_lag_1": 292.93,
+    "rainfall_lag_2": 141.54,
+    "rainfall_lag_3": 103.64,
+    "rainfall_3mo_sum": 538.11
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 9,
+    "rainfall_mm": 215.99,
+    "rainfall_lag_1": 214.45,
+    "rainfall_lag_2": 292.93,
+    "rainfall_lag_3": 141.54,
+    "rainfall_3mo_sum": 648.92
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 10,
+    "rainfall_mm": 104.92,
+    "rainfall_lag_1": 215.99,
+    "rainfall_lag_2": 214.45,
+    "rainfall_lag_3": 292.93,
+    "rainfall_3mo_sum": 723.37
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 11,
+    "rainfall_mm": 3.42,
+    "rainfall_lag_1": 104.92,
+    "rainfall_lag_2": 215.99,
+    "rainfall_lag_3": 214.45,
+    "rainfall_3mo_sum": 535.36
+  },
+  {
+    "district": "Dharwad",
+    "year": 2022,
+    "month": 12,
+    "rainfall_mm": 9.76,
+    "rainfall_lag_1": 3.42,
+    "rainfall_lag_2": 104.92,
+    "rainfall_lag_3": 215.99,
+    "rainfall_3mo_sum": 324.33000000000004
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 1,
+    "rainfall_mm": 0.02,
+    "rainfall_lag_1": 9.76,
+    "rainfall_lag_2": 3.42,
+    "rainfall_lag_3": 104.92,
+    "rainfall_3mo_sum": 118.1
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 0.02,
+    "rainfall_lag_2": 9.76,
+    "rainfall_lag_3": 3.42,
+    "rainfall_3mo_sum": 13.2
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 3,
+    "rainfall_mm": 0.02,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 0.02,
+    "rainfall_lag_3": 9.76,
+    "rainfall_3mo_sum": 9.78
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 4,
+    "rainfall_mm": 13.32,
+    "rainfall_lag_1": 0.02,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 0.02,
+    "rainfall_3mo_sum": 0.04
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 5,
+    "rainfall_mm": 39.56,
+    "rainfall_lag_1": 13.32,
+    "rainfall_lag_2": 0.02,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 13.34
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 6,
+    "rainfall_mm": 74.89,
+    "rainfall_lag_1": 39.56,
+    "rainfall_lag_2": 13.32,
+    "rainfall_lag_3": 0.02,
+    "rainfall_3mo_sum": 52.900000000000006
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 7,
+    "rainfall_mm": 379.57,
+    "rainfall_lag_1": 74.89,
+    "rainfall_lag_2": 39.56,
+    "rainfall_lag_3": 13.32,
+    "rainfall_3mo_sum": 127.77000000000001
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 8,
+    "rainfall_mm": 61.49,
+    "rainfall_lag_1": 379.57,
+    "rainfall_lag_2": 74.89,
+    "rainfall_lag_3": 39.56,
+    "rainfall_3mo_sum": 494.02
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 9,
+    "rainfall_mm": 155.32,
+    "rainfall_lag_1": 61.49,
+    "rainfall_lag_2": 379.57,
+    "rainfall_lag_3": 74.89,
+    "rainfall_3mo_sum": 515.95
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 10,
+    "rainfall_mm": 14.8,
+    "rainfall_lag_1": 155.32,
+    "rainfall_lag_2": 61.49,
+    "rainfall_lag_3": 379.57,
+    "rainfall_3mo_sum": 596.38
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 11,
+    "rainfall_mm": 42.59,
+    "rainfall_lag_1": 14.8,
+    "rainfall_lag_2": 155.32,
+    "rainfall_lag_3": 61.49,
+    "rainfall_3mo_sum": 231.61
+  },
+  {
+    "district": "Dharwad",
+    "year": 2023,
+    "month": 12,
+    "rainfall_mm": 0.73,
+    "rainfall_lag_1": 42.59,
+    "rainfall_lag_2": 14.8,
+    "rainfall_lag_3": 155.32,
+    "rainfall_3mo_sum": 212.70999999999998
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 1,
+    "rainfall_mm": 9.04,
+    "rainfall_lag_1": 0.73,
+    "rainfall_lag_2": 42.59,
+    "rainfall_lag_3": 14.8,
+    "rainfall_3mo_sum": 58.120000000000005
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 9.04,
+    "rainfall_lag_2": 0.73,
+    "rainfall_lag_3": 42.59,
+    "rainfall_3mo_sum": 52.36
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 3,
+    "rainfall_mm": 0.71,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 9.04,
+    "rainfall_lag_3": 0.73,
+    "rainfall_3mo_sum": 9.77
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 4,
+    "rainfall_mm": 54.23,
+    "rainfall_lag_1": 0.71,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 9.04,
+    "rainfall_3mo_sum": 9.75
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 5,
+    "rainfall_mm": 78.2,
+    "rainfall_lag_1": 54.23,
+    "rainfall_lag_2": 0.71,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 54.94
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 6,
+    "rainfall_mm": 233.04,
+    "rainfall_lag_1": 78.2,
+    "rainfall_lag_2": 54.23,
+    "rainfall_lag_3": 0.71,
+    "rainfall_3mo_sum": 133.14000000000001
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 7,
+    "rainfall_mm": 428.11,
+    "rainfall_lag_1": 233.04,
+    "rainfall_lag_2": 78.2,
+    "rainfall_lag_3": 54.23,
+    "rainfall_3mo_sum": 365.47
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 8,
+    "rainfall_mm": 210.75,
+    "rainfall_lag_1": 428.11,
+    "rainfall_lag_2": 233.04,
+    "rainfall_lag_3": 78.2,
+    "rainfall_3mo_sum": 739.35
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 9,
+    "rainfall_mm": 190.19,
+    "rainfall_lag_1": 210.75,
+    "rainfall_lag_2": 428.11,
+    "rainfall_lag_3": 233.04,
+    "rainfall_3mo_sum": 871.9
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 10,
+    "rainfall_mm": 237.1,
+    "rainfall_lag_1": 190.19,
+    "rainfall_lag_2": 210.75,
+    "rainfall_lag_3": 428.11,
+    "rainfall_3mo_sum": 829.05
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 11,
+    "rainfall_mm": 5.64,
+    "rainfall_lag_1": 237.1,
+    "rainfall_lag_2": 190.19,
+    "rainfall_lag_3": 210.75,
+    "rainfall_3mo_sum": 638.04
+  },
+  {
+    "district": "Dharwad",
+    "year": 2024,
+    "month": 12,
+    "rainfall_mm": 15.86,
+    "rainfall_lag_1": 5.64,
+    "rainfall_lag_2": 237.1,
+    "rainfall_lag_3": 190.19,
+    "rainfall_3mo_sum": 432.92999999999995
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "month": 1,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 15.86,
+    "rainfall_lag_2": 5.64,
+    "rainfall_lag_3": 237.1,
+    "rainfall_3mo_sum": 258.6
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "month": 2,
+    "rainfall_mm": 0.31,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 15.86,
+    "rainfall_lag_3": 5.64,
+    "rainfall_3mo_sum": 21.5
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "month": 3,
+    "rainfall_mm": 6.73,
+    "rainfall_lag_1": 0.31,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 15.86,
+    "rainfall_3mo_sum": 16.169999999999998
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "month": 4,
+    "rainfall_mm": 49.06,
+    "rainfall_lag_1": 6.73,
+    "rainfall_lag_2": 0.31,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 7.04
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "month": 5,
+    "rainfall_mm": 495.96,
+    "rainfall_lag_1": 49.06,
+    "rainfall_lag_2": 6.73,
+    "rainfall_lag_3": 0.31,
+    "rainfall_3mo_sum": 56.10000000000001
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "month": 7,
+    "rainfall_mm": 262.86,
+    "rainfall_lag_1": 495.96,
+    "rainfall_lag_2": 49.06,
+    "rainfall_lag_3": 6.73,
+    "rainfall_3mo_sum": 551.75
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "month": 8,
+    "rainfall_mm": 430.76,
+    "rainfall_lag_1": 262.86,
+    "rainfall_lag_2": 495.96,
+    "rainfall_lag_3": 49.06,
+    "rainfall_3mo_sum": 807.8799999999999
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "month": 9,
+    "rainfall_mm": 265.55,
+    "rainfall_lag_1": 430.76,
+    "rainfall_lag_2": 262.86,
+    "rainfall_lag_3": 495.96,
+    "rainfall_3mo_sum": 1189.58
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "month": 10,
+    "rainfall_mm": 263.16,
+    "rainfall_lag_1": 265.55,
+    "rainfall_lag_2": 430.76,
+    "rainfall_lag_3": 262.86,
+    "rainfall_3mo_sum": 959.17
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "month": 11,
+    "rainfall_mm": 222.05,
+    "rainfall_lag_1": 263.16,
+    "rainfall_lag_2": 265.55,
+    "rainfall_lag_3": 430.76,
+    "rainfall_3mo_sum": 959.47
+  },
+  {
+    "district": "Dharwad",
+    "year": 2025,
+    "month": 12,
+    "rainfall_mm": 102.57,
+    "rainfall_lag_1": 222.05,
+    "rainfall_lag_2": 263.16,
+    "rainfall_lag_3": 265.55,
+    "rainfall_3mo_sum": 750.76
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 1,
+    "rainfall_mm": 88.26,
+    "rainfall_lag_1": 102.57,
+    "rainfall_lag_2": 222.05,
+    "rainfall_lag_3": 263.16,
+    "rainfall_3mo_sum": 587.78
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 2,
+    "rainfall_mm": 80.51,
+    "rainfall_lag_1": 88.26,
+    "rainfall_lag_2": 102.57,
+    "rainfall_lag_3": 222.05,
+    "rainfall_3mo_sum": 412.88
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 3,
+    "rainfall_mm": 79.78,
+    "rainfall_lag_1": 80.51,
+    "rainfall_lag_2": 88.26,
+    "rainfall_lag_3": 102.57,
+    "rainfall_3mo_sum": 271.34000000000003
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 4,
+    "rainfall_mm": 83.71,
+    "rainfall_lag_1": 79.78,
+    "rainfall_lag_2": 80.51,
+    "rainfall_lag_3": 88.26,
+    "rainfall_3mo_sum": 248.55
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 5,
+    "rainfall_mm": 121.38,
+    "rainfall_lag_1": 83.71,
+    "rainfall_lag_2": 79.78,
+    "rainfall_lag_3": 80.51,
+    "rainfall_3mo_sum": 244
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 6,
+    "rainfall_mm": 287.52,
+    "rainfall_lag_1": 121.38,
+    "rainfall_lag_2": 83.71,
+    "rainfall_lag_3": 79.78,
+    "rainfall_3mo_sum": 284.87
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 7,
+    "rainfall_mm": 285.05,
+    "rainfall_lag_1": 287.52,
+    "rainfall_lag_2": 121.38,
+    "rainfall_lag_3": 83.71,
+    "rainfall_3mo_sum": 492.60999999999996
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 8,
+    "rainfall_mm": 455.11,
+    "rainfall_lag_1": 285.05,
+    "rainfall_lag_2": 287.52,
+    "rainfall_lag_3": 121.38,
+    "rainfall_3mo_sum": 693.9499999999999
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 9,
+    "rainfall_mm": 289.98,
+    "rainfall_lag_1": 455.11,
+    "rainfall_lag_2": 285.05,
+    "rainfall_lag_3": 287.52,
+    "rainfall_3mo_sum": 1027.68
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 10,
+    "rainfall_mm": 287.6,
+    "rainfall_lag_1": 289.98,
+    "rainfall_lag_2": 455.11,
+    "rainfall_lag_3": 285.05,
+    "rainfall_3mo_sum": 1030.14
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 11,
+    "rainfall_mm": 246.41,
+    "rainfall_lag_1": 287.6,
+    "rainfall_lag_2": 289.98,
+    "rainfall_lag_3": 455.11,
+    "rainfall_3mo_sum": 1032.69
+  },
+  {
+    "district": "Dharwad",
+    "year": 2026,
+    "month": 12,
+    "rainfall_mm": 127.03,
+    "rainfall_lag_1": 246.41,
+    "rainfall_lag_2": 287.6,
+    "rainfall_lag_3": 289.98,
+    "rainfall_3mo_sum": 823.99
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 1,
+    "rainfall_mm": 112.7,
+    "rainfall_lag_1": 127.03,
+    "rainfall_lag_2": 246.41,
+    "rainfall_lag_3": 287.6,
+    "rainfall_3mo_sum": 661.04
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 2,
+    "rainfall_mm": 104.96,
+    "rainfall_lag_1": 112.7,
+    "rainfall_lag_2": 127.03,
+    "rainfall_lag_3": 246.41,
+    "rainfall_3mo_sum": 486.14
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 3,
+    "rainfall_mm": 104.22,
+    "rainfall_lag_1": 104.96,
+    "rainfall_lag_2": 112.7,
+    "rainfall_lag_3": 127.03,
+    "rainfall_3mo_sum": 344.69
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 4,
+    "rainfall_mm": 108.16,
+    "rainfall_lag_1": 104.22,
+    "rainfall_lag_2": 104.96,
+    "rainfall_lag_3": 112.7,
+    "rainfall_3mo_sum": 321.88
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 5,
+    "rainfall_mm": 145.82,
+    "rainfall_lag_1": 108.16,
+    "rainfall_lag_2": 104.22,
+    "rainfall_lag_3": 104.96,
+    "rainfall_3mo_sum": 317.34
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 6,
+    "rainfall_mm": 311.7,
+    "rainfall_lag_1": 145.82,
+    "rainfall_lag_2": 108.16,
+    "rainfall_lag_3": 104.22,
+    "rainfall_3mo_sum": 358.2
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 7,
+    "rainfall_mm": 309.45,
+    "rainfall_lag_1": 311.7,
+    "rainfall_lag_2": 145.82,
+    "rainfall_lag_3": 108.16,
+    "rainfall_3mo_sum": 565.68
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 8,
+    "rainfall_mm": 479.51,
+    "rainfall_lag_1": 309.45,
+    "rainfall_lag_2": 311.7,
+    "rainfall_lag_3": 145.82,
+    "rainfall_3mo_sum": 766.97
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 9,
+    "rainfall_mm": 314.37,
+    "rainfall_lag_1": 479.51,
+    "rainfall_lag_2": 309.45,
+    "rainfall_lag_3": 311.7,
+    "rainfall_3mo_sum": 1100.66
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 10,
+    "rainfall_mm": 311.99,
+    "rainfall_lag_1": 314.37,
+    "rainfall_lag_2": 479.51,
+    "rainfall_lag_3": 309.45,
+    "rainfall_3mo_sum": 1103.33
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 11,
+    "rainfall_mm": 270.81,
+    "rainfall_lag_1": 311.99,
+    "rainfall_lag_2": 314.37,
+    "rainfall_lag_3": 479.51,
+    "rainfall_3mo_sum": 1105.87
+  },
+  {
+    "district": "Dharwad",
+    "year": 2027,
+    "month": 12,
+    "rainfall_mm": 151.43,
+    "rainfall_lag_1": 270.81,
+    "rainfall_lag_2": 311.99,
+    "rainfall_lag_3": 314.37,
+    "rainfall_3mo_sum": 897.17
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 1,
+    "rainfall_mm": 2.56,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": null
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 2,
+    "rainfall_mm": 2.83,
+    "rainfall_lag_1": 2.56,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 2.56
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 3,
+    "rainfall_mm": 13.29,
+    "rainfall_lag_1": 2.83,
+    "rainfall_lag_2": 2.56,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 5.390000000000001
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 4,
+    "rainfall_mm": 31.12,
+    "rainfall_lag_1": 13.29,
+    "rainfall_lag_2": 2.83,
+    "rainfall_lag_3": 2.56,
+    "rainfall_3mo_sum": 18.679999999999996
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 5,
+    "rainfall_mm": 107.56,
+    "rainfall_lag_1": 31.12,
+    "rainfall_lag_2": 13.29,
+    "rainfall_lag_3": 2.83,
+    "rainfall_3mo_sum": 47.239999999999995
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 6,
+    "rainfall_mm": 126.68,
+    "rainfall_lag_1": 107.56,
+    "rainfall_lag_2": 31.12,
+    "rainfall_lag_3": 13.29,
+    "rainfall_3mo_sum": 151.97
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 7,
+    "rainfall_mm": 59.14,
+    "rainfall_lag_1": 126.68,
+    "rainfall_lag_2": 107.56,
+    "rainfall_lag_3": 31.12,
+    "rainfall_3mo_sum": 265.36
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 8,
+    "rainfall_mm": 52.67,
+    "rainfall_lag_1": 59.14,
+    "rainfall_lag_2": 126.68,
+    "rainfall_lag_3": 107.56,
+    "rainfall_3mo_sum": 293.38
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 9,
+    "rainfall_mm": 111,
+    "rainfall_lag_1": 52.67,
+    "rainfall_lag_2": 59.14,
+    "rainfall_lag_3": 126.68,
+    "rainfall_3mo_sum": 238.49
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 10,
+    "rainfall_mm": 32.05,
+    "rainfall_lag_1": 111,
+    "rainfall_lag_2": 52.67,
+    "rainfall_lag_3": 59.14,
+    "rainfall_3mo_sum": 222.81
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 11,
+    "rainfall_mm": 5.28,
+    "rainfall_lag_1": 32.05,
+    "rainfall_lag_2": 111,
+    "rainfall_lag_3": 52.67,
+    "rainfall_3mo_sum": 195.72000000000003
+  },
+  {
+    "district": "Gadag",
+    "year": 2018,
+    "month": 12,
+    "rainfall_mm": 1.82,
+    "rainfall_lag_1": 5.28,
+    "rainfall_lag_2": 32.05,
+    "rainfall_lag_3": 111,
+    "rainfall_3mo_sum": 148.32999999999998
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 1,
+    "rainfall_mm": 0.37,
+    "rainfall_lag_1": 1.82,
+    "rainfall_lag_2": 5.28,
+    "rainfall_lag_3": 32.05,
+    "rainfall_3mo_sum": 39.15
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 2,
+    "rainfall_mm": 0.15,
+    "rainfall_lag_1": 0.37,
+    "rainfall_lag_2": 1.82,
+    "rainfall_lag_3": 5.28,
+    "rainfall_3mo_sum": 7.470000000000001
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 3,
+    "rainfall_mm": 3.18,
+    "rainfall_lag_1": 0.15,
+    "rainfall_lag_2": 0.37,
+    "rainfall_lag_3": 1.82,
+    "rainfall_3mo_sum": 2.34
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 4,
+    "rainfall_mm": 31.21,
+    "rainfall_lag_1": 3.18,
+    "rainfall_lag_2": 0.15,
+    "rainfall_lag_3": 0.37,
+    "rainfall_3mo_sum": 3.7
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 5,
+    "rainfall_mm": 27.71,
+    "rainfall_lag_1": 31.21,
+    "rainfall_lag_2": 3.18,
+    "rainfall_lag_3": 0.15,
+    "rainfall_3mo_sum": 34.54
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 6,
+    "rainfall_mm": 75.07,
+    "rainfall_lag_1": 27.71,
+    "rainfall_lag_2": 31.21,
+    "rainfall_lag_3": 3.18,
+    "rainfall_3mo_sum": 62.1
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 7,
+    "rainfall_mm": 94.99,
+    "rainfall_lag_1": 75.07,
+    "rainfall_lag_2": 27.71,
+    "rainfall_lag_3": 31.21,
+    "rainfall_3mo_sum": 133.99
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 8,
+    "rainfall_mm": 204.57,
+    "rainfall_lag_1": 94.99,
+    "rainfall_lag_2": 75.07,
+    "rainfall_lag_3": 27.71,
+    "rainfall_3mo_sum": 197.77
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 9,
+    "rainfall_mm": 121.28,
+    "rainfall_lag_1": 204.57,
+    "rainfall_lag_2": 94.99,
+    "rainfall_lag_3": 75.07,
+    "rainfall_3mo_sum": 374.63
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 10,
+    "rainfall_mm": 221.88,
+    "rainfall_lag_1": 121.28,
+    "rainfall_lag_2": 204.57,
+    "rainfall_lag_3": 94.99,
+    "rainfall_3mo_sum": 420.84000000000003
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 11,
+    "rainfall_mm": 25.15,
+    "rainfall_lag_1": 221.88,
+    "rainfall_lag_2": 121.28,
+    "rainfall_lag_3": 204.57,
+    "rainfall_3mo_sum": 547.73
+  },
+  {
+    "district": "Gadag",
+    "year": 2019,
+    "month": 12,
+    "rainfall_mm": 4.86,
+    "rainfall_lag_1": 25.15,
+    "rainfall_lag_2": 221.88,
+    "rainfall_lag_3": 121.28,
+    "rainfall_3mo_sum": 368.31
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 1,
+    "rainfall_mm": 1.94,
+    "rainfall_lag_1": 4.86,
+    "rainfall_lag_2": 25.15,
+    "rainfall_lag_3": 221.88,
+    "rainfall_3mo_sum": 251.89
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 1.94,
+    "rainfall_lag_2": 4.86,
+    "rainfall_lag_3": 25.15,
+    "rainfall_3mo_sum": 31.95
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 3,
+    "rainfall_mm": 6.06,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 1.94,
+    "rainfall_lag_3": 4.86,
+    "rainfall_3mo_sum": 6.800000000000001
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 4,
+    "rainfall_mm": 92.99,
+    "rainfall_lag_1": 6.06,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 1.94,
+    "rainfall_3mo_sum": 8
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 5,
+    "rainfall_mm": 69.48,
+    "rainfall_lag_1": 92.99,
+    "rainfall_lag_2": 6.06,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 99.05
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 6,
+    "rainfall_mm": 83.01,
+    "rainfall_lag_1": 69.48,
+    "rainfall_lag_2": 92.99,
+    "rainfall_lag_3": 6.06,
+    "rainfall_3mo_sum": 168.53
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 7,
+    "rainfall_mm": 249.54,
+    "rainfall_lag_1": 83.01,
+    "rainfall_lag_2": 69.48,
+    "rainfall_lag_3": 92.99,
+    "rainfall_3mo_sum": 245.48000000000002
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 8,
+    "rainfall_mm": 154.76,
+    "rainfall_lag_1": 249.54,
+    "rainfall_lag_2": 83.01,
+    "rainfall_lag_3": 69.48,
+    "rainfall_3mo_sum": 402.03000000000003
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 9,
+    "rainfall_mm": 213.47,
+    "rainfall_lag_1": 154.76,
+    "rainfall_lag_2": 249.54,
+    "rainfall_lag_3": 83.01,
+    "rainfall_3mo_sum": 487.30999999999995
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 10,
+    "rainfall_mm": 174.79,
+    "rainfall_lag_1": 213.47,
+    "rainfall_lag_2": 154.76,
+    "rainfall_lag_3": 249.54,
+    "rainfall_3mo_sum": 617.77
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 11,
+    "rainfall_mm": 4.35,
+    "rainfall_lag_1": 174.79,
+    "rainfall_lag_2": 213.47,
+    "rainfall_lag_3": 154.76,
+    "rainfall_3mo_sum": 543.02
+  },
+  {
+    "district": "Gadag",
+    "year": 2020,
+    "month": 12,
+    "rainfall_mm": 1.82,
+    "rainfall_lag_1": 4.35,
+    "rainfall_lag_2": 174.79,
+    "rainfall_lag_3": 213.47,
+    "rainfall_3mo_sum": 392.61
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 1,
+    "rainfall_mm": 17.92,
+    "rainfall_lag_1": 1.82,
+    "rainfall_lag_2": 4.35,
+    "rainfall_lag_3": 174.79,
+    "rainfall_3mo_sum": 180.95999999999998
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 2,
+    "rainfall_mm": 13.69,
+    "rainfall_lag_1": 17.92,
+    "rainfall_lag_2": 1.82,
+    "rainfall_lag_3": 4.35,
+    "rainfall_3mo_sum": 24.090000000000003
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 3,
+    "rainfall_mm": 1.43,
+    "rainfall_lag_1": 13.69,
+    "rainfall_lag_2": 17.92,
+    "rainfall_lag_3": 1.82,
+    "rainfall_3mo_sum": 33.43
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 4,
+    "rainfall_mm": 35.7,
+    "rainfall_lag_1": 1.43,
+    "rainfall_lag_2": 13.69,
+    "rainfall_lag_3": 17.92,
+    "rainfall_3mo_sum": 33.04
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 5,
+    "rainfall_mm": 154.87,
+    "rainfall_lag_1": 35.7,
+    "rainfall_lag_2": 1.43,
+    "rainfall_lag_3": 13.69,
+    "rainfall_3mo_sum": 50.82
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 6,
+    "rainfall_mm": 137.19,
+    "rainfall_lag_1": 154.87,
+    "rainfall_lag_2": 35.7,
+    "rainfall_lag_3": 1.43,
+    "rainfall_3mo_sum": 192
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 7,
+    "rainfall_mm": 158.75,
+    "rainfall_lag_1": 137.19,
+    "rainfall_lag_2": 154.87,
+    "rainfall_lag_3": 35.7,
+    "rainfall_3mo_sum": 327.76
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 8,
+    "rainfall_mm": 58.89,
+    "rainfall_lag_1": 158.75,
+    "rainfall_lag_2": 137.19,
+    "rainfall_lag_3": 154.87,
+    "rainfall_3mo_sum": 450.81
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 9,
+    "rainfall_mm": 98.89,
+    "rainfall_lag_1": 58.89,
+    "rainfall_lag_2": 158.75,
+    "rainfall_lag_3": 137.19,
+    "rainfall_3mo_sum": 354.83
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 10,
+    "rainfall_mm": 117.32,
+    "rainfall_lag_1": 98.89,
+    "rainfall_lag_2": 58.89,
+    "rainfall_lag_3": 158.75,
+    "rainfall_3mo_sum": 316.53
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 11,
+    "rainfall_mm": 93.51,
+    "rainfall_lag_1": 117.32,
+    "rainfall_lag_2": 98.89,
+    "rainfall_lag_3": 58.89,
+    "rainfall_3mo_sum": 275.09999999999997
+  },
+  {
+    "district": "Gadag",
+    "year": 2021,
+    "month": 12,
+    "rainfall_mm": 12.79,
+    "rainfall_lag_1": 93.51,
+    "rainfall_lag_2": 117.32,
+    "rainfall_lag_3": 98.89,
+    "rainfall_3mo_sum": 309.71999999999997
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 1,
+    "rainfall_mm": 0.19,
+    "rainfall_lag_1": 12.79,
+    "rainfall_lag_2": 93.51,
+    "rainfall_lag_3": 117.32,
+    "rainfall_3mo_sum": 223.62
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 0.19,
+    "rainfall_lag_2": 12.79,
+    "rainfall_lag_3": 93.51,
+    "rainfall_3mo_sum": 106.49000000000001
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 3,
+    "rainfall_mm": 6.42,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 0.19,
+    "rainfall_lag_3": 12.79,
+    "rainfall_3mo_sum": 12.979999999999999
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 4,
+    "rainfall_mm": 43.21,
+    "rainfall_lag_1": 6.42,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 0.19,
+    "rainfall_3mo_sum": 6.61
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 5,
+    "rainfall_mm": 119.79,
+    "rainfall_lag_1": 43.21,
+    "rainfall_lag_2": 6.42,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 49.63
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 6,
+    "rainfall_mm": 64.99,
+    "rainfall_lag_1": 119.79,
+    "rainfall_lag_2": 43.21,
+    "rainfall_lag_3": 6.42,
+    "rainfall_3mo_sum": 169.42
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 7,
+    "rainfall_mm": 154.7,
+    "rainfall_lag_1": 64.99,
+    "rainfall_lag_2": 119.79,
+    "rainfall_lag_3": 43.21,
+    "rainfall_3mo_sum": 227.99
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 8,
+    "rainfall_mm": 153.44,
+    "rainfall_lag_1": 154.7,
+    "rainfall_lag_2": 64.99,
+    "rainfall_lag_3": 119.79,
+    "rainfall_3mo_sum": 339.48
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 9,
+    "rainfall_mm": 207.28,
+    "rainfall_lag_1": 153.44,
+    "rainfall_lag_2": 154.7,
+    "rainfall_lag_3": 64.99,
+    "rainfall_3mo_sum": 373.13
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 10,
+    "rainfall_mm": 100.49,
+    "rainfall_lag_1": 207.28,
+    "rainfall_lag_2": 153.44,
+    "rainfall_lag_3": 154.7,
+    "rainfall_3mo_sum": 515.4200000000001
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 11,
+    "rainfall_mm": 3.79,
+    "rainfall_lag_1": 100.49,
+    "rainfall_lag_2": 207.28,
+    "rainfall_lag_3": 153.44,
+    "rainfall_3mo_sum": 461.21
+  },
+  {
+    "district": "Gadag",
+    "year": 2022,
+    "month": 12,
+    "rainfall_mm": 14,
+    "rainfall_lag_1": 3.79,
+    "rainfall_lag_2": 100.49,
+    "rainfall_lag_3": 207.28,
+    "rainfall_3mo_sum": 311.56
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 1,
+    "rainfall_mm": 0.01,
+    "rainfall_lag_1": 14,
+    "rainfall_lag_2": 3.79,
+    "rainfall_lag_3": 100.49,
+    "rainfall_3mo_sum": 118.28
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 0.01,
+    "rainfall_lag_2": 14,
+    "rainfall_lag_3": 3.79,
+    "rainfall_3mo_sum": 17.8
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 3,
+    "rainfall_mm": 0.63,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 0.01,
+    "rainfall_lag_3": 14,
+    "rainfall_3mo_sum": 14.01
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 4,
+    "rainfall_mm": 19.2,
+    "rainfall_lag_1": 0.63,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 0.01,
+    "rainfall_3mo_sum": 0.64
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 5,
+    "rainfall_mm": 43.52,
+    "rainfall_lag_1": 19.2,
+    "rainfall_lag_2": 0.63,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 19.83
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 6,
+    "rainfall_mm": 22.6,
+    "rainfall_lag_1": 43.52,
+    "rainfall_lag_2": 19.2,
+    "rainfall_lag_3": 0.63,
+    "rainfall_3mo_sum": 63.35
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 7,
+    "rainfall_mm": 173.7,
+    "rainfall_lag_1": 22.6,
+    "rainfall_lag_2": 43.52,
+    "rainfall_lag_3": 19.2,
+    "rainfall_3mo_sum": 85.32000000000001
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 8,
+    "rainfall_mm": 42.26,
+    "rainfall_lag_1": 173.7,
+    "rainfall_lag_2": 22.6,
+    "rainfall_lag_3": 43.52,
+    "rainfall_3mo_sum": 239.82
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 9,
+    "rainfall_mm": 111.14,
+    "rainfall_lag_1": 42.26,
+    "rainfall_lag_2": 173.7,
+    "rainfall_lag_3": 22.6,
+    "rainfall_3mo_sum": 238.55999999999997
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 10,
+    "rainfall_mm": 6.54,
+    "rainfall_lag_1": 111.14,
+    "rainfall_lag_2": 42.26,
+    "rainfall_lag_3": 173.7,
+    "rainfall_3mo_sum": 327.1
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 11,
+    "rainfall_mm": 46.58,
+    "rainfall_lag_1": 6.54,
+    "rainfall_lag_2": 111.14,
+    "rainfall_lag_3": 42.26,
+    "rainfall_3mo_sum": 159.94
+  },
+  {
+    "district": "Gadag",
+    "year": 2023,
+    "month": 12,
+    "rainfall_mm": 1.3,
+    "rainfall_lag_1": 46.58,
+    "rainfall_lag_2": 6.54,
+    "rainfall_lag_3": 111.14,
+    "rainfall_3mo_sum": 164.26
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 1,
+    "rainfall_mm": 6.06,
+    "rainfall_lag_1": 1.3,
+    "rainfall_lag_2": 46.58,
+    "rainfall_lag_3": 6.54,
+    "rainfall_3mo_sum": 54.419999999999995
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 6.06,
+    "rainfall_lag_2": 1.3,
+    "rainfall_lag_3": 46.58,
+    "rainfall_3mo_sum": 53.94
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 3,
+    "rainfall_mm": 0.92,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 6.06,
+    "rainfall_lag_3": 1.3,
+    "rainfall_3mo_sum": 7.359999999999999
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 4,
+    "rainfall_mm": 47.5,
+    "rainfall_lag_1": 0.92,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 6.06,
+    "rainfall_3mo_sum": 6.9799999999999995
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 5,
+    "rainfall_mm": 75.38,
+    "rainfall_lag_1": 47.5,
+    "rainfall_lag_2": 0.92,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 48.42
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 6,
+    "rainfall_mm": 141.51,
+    "rainfall_lag_1": 75.38,
+    "rainfall_lag_2": 47.5,
+    "rainfall_lag_3": 0.92,
+    "rainfall_3mo_sum": 123.8
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 7,
+    "rainfall_mm": 144.34,
+    "rainfall_lag_1": 141.51,
+    "rainfall_lag_2": 75.38,
+    "rainfall_lag_3": 47.5,
+    "rainfall_3mo_sum": 264.39
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 8,
+    "rainfall_mm": 121.86,
+    "rainfall_lag_1": 144.34,
+    "rainfall_lag_2": 141.51,
+    "rainfall_lag_3": 75.38,
+    "rainfall_3mo_sum": 361.23
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 9,
+    "rainfall_mm": 127.24,
+    "rainfall_lag_1": 121.86,
+    "rainfall_lag_2": 144.34,
+    "rainfall_lag_3": 141.51,
+    "rainfall_3mo_sum": 407.71
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 10,
+    "rainfall_mm": 191.39,
+    "rainfall_lag_1": 127.24,
+    "rainfall_lag_2": 121.86,
+    "rainfall_lag_3": 144.34,
+    "rainfall_3mo_sum": 393.44
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 11,
+    "rainfall_mm": 4.02,
+    "rainfall_lag_1": 191.39,
+    "rainfall_lag_2": 127.24,
+    "rainfall_lag_3": 121.86,
+    "rainfall_3mo_sum": 440.49
+  },
+  {
+    "district": "Gadag",
+    "year": 2024,
+    "month": 12,
+    "rainfall_mm": 15.11,
+    "rainfall_lag_1": 4.02,
+    "rainfall_lag_2": 191.39,
+    "rainfall_lag_3": 127.24,
+    "rainfall_3mo_sum": 322.65
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "month": 1,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 15.11,
+    "rainfall_lag_2": 4.02,
+    "rainfall_lag_3": 191.39,
+    "rainfall_3mo_sum": 210.51999999999998
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "month": 2,
+    "rainfall_mm": 0.44,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 15.11,
+    "rainfall_lag_3": 4.02,
+    "rainfall_3mo_sum": 19.13
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "month": 3,
+    "rainfall_mm": 3.24,
+    "rainfall_lag_1": 0.44,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 15.11,
+    "rainfall_3mo_sum": 15.549999999999999
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "month": 4,
+    "rainfall_mm": 58.78,
+    "rainfall_lag_1": 3.24,
+    "rainfall_lag_2": 0.44,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 3.68
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "month": 5,
+    "rainfall_mm": 270.32,
+    "rainfall_lag_1": 58.78,
+    "rainfall_lag_2": 3.24,
+    "rainfall_lag_3": 0.44,
+    "rainfall_3mo_sum": 62.46
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "month": 7,
+    "rainfall_mm": 121.22,
+    "rainfall_lag_1": 270.32,
+    "rainfall_lag_2": 58.78,
+    "rainfall_lag_3": 3.24,
+    "rainfall_3mo_sum": 332.34000000000003
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "month": 8,
+    "rainfall_mm": 184.45,
+    "rainfall_lag_1": 121.22,
+    "rainfall_lag_2": 270.32,
+    "rainfall_lag_3": 58.78,
+    "rainfall_3mo_sum": 450.31999999999994
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "month": 9,
+    "rainfall_mm": 148.79,
+    "rainfall_lag_1": 184.45,
+    "rainfall_lag_2": 121.22,
+    "rainfall_lag_3": 270.32,
+    "rainfall_3mo_sum": 575.99
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "month": 10,
+    "rainfall_mm": 177.72,
+    "rainfall_lag_1": 148.79,
+    "rainfall_lag_2": 184.45,
+    "rainfall_lag_3": 121.22,
+    "rainfall_3mo_sum": 454.46000000000004
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "month": 11,
+    "rainfall_mm": 156.54,
+    "rainfall_lag_1": 177.72,
+    "rainfall_lag_2": 148.79,
+    "rainfall_lag_3": 184.45,
+    "rainfall_3mo_sum": 510.96
+  },
+  {
+    "district": "Gadag",
+    "year": 2025,
+    "month": 12,
+    "rainfall_mm": 62.38,
+    "rainfall_lag_1": 156.54,
+    "rainfall_lag_2": 177.72,
+    "rainfall_lag_3": 148.79,
+    "rainfall_3mo_sum": 483.04999999999995
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 1,
+    "rainfall_mm": 43.5,
+    "rainfall_lag_1": 62.38,
+    "rainfall_lag_2": 156.54,
+    "rainfall_lag_3": 177.72,
+    "rainfall_3mo_sum": 396.64
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 2,
+    "rainfall_mm": 39.92,
+    "rainfall_lag_1": 43.5,
+    "rainfall_lag_2": 62.38,
+    "rainfall_lag_3": 156.54,
+    "rainfall_3mo_sum": 262.41999999999996
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 3,
+    "rainfall_mm": 40.51,
+    "rainfall_lag_1": 39.92,
+    "rainfall_lag_2": 43.5,
+    "rainfall_lag_3": 62.38,
+    "rainfall_3mo_sum": 145.8
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 4,
+    "rainfall_mm": 42.67,
+    "rainfall_lag_1": 40.51,
+    "rainfall_lag_2": 39.92,
+    "rainfall_lag_3": 43.5,
+    "rainfall_3mo_sum": 123.93
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 5,
+    "rainfall_mm": 83.19,
+    "rainfall_lag_1": 42.67,
+    "rainfall_lag_2": 40.51,
+    "rainfall_lag_3": 39.92,
+    "rainfall_3mo_sum": 123.10000000000001
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 6,
+    "rainfall_mm": 146.19,
+    "rainfall_lag_1": 83.19,
+    "rainfall_lag_2": 42.67,
+    "rainfall_lag_3": 40.51,
+    "rainfall_3mo_sum": 166.37
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 7,
+    "rainfall_mm": 134.76,
+    "rainfall_lag_1": 146.19,
+    "rainfall_lag_2": 83.19,
+    "rainfall_lag_3": 42.67,
+    "rainfall_3mo_sum": 272.05
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 8,
+    "rainfall_mm": 190.7,
+    "rainfall_lag_1": 134.76,
+    "rainfall_lag_2": 146.19,
+    "rainfall_lag_3": 83.19,
+    "rainfall_3mo_sum": 364.14
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 9,
+    "rainfall_mm": 155.45,
+    "rainfall_lag_1": 190.7,
+    "rainfall_lag_2": 134.76,
+    "rainfall_lag_3": 146.19,
+    "rainfall_3mo_sum": 471.65
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 10,
+    "rainfall_mm": 184.28,
+    "rainfall_lag_1": 155.45,
+    "rainfall_lag_2": 190.7,
+    "rainfall_lag_3": 134.76,
+    "rainfall_3mo_sum": 480.90999999999997
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 11,
+    "rainfall_mm": 163.42,
+    "rainfall_lag_1": 184.28,
+    "rainfall_lag_2": 155.45,
+    "rainfall_lag_3": 190.7,
+    "rainfall_3mo_sum": 530.4300000000001
+  },
+  {
+    "district": "Gadag",
+    "year": 2026,
+    "month": 12,
+    "rainfall_mm": 68.92,
+    "rainfall_lag_1": 163.42,
+    "rainfall_lag_2": 184.28,
+    "rainfall_lag_3": 155.45,
+    "rainfall_3mo_sum": 503.15
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 1,
+    "rainfall_mm": 50.14,
+    "rainfall_lag_1": 68.92,
+    "rainfall_lag_2": 163.42,
+    "rainfall_lag_3": 184.28,
+    "rainfall_3mo_sum": 416.62
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 2,
+    "rainfall_mm": 46.52,
+    "rainfall_lag_1": 50.14,
+    "rainfall_lag_2": 68.92,
+    "rainfall_lag_3": 163.42,
+    "rainfall_3mo_sum": 282.48
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 3,
+    "rainfall_mm": 47.11,
+    "rainfall_lag_1": 46.52,
+    "rainfall_lag_2": 50.14,
+    "rainfall_lag_3": 68.92,
+    "rainfall_3mo_sum": 165.57999999999998
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 4,
+    "rainfall_mm": 49.27,
+    "rainfall_lag_1": 47.11,
+    "rainfall_lag_2": 46.52,
+    "rainfall_lag_3": 50.14,
+    "rainfall_3mo_sum": 143.76999999999998
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 5,
+    "rainfall_mm": 89.85,
+    "rainfall_lag_1": 49.27,
+    "rainfall_lag_2": 47.11,
+    "rainfall_lag_3": 46.52,
+    "rainfall_3mo_sum": 142.9
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 6,
+    "rainfall_mm": 153.4,
+    "rainfall_lag_1": 89.85,
+    "rainfall_lag_2": 49.27,
+    "rainfall_lag_3": 47.11,
+    "rainfall_3mo_sum": 186.23000000000002
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 7,
+    "rainfall_mm": 141.46,
+    "rainfall_lag_1": 153.4,
+    "rainfall_lag_2": 89.85,
+    "rainfall_lag_3": 49.27,
+    "rainfall_3mo_sum": 292.52
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 8,
+    "rainfall_mm": 197.43,
+    "rainfall_lag_1": 141.46,
+    "rainfall_lag_2": 153.4,
+    "rainfall_lag_3": 89.85,
+    "rainfall_3mo_sum": 384.71000000000004
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 9,
+    "rainfall_mm": 162.18,
+    "rainfall_lag_1": 197.43,
+    "rainfall_lag_2": 141.46,
+    "rainfall_lag_3": 153.4,
+    "rainfall_3mo_sum": 492.28999999999996
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 10,
+    "rainfall_mm": 191,
+    "rainfall_lag_1": 162.18,
+    "rainfall_lag_2": 197.43,
+    "rainfall_lag_3": 141.46,
+    "rainfall_3mo_sum": 501.07000000000005
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 11,
+    "rainfall_mm": 170.14,
+    "rainfall_lag_1": 191,
+    "rainfall_lag_2": 162.18,
+    "rainfall_lag_3": 197.43,
+    "rainfall_3mo_sum": 550.61
+  },
+  {
+    "district": "Gadag",
+    "year": 2027,
+    "month": 12,
+    "rainfall_mm": 75.64,
+    "rainfall_lag_1": 170.14,
+    "rainfall_lag_2": 191,
+    "rainfall_lag_3": 162.18,
+    "rainfall_3mo_sum": 523.3199999999999
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 1,
+    "rainfall_mm": 2.47,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": null
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 2,
+    "rainfall_mm": 2.43,
+    "rainfall_lag_1": 2.47,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 2.47
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 3,
+    "rainfall_mm": 16.92,
+    "rainfall_lag_1": 2.43,
+    "rainfall_lag_2": 2.47,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 4.9
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 4,
+    "rainfall_mm": 33.93,
+    "rainfall_lag_1": 16.92,
+    "rainfall_lag_2": 2.43,
+    "rainfall_lag_3": 2.47,
+    "rainfall_3mo_sum": 21.82
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 5,
+    "rainfall_mm": 105.45,
+    "rainfall_lag_1": 33.93,
+    "rainfall_lag_2": 16.92,
+    "rainfall_lag_3": 2.43,
+    "rainfall_3mo_sum": 53.28
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 6,
+    "rainfall_mm": 147.37,
+    "rainfall_lag_1": 105.45,
+    "rainfall_lag_2": 33.93,
+    "rainfall_lag_3": 16.92,
+    "rainfall_3mo_sum": 156.3
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 7,
+    "rainfall_mm": 76.6,
+    "rainfall_lag_1": 147.37,
+    "rainfall_lag_2": 105.45,
+    "rainfall_lag_3": 33.93,
+    "rainfall_3mo_sum": 286.75
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 8,
+    "rainfall_mm": 64.4,
+    "rainfall_lag_1": 76.6,
+    "rainfall_lag_2": 147.37,
+    "rainfall_lag_3": 105.45,
+    "rainfall_3mo_sum": 329.42
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 9,
+    "rainfall_mm": 86.34,
+    "rainfall_lag_1": 64.4,
+    "rainfall_lag_2": 76.6,
+    "rainfall_lag_3": 147.37,
+    "rainfall_3mo_sum": 288.37
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 10,
+    "rainfall_mm": 37.7,
+    "rainfall_lag_1": 86.34,
+    "rainfall_lag_2": 64.4,
+    "rainfall_lag_3": 76.6,
+    "rainfall_3mo_sum": 227.34
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 11,
+    "rainfall_mm": 4.41,
+    "rainfall_lag_1": 37.7,
+    "rainfall_lag_2": 86.34,
+    "rainfall_lag_3": 64.4,
+    "rainfall_3mo_sum": 188.44
+  },
+  {
+    "district": "Haveri",
+    "year": 2018,
+    "month": 12,
+    "rainfall_mm": 0.64,
+    "rainfall_lag_1": 4.41,
+    "rainfall_lag_2": 37.7,
+    "rainfall_lag_3": 86.34,
+    "rainfall_3mo_sum": 128.45
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 1,
+    "rainfall_mm": 0.23,
+    "rainfall_lag_1": 0.64,
+    "rainfall_lag_2": 4.41,
+    "rainfall_lag_3": 37.7,
+    "rainfall_3mo_sum": 42.75
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 2,
+    "rainfall_mm": 0.36,
+    "rainfall_lag_1": 0.23,
+    "rainfall_lag_2": 0.64,
+    "rainfall_lag_3": 4.41,
+    "rainfall_3mo_sum": 5.28
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 3,
+    "rainfall_mm": 1.78,
+    "rainfall_lag_1": 0.36,
+    "rainfall_lag_2": 0.23,
+    "rainfall_lag_3": 0.64,
+    "rainfall_3mo_sum": 1.23
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 4,
+    "rainfall_mm": 25.78,
+    "rainfall_lag_1": 1.78,
+    "rainfall_lag_2": 0.36,
+    "rainfall_lag_3": 0.23,
+    "rainfall_3mo_sum": 2.37
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 5,
+    "rainfall_mm": 32.43,
+    "rainfall_lag_1": 25.78,
+    "rainfall_lag_2": 1.78,
+    "rainfall_lag_3": 0.36,
+    "rainfall_3mo_sum": 27.92
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 6,
+    "rainfall_mm": 93.14,
+    "rainfall_lag_1": 32.43,
+    "rainfall_lag_2": 25.78,
+    "rainfall_lag_3": 1.78,
+    "rainfall_3mo_sum": 59.99
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 7,
+    "rainfall_mm": 123.64,
+    "rainfall_lag_1": 93.14,
+    "rainfall_lag_2": 32.43,
+    "rainfall_lag_3": 25.78,
+    "rainfall_3mo_sum": 151.35
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 8,
+    "rainfall_mm": 217.51,
+    "rainfall_lag_1": 123.64,
+    "rainfall_lag_2": 93.14,
+    "rainfall_lag_3": 32.43,
+    "rainfall_3mo_sum": 249.21
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 9,
+    "rainfall_mm": 150.47,
+    "rainfall_lag_1": 217.51,
+    "rainfall_lag_2": 123.64,
+    "rainfall_lag_3": 93.14,
+    "rainfall_3mo_sum": 434.28999999999996
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 10,
+    "rainfall_mm": 255.2,
+    "rainfall_lag_1": 150.47,
+    "rainfall_lag_2": 217.51,
+    "rainfall_lag_3": 123.64,
+    "rainfall_3mo_sum": 491.62
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 11,
+    "rainfall_mm": 24.36,
+    "rainfall_lag_1": 255.2,
+    "rainfall_lag_2": 150.47,
+    "rainfall_lag_3": 217.51,
+    "rainfall_3mo_sum": 623.18
+  },
+  {
+    "district": "Haveri",
+    "year": 2019,
+    "month": 12,
+    "rainfall_mm": 8.38,
+    "rainfall_lag_1": 24.36,
+    "rainfall_lag_2": 255.2,
+    "rainfall_lag_3": 150.47,
+    "rainfall_3mo_sum": 430.03
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 1,
+    "rainfall_mm": 1.65,
+    "rainfall_lag_1": 8.38,
+    "rainfall_lag_2": 24.36,
+    "rainfall_lag_3": 255.2,
+    "rainfall_3mo_sum": 287.94
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 1.65,
+    "rainfall_lag_2": 8.38,
+    "rainfall_lag_3": 24.36,
+    "rainfall_3mo_sum": 34.39
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 3,
+    "rainfall_mm": 2.99,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 1.65,
+    "rainfall_lag_3": 8.38,
+    "rainfall_3mo_sum": 10.030000000000001
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 4,
+    "rainfall_mm": 80.99,
+    "rainfall_lag_1": 2.99,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 1.65,
+    "rainfall_3mo_sum": 4.640000000000001
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 5,
+    "rainfall_mm": 71.65,
+    "rainfall_lag_1": 80.99,
+    "rainfall_lag_2": 2.99,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 83.97999999999999
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 6,
+    "rainfall_mm": 116.04,
+    "rainfall_lag_1": 71.65,
+    "rainfall_lag_2": 80.99,
+    "rainfall_lag_3": 2.99,
+    "rainfall_3mo_sum": 155.63
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 7,
+    "rainfall_mm": 294.71,
+    "rainfall_lag_1": 116.04,
+    "rainfall_lag_2": 71.65,
+    "rainfall_lag_3": 80.99,
+    "rainfall_3mo_sum": 268.68
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 8,
+    "rainfall_mm": 173.5,
+    "rainfall_lag_1": 294.71,
+    "rainfall_lag_2": 116.04,
+    "rainfall_lag_3": 71.65,
+    "rainfall_3mo_sum": 482.4
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 9,
+    "rainfall_mm": 245.84,
+    "rainfall_lag_1": 173.5,
+    "rainfall_lag_2": 294.71,
+    "rainfall_lag_3": 116.04,
+    "rainfall_3mo_sum": 584.25
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 10,
+    "rainfall_mm": 219.87,
+    "rainfall_lag_1": 245.84,
+    "rainfall_lag_2": 173.5,
+    "rainfall_lag_3": 294.71,
+    "rainfall_3mo_sum": 714.05
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 11,
+    "rainfall_mm": 7.16,
+    "rainfall_lag_1": 219.87,
+    "rainfall_lag_2": 245.84,
+    "rainfall_lag_3": 173.5,
+    "rainfall_3mo_sum": 639.21
+  },
+  {
+    "district": "Haveri",
+    "year": 2020,
+    "month": 12,
+    "rainfall_mm": 4.69,
+    "rainfall_lag_1": 7.16,
+    "rainfall_lag_2": 219.87,
+    "rainfall_lag_3": 245.84,
+    "rainfall_3mo_sum": 472.87
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 1,
+    "rainfall_mm": 32.76,
+    "rainfall_lag_1": 4.69,
+    "rainfall_lag_2": 7.16,
+    "rainfall_lag_3": 219.87,
+    "rainfall_3mo_sum": 231.72
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 2,
+    "rainfall_mm": 19.54,
+    "rainfall_lag_1": 32.76,
+    "rainfall_lag_2": 4.69,
+    "rainfall_lag_3": 7.16,
+    "rainfall_3mo_sum": 44.61
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 3,
+    "rainfall_mm": 1.59,
+    "rainfall_lag_1": 19.54,
+    "rainfall_lag_2": 32.76,
+    "rainfall_lag_3": 4.69,
+    "rainfall_3mo_sum": 56.989999999999995
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 4,
+    "rainfall_mm": 33.06,
+    "rainfall_lag_1": 1.59,
+    "rainfall_lag_2": 19.54,
+    "rainfall_lag_3": 32.76,
+    "rainfall_3mo_sum": 53.89
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 5,
+    "rainfall_mm": 184.99,
+    "rainfall_lag_1": 33.06,
+    "rainfall_lag_2": 1.59,
+    "rainfall_lag_3": 19.54,
+    "rainfall_3mo_sum": 54.190000000000005
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 6,
+    "rainfall_mm": 149.03,
+    "rainfall_lag_1": 184.99,
+    "rainfall_lag_2": 33.06,
+    "rainfall_lag_3": 1.59,
+    "rainfall_3mo_sum": 219.64000000000001
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 7,
+    "rainfall_mm": 191.63,
+    "rainfall_lag_1": 149.03,
+    "rainfall_lag_2": 184.99,
+    "rainfall_lag_3": 33.06,
+    "rainfall_3mo_sum": 367.08
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 8,
+    "rainfall_mm": 73.04,
+    "rainfall_lag_1": 191.63,
+    "rainfall_lag_2": 149.03,
+    "rainfall_lag_3": 184.99,
+    "rainfall_3mo_sum": 525.65
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 9,
+    "rainfall_mm": 109.77,
+    "rainfall_lag_1": 73.04,
+    "rainfall_lag_2": 191.63,
+    "rainfall_lag_3": 149.03,
+    "rainfall_3mo_sum": 413.70000000000005
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 10,
+    "rainfall_mm": 145.71,
+    "rainfall_lag_1": 109.77,
+    "rainfall_lag_2": 73.04,
+    "rainfall_lag_3": 191.63,
+    "rainfall_3mo_sum": 374.44
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 11,
+    "rainfall_mm": 126.85,
+    "rainfall_lag_1": 145.71,
+    "rainfall_lag_2": 109.77,
+    "rainfall_lag_3": 73.04,
+    "rainfall_3mo_sum": 328.52000000000004
+  },
+  {
+    "district": "Haveri",
+    "year": 2021,
+    "month": 12,
+    "rainfall_mm": 12.03,
+    "rainfall_lag_1": 126.85,
+    "rainfall_lag_2": 145.71,
+    "rainfall_lag_3": 109.77,
+    "rainfall_3mo_sum": 382.33
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 1,
+    "rainfall_mm": 0.13,
+    "rainfall_lag_1": 12.03,
+    "rainfall_lag_2": 126.85,
+    "rainfall_lag_3": 145.71,
+    "rainfall_3mo_sum": 284.59000000000003
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 0.13,
+    "rainfall_lag_2": 12.03,
+    "rainfall_lag_3": 126.85,
+    "rainfall_3mo_sum": 139.01
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 3,
+    "rainfall_mm": 3.56,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 0.13,
+    "rainfall_lag_3": 12.03,
+    "rainfall_3mo_sum": 12.16
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 4,
+    "rainfall_mm": 50.75,
+    "rainfall_lag_1": 3.56,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 0.13,
+    "rainfall_3mo_sum": 3.69
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 5,
+    "rainfall_mm": 160.89,
+    "rainfall_lag_1": 50.75,
+    "rainfall_lag_2": 3.56,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 54.31
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 6,
+    "rainfall_mm": 87.3,
+    "rainfall_lag_1": 160.89,
+    "rainfall_lag_2": 50.75,
+    "rainfall_lag_3": 3.56,
+    "rainfall_3mo_sum": 215.2
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 7,
+    "rainfall_mm": 188.94,
+    "rainfall_lag_1": 87.3,
+    "rainfall_lag_2": 160.89,
+    "rainfall_lag_3": 50.75,
+    "rainfall_3mo_sum": 298.94
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 8,
+    "rainfall_mm": 169.08,
+    "rainfall_lag_1": 188.94,
+    "rainfall_lag_2": 87.3,
+    "rainfall_lag_3": 160.89,
+    "rainfall_3mo_sum": 437.13
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 9,
+    "rainfall_mm": 205.48,
+    "rainfall_lag_1": 169.08,
+    "rainfall_lag_2": 188.94,
+    "rainfall_lag_3": 87.3,
+    "rainfall_3mo_sum": 445.32
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 10,
+    "rainfall_mm": 101.02,
+    "rainfall_lag_1": 205.48,
+    "rainfall_lag_2": 169.08,
+    "rainfall_lag_3": 188.94,
+    "rainfall_3mo_sum": 563.5
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 11,
+    "rainfall_mm": 7.96,
+    "rainfall_lag_1": 101.02,
+    "rainfall_lag_2": 205.48,
+    "rainfall_lag_3": 169.08,
+    "rainfall_3mo_sum": 475.58000000000004
+  },
+  {
+    "district": "Haveri",
+    "year": 2022,
+    "month": 12,
+    "rainfall_mm": 18.99,
+    "rainfall_lag_1": 7.96,
+    "rainfall_lag_2": 101.02,
+    "rainfall_lag_3": 205.48,
+    "rainfall_3mo_sum": 314.46
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 1,
+    "rainfall_mm": 0.01,
+    "rainfall_lag_1": 18.99,
+    "rainfall_lag_2": 7.96,
+    "rainfall_lag_3": 101.02,
+    "rainfall_3mo_sum": 127.97
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 0.01,
+    "rainfall_lag_2": 18.99,
+    "rainfall_lag_3": 7.96,
+    "rainfall_3mo_sum": 26.96
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 3,
+    "rainfall_mm": 0.4,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 0.01,
+    "rainfall_lag_3": 18.99,
+    "rainfall_3mo_sum": 19
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 4,
+    "rainfall_mm": 12.01,
+    "rainfall_lag_1": 0.4,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 0.01,
+    "rainfall_3mo_sum": 0.41000000000000003
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 5,
+    "rainfall_mm": 47.01,
+    "rainfall_lag_1": 12.01,
+    "rainfall_lag_2": 0.4,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 12.41
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 6,
+    "rainfall_mm": 40.32,
+    "rainfall_lag_1": 47.01,
+    "rainfall_lag_2": 12.01,
+    "rainfall_lag_3": 0.4,
+    "rainfall_3mo_sum": 59.419999999999995
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 7,
+    "rainfall_mm": 212.43,
+    "rainfall_lag_1": 40.32,
+    "rainfall_lag_2": 47.01,
+    "rainfall_lag_3": 12.01,
+    "rainfall_3mo_sum": 99.34
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 8,
+    "rainfall_mm": 44.47,
+    "rainfall_lag_1": 212.43,
+    "rainfall_lag_2": 40.32,
+    "rainfall_lag_3": 47.01,
+    "rainfall_3mo_sum": 299.76
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 9,
+    "rainfall_mm": 131.31,
+    "rainfall_lag_1": 44.47,
+    "rainfall_lag_2": 212.43,
+    "rainfall_lag_3": 40.32,
+    "rainfall_3mo_sum": 297.21999999999997
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 10,
+    "rainfall_mm": 5.75,
+    "rainfall_lag_1": 131.31,
+    "rainfall_lag_2": 44.47,
+    "rainfall_lag_3": 212.43,
+    "rainfall_3mo_sum": 388.21000000000004
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 11,
+    "rainfall_mm": 61.58,
+    "rainfall_lag_1": 5.75,
+    "rainfall_lag_2": 131.31,
+    "rainfall_lag_3": 44.47,
+    "rainfall_3mo_sum": 181.53
+  },
+  {
+    "district": "Haveri",
+    "year": 2023,
+    "month": 12,
+    "rainfall_mm": 1.78,
+    "rainfall_lag_1": 61.58,
+    "rainfall_lag_2": 5.75,
+    "rainfall_lag_3": 131.31,
+    "rainfall_3mo_sum": 198.64
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 1,
+    "rainfall_mm": 19.34,
+    "rainfall_lag_1": 1.78,
+    "rainfall_lag_2": 61.58,
+    "rainfall_lag_3": 5.75,
+    "rainfall_3mo_sum": 69.11
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 2,
+    "rainfall_mm": 0,
+    "rainfall_lag_1": 19.34,
+    "rainfall_lag_2": 1.78,
+    "rainfall_lag_3": 61.58,
+    "rainfall_3mo_sum": 82.7
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 3,
+    "rainfall_mm": 0.78,
+    "rainfall_lag_1": null,
+    "rainfall_lag_2": 19.34,
+    "rainfall_lag_3": 1.78,
+    "rainfall_3mo_sum": 21.12
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 4,
+    "rainfall_mm": 47.19,
+    "rainfall_lag_1": 0.78,
+    "rainfall_lag_2": null,
+    "rainfall_lag_3": 19.34,
+    "rainfall_3mo_sum": 20.12
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 5,
+    "rainfall_mm": 97.62,
+    "rainfall_lag_1": 47.19,
+    "rainfall_lag_2": 0.78,
+    "rainfall_lag_3": null,
+    "rainfall_3mo_sum": 47.97
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 6,
+    "rainfall_mm": 155.91,
+    "rainfall_lag_1": 97.62,
+    "rainfall_lag_2": 47.19,
+    "rainfall_lag_3": 0.78,
+    "rainfall_3mo_sum": 145.59
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 7,
+    "rainfall_mm": 192.9,
+    "rainfall_lag_1": 155.91,
+    "rainfall_lag_2": 97.62,
+    "rainfall_lag_3": 47.19,
+    "rainfall_3mo_sum": 300.72
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 8,
+    "rainfall_mm": 172.79,
+    "rainfall_lag_1": 192.9,
+    "rainfall_lag_2": 155.91,
+    "rainfall_lag_3": 97.62,
+    "rainfall_3mo_sum": 446.43
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 9,
+    "rainfall_mm": 124.86,
+    "rainfall_lag_1": 172.79,
+    "rainfall_lag_2": 192.9,
+    "rainfall_lag_3": 155.91,
+    "rainfall_3mo_sum": 521.6
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 10,
+    "rainfall_mm": 205.31,
+    "rainfall_lag_1": 124.86,
+    "rainfall_lag_2": 172.79,
+    "rainfall_lag_3": 192.9,
+    "rainfall_3mo_sum": 490.54999999999995
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 11,
+    "rainfall_mm": 6.54,
+    "rainfall_lag_1": 205.31,
+    "rainfall_lag_2": 124.86,
+    "rainfall_lag_3": 172.79,
+    "rainfall_3mo_sum": 502.96000000000004
+  },
+  {
+    "district": "Haveri",
+    "year": 2024,
+    "month": 12,
+    "rainfall_mm": 22.14,
+    "rainfall_lag_1": 6.54,
+    "rainfall_lag_2": 205.31,
+    "rainfall_lag_3": 124.86,
+    "rainfall_3mo_sum": 336.71
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "month": 1,
+    "rainfall_mm": 0.05,
+    "rainfall_lag_1": 22.14,
+    "rainfall_lag_2": 6.54,
+    "rainfall_lag_3": 205.31,
+    "rainfall_3mo_sum": 233.99
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "month": 2,
+    "rainfall_mm": 0.39,
+    "rainfall_lag_1": 0.05,
+    "rainfall_lag_2": 22.14,
+    "rainfall_lag_3": 6.54,
+    "rainfall_3mo_sum": 28.73
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "month": 3,
+    "rainfall_mm": 6.42,
+    "rainfall_lag_1": 0.39,
+    "rainfall_lag_2": 0.05,
+    "rainfall_lag_3": 22.14,
+    "rainfall_3mo_sum": 22.580000000000002
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "month": 4,
+    "rainfall_mm": 68.93,
+    "rainfall_lag_1": 6.42,
+    "rainfall_lag_2": 0.39,
+    "rainfall_lag_3": 0.05,
+    "rainfall_3mo_sum": 6.859999999999999
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "month": 5,
+    "rainfall_mm": 278.7,
+    "rainfall_lag_1": 68.93,
+    "rainfall_lag_2": 6.42,
+    "rainfall_lag_3": 0.39,
+    "rainfall_3mo_sum": 75.74000000000001
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "month": 7,
+    "rainfall_mm": 139.4,
+    "rainfall_lag_1": 278.7,
+    "rainfall_lag_2": 68.93,
+    "rainfall_lag_3": 6.42,
+    "rainfall_3mo_sum": 354.05
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "month": 8,
+    "rainfall_mm": 223.57,
+    "rainfall_lag_1": 139.4,
+    "rainfall_lag_2": 278.7,
+    "rainfall_lag_3": 68.93,
+    "rainfall_3mo_sum": 487.03000000000003
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "month": 9,
+    "rainfall_mm": 169.97,
+    "rainfall_lag_1": 223.57,
+    "rainfall_lag_2": 139.4,
+    "rainfall_lag_3": 278.7,
+    "rainfall_3mo_sum": 641.6700000000001
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "month": 10,
+    "rainfall_mm": 190.24,
+    "rainfall_lag_1": 169.97,
+    "rainfall_lag_2": 223.57,
+    "rainfall_lag_3": 139.4,
+    "rainfall_3mo_sum": 532.9399999999999
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "month": 11,
+    "rainfall_mm": 177.93,
+    "rainfall_lag_1": 190.24,
+    "rainfall_lag_2": 169.97,
+    "rainfall_lag_3": 223.57,
+    "rainfall_3mo_sum": 583.78
+  },
+  {
+    "district": "Haveri",
+    "year": 2025,
+    "month": 12,
+    "rainfall_mm": 73.77,
+    "rainfall_lag_1": 177.93,
+    "rainfall_lag_2": 190.24,
+    "rainfall_lag_3": 169.97,
+    "rainfall_3mo_sum": 538.14
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 1,
+    "rainfall_mm": 49.25,
+    "rainfall_lag_1": 73.77,
+    "rainfall_lag_2": 177.93,
+    "rainfall_lag_3": 190.24,
+    "rainfall_3mo_sum": 441.94
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 2,
+    "rainfall_mm": 47.24,
+    "rainfall_lag_1": 49.25,
+    "rainfall_lag_2": 73.77,
+    "rainfall_lag_3": 177.93,
+    "rainfall_3mo_sum": 300.95
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 3,
+    "rainfall_mm": 45.23,
+    "rainfall_lag_1": 47.24,
+    "rainfall_lag_2": 49.25,
+    "rainfall_lag_3": 73.77,
+    "rainfall_3mo_sum": 170.26
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 4,
+    "rainfall_mm": 46.48,
+    "rainfall_lag_1": 45.23,
+    "rainfall_lag_2": 47.24,
+    "rainfall_lag_3": 49.25,
+    "rainfall_3mo_sum": 141.72
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 5,
+    "rainfall_mm": 86.2,
+    "rainfall_lag_1": 46.48,
+    "rainfall_lag_2": 45.23,
+    "rainfall_lag_3": 47.24,
+    "rainfall_3mo_sum": 138.95
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 6,
+    "rainfall_mm": 163.95,
+    "rainfall_lag_1": 86.2,
+    "rainfall_lag_2": 46.48,
+    "rainfall_lag_3": 45.23,
+    "rainfall_3mo_sum": 177.91
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 7,
+    "rainfall_mm": 158.23,
+    "rainfall_lag_1": 163.95,
+    "rainfall_lag_2": 86.2,
+    "rainfall_lag_3": 46.48,
+    "rainfall_3mo_sum": 296.63
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 8,
+    "rainfall_mm": 230.21,
+    "rainfall_lag_1": 158.23,
+    "rainfall_lag_2": 163.95,
+    "rainfall_lag_3": 86.2,
+    "rainfall_3mo_sum": 408.37999999999994
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 9,
+    "rainfall_mm": 177.81,
+    "rainfall_lag_1": 230.21,
+    "rainfall_lag_2": 158.23,
+    "rainfall_lag_3": 163.95,
+    "rainfall_3mo_sum": 552.39
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 10,
+    "rainfall_mm": 197.74,
+    "rainfall_lag_1": 177.81,
+    "rainfall_lag_2": 230.21,
+    "rainfall_lag_3": 158.23,
+    "rainfall_3mo_sum": 566.25
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 11,
+    "rainfall_mm": 185.76,
+    "rainfall_lag_1": 197.74,
+    "rainfall_lag_2": 177.81,
+    "rainfall_lag_3": 230.21,
+    "rainfall_3mo_sum": 605.76
+  },
+  {
+    "district": "Haveri",
+    "year": 2026,
+    "month": 12,
+    "rainfall_mm": 81.28,
+    "rainfall_lag_1": 185.76,
+    "rainfall_lag_2": 197.74,
+    "rainfall_lag_3": 177.81,
+    "rainfall_3mo_sum": 561.31
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 1,
+    "rainfall_mm": 56.9,
+    "rainfall_lag_1": 81.28,
+    "rainfall_lag_2": 185.76,
+    "rainfall_lag_3": 197.74,
+    "rainfall_3mo_sum": 464.78
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 2,
+    "rainfall_mm": 54.81,
+    "rainfall_lag_1": 56.9,
+    "rainfall_lag_2": 81.28,
+    "rainfall_lag_3": 185.76,
+    "rainfall_3mo_sum": 323.94
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 3,
+    "rainfall_mm": 52.81,
+    "rainfall_lag_1": 54.81,
+    "rainfall_lag_2": 56.9,
+    "rainfall_lag_3": 81.28,
+    "rainfall_3mo_sum": 192.99
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 4,
+    "rainfall_mm": 54.08,
+    "rainfall_lag_1": 52.81,
+    "rainfall_lag_2": 54.81,
+    "rainfall_lag_3": 56.9,
+    "rainfall_3mo_sum": 164.52
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 5,
+    "rainfall_mm": 93.88,
+    "rainfall_lag_1": 54.08,
+    "rainfall_lag_2": 52.81,
+    "rainfall_lag_3": 54.81,
+    "rainfall_3mo_sum": 161.7
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 6,
+    "rainfall_mm": 172.08,
+    "rainfall_lag_1": 93.88,
+    "rainfall_lag_2": 54.08,
+    "rainfall_lag_3": 52.81,
+    "rainfall_3mo_sum": 200.76999999999998
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 7,
+    "rainfall_mm": 165.9,
+    "rainfall_lag_1": 172.08,
+    "rainfall_lag_2": 93.88,
+    "rainfall_lag_3": 54.08,
+    "rainfall_3mo_sum": 320.04
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 8,
+    "rainfall_mm": 237.92,
+    "rainfall_lag_1": 165.9,
+    "rainfall_lag_2": 172.08,
+    "rainfall_lag_3": 93.88,
+    "rainfall_3mo_sum": 431.86
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 9,
+    "rainfall_mm": 185.52,
+    "rainfall_lag_1": 237.92,
+    "rainfall_lag_2": 165.9,
+    "rainfall_lag_3": 172.08,
+    "rainfall_3mo_sum": 575.9
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 10,
+    "rainfall_mm": 205.45,
+    "rainfall_lag_1": 185.52,
+    "rainfall_lag_2": 237.92,
+    "rainfall_lag_3": 165.9,
+    "rainfall_3mo_sum": 589.34
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 11,
+    "rainfall_mm": 193.47,
+    "rainfall_lag_1": 205.45,
+    "rainfall_lag_2": 185.52,
+    "rainfall_lag_3": 237.92,
+    "rainfall_3mo_sum": 628.89
+  },
+  {
+    "district": "Haveri",
+    "year": 2027,
+    "month": 12,
+    "rainfall_mm": 88.99,
+    "rainfall_lag_1": 193.47,
+    "rainfall_lag_2": 205.45,
+    "rainfall_lag_3": 185.52,
+    "rainfall_3mo_sum": 584.4399999999999
+  }
+]
