@@ -7,6 +7,7 @@ import numpy as np
 import sys
 import os
 import json
+import joblib
 from sklearn.preprocessing import LabelEncoder
 
 def load_model(model_path):
@@ -31,7 +32,8 @@ def predict_single(features):
         model_path = os.path.join(script_dir, 'onion.pkl')
         
         # Load the model
-        model = load_model(model_path)
+        print(model_path)
+        model = joblib.load(model_path)
         if model is None:
             return {'error': 'Could not load model'}
         
@@ -69,6 +71,7 @@ def predict_single(features):
         # Note: This assumes your model can handle categorical data directly
         # If your model requires encoded categorical variables, you'll need to 
         # load the same encoders used during training
+
         
         # Make prediction
         prediction = model.predict(df)

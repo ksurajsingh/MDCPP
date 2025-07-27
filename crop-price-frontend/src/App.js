@@ -504,7 +504,7 @@ const PredictionPage = () => {
 
   const API_BASE_URL = "http://localhost:5000/api";
 
-  const handlePredict = async () => {
+  const handlePredict = async (crop) => {
     if (!filters.commodity || !filters.district) {
       alert("Please select both commodity and district");
       return;
@@ -512,7 +512,7 @@ const PredictionPage = () => {
 
     setLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/predict/soyabean`, {
+      const response = await fetch(`${API_BASE_URL}/predict/${crop.toLowerCase()}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -531,7 +531,7 @@ const PredictionPage = () => {
   };
 
   return (
-    <div style={{ padding: "2rem", textAlign: "center" }}>
+    <div style={{ padding: "2rem", marginTop:"2rem" }}>
       <div style={{ marginBottom: "2rem" }}>
         <h2
           style={{
@@ -578,6 +578,7 @@ const PredictionPage = () => {
         </h3>
 
         <div style={{ display: "grid", gap: "1rem", marginBottom: "1.5rem" }}>
+          <label>Commodity</label>
           <select
             type="text"
             placeholder="Enter commodity (e.g., Onion, Rice, Wheat)"
@@ -598,6 +599,64 @@ const PredictionPage = () => {
            <option value="Cotton">COTTON</option>
           </select>
 
+          {filters.commodity === 'Onion' && (
+            <>
+              <div>
+                <label>Market: </label>
+                <select
+                 type="text"
+                 placeholder="Enter market (eg.)"
+                 value={filters.market}
+                 onChange={(e)=>
+                  setFilters({ ...filters,market:e.target.value})
+                 }
+                 style={{
+                  padding: "0.75rem",
+                  border: "1px solid #d1d5db",
+                  borderRadius: "0.375rem",
+                  fontSize: "1rem",
+                  outline: "none",
+                 }}
+                >
+                  <option value="Belgaum">Belgaum</option> 
+                  <option value="Dharwar">Dharwar</option> 
+                  <option value="Hubli (Amaragol)">Hubli (Amaragol)</option> 
+                  <option value="Gadag">Gadag</option> 
+                  <option value="Haveri">Haveri</option> 
+                  <option value="Ranebennur">Ranebennur</option> 
+                </select>
+              </div>
+              <div>
+                <label>Variety: </label>
+                <select
+                type="test"
+                placeholder="Enter market(eg. )"
+                value={filters.variety}
+                onchange={(e)=>
+                  setFilters({ ...filters,variety:e.target.value})
+                }
+                style={{
+                  padding: "0.75rem",
+                  border: "1px solid #d1d5db",
+                  borderRadius: "0.375rem",
+                  fontSize: "1rem",
+                  outline: "none",
+                }}
+                >
+                  <option value="Variety">Variety</option>
+                  <option value="Pusa-Red">Pusa-Red</option>
+                  <option value="White">White</option>
+                  <option value="Puna">Puna</option>
+                  <option value="Telagi">Telagi</option>
+                  <option value="Onion">Onion</option>
+                  <option value="Other">Other</option>
+                  <option value="Local">Local</option>
+                </select>
+              </div>
+            </>
+          )} 
+
+          <label>District</label>
           <select
             type="text"
             placeholder="Enter district name"
@@ -620,6 +679,7 @@ const PredictionPage = () => {
             <option value="Haveri">HAVERI</option>
           </select>
 
+          <label>Year</label>
           <select
             type="number"
             placeholder="Enter year (e.g., 2023)"
@@ -642,6 +702,7 @@ const PredictionPage = () => {
             <option value="2024">2024</option>  {/* Testing purposes only */}
           </select>
 
+          <label>Month</label>
           <select
             type="number"
             placeholder="Enter month (1–12)"
@@ -673,6 +734,7 @@ const PredictionPage = () => {
             <option value='12'>12</option>
           </select>
 
+          <label>Range</label>
           <select
             value={filters.days}
             onChange={(e) =>
@@ -694,7 +756,7 @@ const PredictionPage = () => {
         </div>
 
         <button
-          onClick={handlePredict}
+          onClick={()=>handlePredict(filters.commodity)}
           disabled={loading}
           style={{
             backgroundColor: loading ? "#9ca3af" : "#3b82f6",
