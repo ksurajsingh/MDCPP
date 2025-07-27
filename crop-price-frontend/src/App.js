@@ -1685,7 +1685,7 @@ const TeamPage = () => {
         >
           Interested in contributing to the future of agricultural technology?
         </p>
-        <button className="btn-primary">Get In Touch</button>
+        <a href='https://github.com/ksurajsingh/mdcpp'><button className="btn-primary">Get In Touch</button></a>
       </div>
     </div>
   );

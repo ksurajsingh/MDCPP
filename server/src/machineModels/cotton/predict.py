@@ -29,7 +29,7 @@ def predict_single(features):
     try:
         # Get the directory of this script
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        model_path = os.path.join(script_dir, 'onion.pkl')
+        model_path = os.path.join(script_dir, 'cotton_model.pkl')
         
         # Load the model
         model = joblib.load(model_path)
@@ -46,6 +46,16 @@ def predict_single(features):
         # decoded=encoder.inverse_transform(encoded)
         # print(decoded)
         
+        # actual labelling
+        districts=['Belagavi', 'Bellary', 'Dharwad', 'District', 'Gadag', 'Haveri','Raichur']
+
+        markets=[ 'Annigeri', 'Bailahongal', 'Bellary', 'Byadagi', 'Devadurga', 'Dharwar', 'Gadag', 'Gokak', 'Haveri', 'Hirekerur', 'Hoovinahadagali', 'Hubli (Amaragol)', 'Kalagategi', 'Kottur', 'Kudchi', 'Kundagol', 'Laxmeshwar', 'Lingasugur', 'Manvi', 'Market Name', 'Nargunda', 'Raichur', 'Ramdurga', 'Ranebennur', 'Rona', 'Sankeshwar', 'Savanur', 'Shiggauv', 'Sindhanur', 'Sirguppa', 'Soundati' ]
+
+        varieties-[ 'Aka-1 (Unginned)', 'F-1054', 'GCH', 'H-4(A) 27mm FIne', 'Hampi (Ginned)', 'Jayadhar', 'LD-327', 'LH-1556', 'MCU 5', 'N-44', 'Other', 'R-51 (Ginned)', 'Suyodhar (Ginned)', 'Varalakshmi (Ginned)', 'Variety' ]
+
+        
+
+
         # Inconsiderate LabelEncoders
         districtEncodes={
                 'Belagaum':'0',
@@ -162,3 +172,33 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# import pickle
+# import pandas as pd 
+# import numpy as np 
+# import sys 
+# import os 
+# import json 
+# from sklearn.preprocessing import LabelEncoder
+#
+#
+# def load_model(model_path):
+#     try:
+#         with open(model_path,"rb")as file:
+#             model=pickle.load(file)
+#         return model 
+#     except FileNotFoundError:
+#         return None 
+#     except Exception as e:
+#         return None
+#
+# def predictCotton():
+#     model_path=os.path.join(os.path.dirname(__file__),'cotton_model.pkl')
+#     prediction=load_model(model_path);
+#     return prediction
+#
+#
+# def main():
+#    result=predictCotton()
+#    return result
+
