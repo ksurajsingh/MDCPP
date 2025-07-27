@@ -32,7 +32,7 @@ const OnionAnalysis = () => {
     groupBy: "month",
   });
 
-  const API_BASE_URL = "http://192.168.29.55:5000/api";
+  const API_BASE_URL = "http://localhost:5000/api";
 
   useEffect(() => {
     fetchOnionDistricts();
@@ -504,7 +504,7 @@ const PredictionPage = () => {
     market:"Belgaum"
   });
 
-  const API_BASE_URL = "http://192.168.29.55:5000/api";
+  const API_BASE_URL = "http://localhost:5000/api";
 
   const handlePredict = async (crop) => {
     if (!filters.commodity || !filters.district) {
