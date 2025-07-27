@@ -32,7 +32,7 @@ const OnionAnalysis = () => {
     groupBy: "month",
   });
 
-  const API_BASE_URL = "http://localhost:5000/api";
+  const API_BASE_URL = "http://192.168.29.55:5000/api";
 
   useEffect(() => {
     fetchOnionDistricts();
@@ -500,10 +500,11 @@ const PredictionPage = () => {
     year: 2028,
     month: 5,
     days: 30,
-    // variety:"",
+    variety:"Pusa-Red",
+    market:"Belgaum"
   });
 
-  const API_BASE_URL = "http://localhost:5000/api";
+  const API_BASE_URL = "http://192.168.29.55:5000/api";
 
   const handlePredict = async (crop) => {
     if (!filters.commodity || !filters.district) {
@@ -663,8 +664,10 @@ const PredictionPage = () => {
             type="text"
             placeholder="Enter district name"
             value={filters.district}
-            onChange={(e) =>
+            onChange={(e) =>{
+              console.log("Variety selected:", e.target.value);
               setFilters({ ...filters, district: e.target.value })
+            }
             }
             style={{
               padding: "0.75rem",

@@ -87,7 +87,7 @@ def predict_single(features):
             'Area_Hectare': area_hectare,
             'Yield_TonnePerHectare': yield_tonne_per_hectare
         }
-        
+       
         df = pd.DataFrame([input_data])
         
         # Handle categorical variables if needed
