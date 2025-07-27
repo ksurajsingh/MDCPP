@@ -500,6 +500,7 @@ const PredictionPage = () => {
     year: 2028,
     month: 5,
     days: 30,
+    // variety:"",
   });
 
   const API_BASE_URL = "http://localhost:5000/api";
@@ -511,6 +512,7 @@ const PredictionPage = () => {
     }
 
     setLoading(true);
+    console.log(filters)
     try {
       const response = await fetch(`${API_BASE_URL}/predict/${crop.toLowerCase()}`, {
         method: "POST",
@@ -521,6 +523,7 @@ const PredictionPage = () => {
       });
 
       const data = await response.json();
+      console.log(data)
       setPredictionData(data);
     } catch (error) {
       console.error("Error making prediction:", error);
@@ -629,10 +632,10 @@ const PredictionPage = () => {
               <div>
                 <label>Variety: </label>
                 <select
-                type="test"
+                type="text"
                 placeholder="Enter market(eg. )"
                 value={filters.variety}
-                onchange={(e)=>
+                onChange={(e)=>
                   setFilters({ ...filters,variety:e.target.value})
                 }
                 style={{
@@ -643,7 +646,6 @@ const PredictionPage = () => {
                   outline: "none",
                 }}
                 >
-                  <option value="Variety">Variety</option>
                   <option value="Pusa-Red">Pusa-Red</option>
                   <option value="White">White</option>
                   <option value="Puna">Puna</option>
