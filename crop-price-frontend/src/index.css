@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+label{
+  margin:0;
+  padding:0;
+  margin-top:32px;
+}
+
 /* Custom styles for better appearance if Tailwind isn't working */
 .fallback-styles {
   font-family:

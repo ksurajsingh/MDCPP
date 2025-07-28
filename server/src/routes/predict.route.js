@@ -1,4 +1,5 @@
 import { predictSingle } from "../controllers/prediction.controller.js";
+import { predictCottonPrice } from "../controllers/cotton.controller.js";
 import { Router } from "express";
 
 const router = Router();
@@ -17,6 +18,7 @@ import {
  * @body    { district, year, month, variety, market }
  */
 router.post("/onion", predictOnionPrice);
+router.post("/cotton", predictCottonPrice);
 
 /**
  * @route   GET /api/onion/options
