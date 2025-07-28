@@ -632,7 +632,6 @@ const PredictionPage = () => {
                   outline: "none",
                  }}
                 >
-                  <option value="Belgaum">Belgaum</option> 
                   <option value="Dharwar">Dharwar</option> 
                   <option value="Hubli (Amaragol)">Hubli (Amaragol)</option> 
                   <option value="Gadag">Gadag</option> 

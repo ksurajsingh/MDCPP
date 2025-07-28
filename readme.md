@@ -1,5 +1,7 @@
 # TODO
 
+BREAKING CHANGES PUSHED - to fix :
+- [ ] multi-model prediction for onion
 - [ ] setup default values for COTTON in prediction page.
 
 ## SEE [ To understand for write up ]
