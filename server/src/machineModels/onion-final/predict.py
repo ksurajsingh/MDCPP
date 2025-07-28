@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 # mlModels/onion_predict.py - Onion price prediction script for venv integration
 
-import pickle
+import joblib
 import pandas as pd
 import numpy as np
 import sys
 import os
 import json
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder, StandardScaler
 
-def load_model(model_path):
-    """Load the trained model from pickle file"""
+def load_model_and_encoders(model_path):
+    """Load the trained model and preprocessing objects from joblib file"""
     try:
-        with open(model_path, 'rb') as file:
-            model = pickle.load(file)
-        return model
+        # Load the complete model package (model + encoders + scaler)
+        model_package = joblib.load(model_path)
+        return model_package
     except FileNotFoundError:
         return None
     except Exception as e:
@@ -30,10 +30,15 @@ def predict_single(features):
         script_dir = os.path.dirname(os.path.abspath(__file__))
         model_path = os.path.join(script_dir, 'onion.pkl')
         
-        # Load the model
-        model = load_model(model_path)
-        if model is None:
-            return {'error': 'Could not load model'}
+        # Load the model package
+        model_package = load_model_and_encoders(model_path)
+        if model_package is None:
+            return {'error': 'Could not load model package'}
+        
+        model = model_package['model']
+        label_encoders = model_package['label_encoders']
+        scaler = model_package.get('scaler', None)
+        model_type = model_package.get('model_type', 'unknown')
         
         # Parse features
         district = features[0]
@@ -48,7 +53,7 @@ def predict_single(features):
         area_hectare = float(features[9])
         yield_tonne_per_hectare = float(features[10])
         
-        # Create input DataFrame
+        # Create input DataFrame with original column names
         input_data = {
             'District': district,
             'Market Name': market,
@@ -65,22 +70,51 @@ def predict_single(features):
         
         df = pd.DataFrame([input_data])
         
-        # Handle categorical variables if needed
-        # Note: This assumes your model can handle categorical data directly
-        # If your model requires encoded categorical variables, you'll need to 
-        # load the same encoders used during training
+        # Encode categorical variables using the same encoders from training
+        for col in ["District", "Market Name", "Variety"]:
+            if col in label_encoders:
+                le = label_encoders[col]
+                try:
+                    # Transform the categorical value
+                    df[col] = le.transform([df[col].iloc[0]])
+                except ValueError as e:
+                    # Handle unseen categories
+                    return {'error': f'Unknown {col.lower()}: {df[col].iloc[0]}. Available options: {list(le.classes_)}'}
         
-        # Make prediction
-        prediction = model.predict(df)
+        # Apply scaling if the model requires it (e.g., MLP Regressor)
+        if scaler is not None and model_type == 'MLP Regressor':
+            df_scaled = scaler.transform(df)
+            prediction = model.predict(df_scaled)
+        else:
+            prediction = model.predict(df)
+        
         predicted_price = float(prediction[0])
         
-        # Calculate confidence (this is a placeholder - adjust based on your model)
-        # You might want to use prediction intervals or model uncertainty here
-        confidence = 85.0  # Placeholder confidence score
+        # Calculate confidence based on model type
+        confidence = 85.0  # Default confidence
+        try:
+            # If it's a Random Forest or similar ensemble method
+            if hasattr(model, 'estimators_'):
+                # Get prediction from all trees for uncertainty estimation
+                predictions = []
+                for estimator in model.estimators_[:min(50, len(model.estimators_))]:
+                    if scaler is not None and model_type == 'MLP Regressor':
+                        pred = estimator.predict(df_scaled)
+                    else:
+                        pred = estimator.predict(df)
+                    predictions.append(pred[0])
+                
+                std_dev = np.std(predictions)
+                # Convert std deviation to confidence (inverse relationship)
+                confidence = max(60.0, min(95.0, 90.0 - (std_dev * 2)))
+                
+        except Exception:
+            confidence = 85.0
         
         return {
             'prediction': predicted_price,
-            'confidence': confidence,
+            'confidence': round(confidence, 1),
+            'model_type': model_type,
             'input_features': {
                 'district': district,
                 'market': market,
