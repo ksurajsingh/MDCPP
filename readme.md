@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] setup default values for COTTON in prediction page.
 
 ## SEE [ To understand for write up ]
 
@@ -12,7 +13,7 @@
 
 - [ ] ⚠️ Multilingual speech chat [PARTIAL]  
 - [ ] ⚠️ Visualisation [PARTIAL]  
-- [ ] Historical Data view  
+- [ ] Historical Data view [PARTIAL]  
 - [ ] Rainfall crop correlation analysis  
 - [ ] Predictive pricemodelling   
 - [ ] Update history trends as a Dashboard  
