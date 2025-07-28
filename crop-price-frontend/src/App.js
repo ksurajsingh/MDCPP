@@ -504,6 +504,16 @@ const PredictionPage = () => {
     market:"Belgaum"
   });
 
+  useEffect(()=>{
+    if(filters.commodity==='Cotton'){
+      setFilters(prev=>({
+        ...prev,
+        district:"Belagavi",
+        mareket:"GCH"
+      }));
+    }
+  },[filters.commodity])
+
   const API_BASE_URL = "http://localhost:5000/api";
 
   const handlePredict = async (crop) => {
@@ -659,30 +669,155 @@ const PredictionPage = () => {
             </>
           )} 
 
-          <label>District</label>
-          <select
-            type="text"
-            placeholder="Enter district name"
-            value={filters.district}
-            onChange={(e) =>{
-              console.log("Variety selected:", e.target.value);
-              setFilters({ ...filters, district: e.target.value })
-            }
-            }
-            style={{
-              padding: "0.75rem",
-              border: "1px solid #d1d5db",
-              borderRadius: "0.375rem",
-              fontSize: "1rem",
-              outline: "none",
-            }}
-          >
-            <option value="Belgaum">BELGAUM</option>
-            <option value="Bidar">BIDAR</option>
-            <option value="Dharwad">DHARWAD</option>
-            <option value="Gadag">GADAG</option>
-            <option value="Haveri">HAVERI</option>
-          </select>
+ 
+          {filters.commodity === 'Cotton' && (
+            <>
+              <div>
+                <label>Market: </label>
+                <select
+                   type="text"
+                   placeholder="Enter market (eg.)"
+                   value={filters.market}
+                   onChange={(e)=>
+                    setFilters({ ...filters,market:e.target.value})
+                   }
+                   style={{
+                    padding: "0.75rem",
+                    border: "1px solid #d1d5db",
+                    borderRadius: "0.375rem",
+                    fontSize: "1rem",
+                    outline: "none",
+                   }}
+                >
+                  <option value="Annigeri">Annigeri</option>
+                  <option value="Bailahongal">Bailahongal</option>
+                  <option value="Bellary">Bellary</option>
+                  <option value="Byadagi">Byadagi</option>
+                  <option value="Devadurga">Devadurga</option>
+                  <option value="Dharwar">Dharwar</option>
+                  <option value="Gadag">Gadag</option>
+                  <option value="Gokak">Gokak</option>
+                  <option value="Haveri">Haveri</option>
+                  <option value="Hirekerur">Hirekerur</option>
+                  <option value="Hoovinahadagali">Hoovinahadagali</option>
+                  <option value="Hubli (Amaragol)">Hubli (Amaragol)</option>
+                  <option value="Kalagategi">Kalagategi</option>
+                  <option value="Kottur">Kottur</option>
+                  <option value="Kudchi">Kudchi</option>
+                  <option value="Kundagol">Kundagol</option>
+                  <option value="Laxmeshwar">Laxmeshwar</option>
+                  <option value="Lingasugur">Lingasugur</option>
+                  <option value="Manvi">Manvi</option>
+                  <option value="Market Name">Market Name</option>
+                  <option value="Nargunda">Nargunda</option>
+                  <option value="Raichur">Raichur</option>
+                  <option value="Ramdurga">Ramdurga</option>
+                  <option value="Ranebennur">Ranebennur</option>
+                  <option value="Rona">Rona</option>
+                  <option value="Sankeshwar">Sankeshwar</option>
+                  <option value="Savanur">Savanur</option>
+                  <option value="Shiggauv">Shiggauv</option>
+                  <option value="Sindhanur">Sindhanur</option>
+                  <option value="Sirguppa">Sirguppa</option>
+                  <option value="Soundati">Soundati</option>
+                </select>
+              </div>
+              <div>
+                <label>Variety: </label>
+                <select
+                  type="text"
+                  placeholder="Enter market(eg. )"
+                  value={filters.variety}
+                  onChange={(e)=>
+                    setFilters({ ...filters,variety:e.target.value})
+                  }
+                  style={{
+                    padding: "0.75rem",
+                    border: "1px solid #d1d5db",
+                    borderRadius: "0.375rem",
+                    fontSize: "1rem",
+                    outline: "none",
+                  }}
+                >
+                  <option value="Aka-1 (Unginned)">Aka-1 (Unginned)</option>
+                  <option value="F-1054">F-1054</option>
+                  <option value="GCH">GCH</option>
+                  <option value="H-4(A) 27mm FIne">H-4(A) 27mm FIne</option>
+                  <option value="Hampi (Ginned)">Hampi (Ginned)</option>
+                  <option value="Jayadhar">Jayadhar</option>
+                  <option value="LD-327">LD-327</option>
+                  <option value="LH-1556">LH-1556</option>
+                  <option value="MCU 5">MCU 5</option>
+                  <option value="N-44">N-44</option>
+                  <option value="Other">Other</option>
+                  <option value="R-51 (Ginned)">R-51 (Ginned)</option>
+                  <option value="Suyodhar (Ginned)">Suyodhar (Ginned)</option>
+                  <option value="Varalakshmi (Ginned)">Varalakshmi (Ginned)</option>
+                </select>
+              </div>
+            </>
+          )}
+ 
+
+          {(filters.commodity==='Onion' || filters.commodity=== 'Soyabean')  &&(
+            <>
+              <label>District</label>
+              <select
+                type="text"
+                placeholder="Enter district name"
+                value={filters.district}
+                onChange={(e) =>{
+                  console.log("Variety selected:", e.target.value);
+                  setFilters({ ...filters, district: e.target.value })
+                }
+                }
+                style={{
+                  padding: "0.75rem",
+                  border: "1px solid #d1d5db",
+                  borderRadius: "0.375rem",
+                  fontSize: "1rem",
+                  outline: "none",
+                }}
+              >
+                <option value="Belgaum">BELGAUM</option>
+                <option value="Bidar">BIDAR</option>
+                <option value="Dharwad">DHARWAD</option>
+                <option value="Gadag">GADAG</option>
+                <option value="Haveri">HAVERI</option>
+              </select>
+            </>
+          )}
+
+          {filters.commodity==='Cotton' && (
+            <>
+              <label>District</label>
+              <select
+                type="text"
+                placeholder="Enter district name"
+                value={filters.district}
+                onChange={(e) =>{
+                  console.log("Variety selected:", e.target.value);
+                  setFilters({ ...filters, district: e.target.value })
+                }
+                }
+                style={{
+                  padding: "0.75rem",
+                  border: "1px solid #d1d5db",
+                  borderRadius: "0.375rem",
+                  fontSize: "1rem",
+                  outline: "none",
+                }}
+              >
+                <option value="Belagavi">Belagavi</option>
+                <option value="Bellary">Bellary</option>
+                <option value="Dharwad">Dharwad</option>
+                <option value="District">District</option>
+                <option value="Gadag">Gadag</option>
+                <option value="Haveri">Haveri</option>
+                <option value="Raichur">Raichur</option>
+              </select>
+            </>
+          )}
 
           <label>Year</label>
           <select

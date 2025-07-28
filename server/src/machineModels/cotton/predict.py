@@ -46,45 +46,65 @@ def predict_single(features):
         # decoded=encoder.inverse_transform(encoded)
         # print(decoded)
         
-        # actual labelling
-        districts=['Belagavi', 'Bellary', 'Dharwad', 'District', 'Gadag', 'Haveri','Raichur']
-
-        markets=[ 'Annigeri', 'Bailahongal', 'Bellary', 'Byadagi', 'Devadurga', 'Dharwar', 'Gadag', 'Gokak', 'Haveri', 'Hirekerur', 'Hoovinahadagali', 'Hubli (Amaragol)', 'Kalagategi', 'Kottur', 'Kudchi', 'Kundagol', 'Laxmeshwar', 'Lingasugur', 'Manvi', 'Market Name', 'Nargunda', 'Raichur', 'Ramdurga', 'Ranebennur', 'Rona', 'Sankeshwar', 'Savanur', 'Shiggauv', 'Sindhanur', 'Sirguppa', 'Soundati' ]
-
-        varieties-[ 'Aka-1 (Unginned)', 'F-1054', 'GCH', 'H-4(A) 27mm FIne', 'Hampi (Ginned)', 'Jayadhar', 'LD-327', 'LH-1556', 'MCU 5', 'N-44', 'Other', 'R-51 (Ginned)', 'Suyodhar (Ginned)', 'Varalakshmi (Ginned)', 'Variety' ]
+        # actual labelling 
+        # not required once executed
+        # districts=['Belagavi', 'Bellary', 'Dharwad', 'District', 'Gadag', 'Haveri','Raichur']
+        # Dencoder=LabelEncoder()
+        # Dencoder.fit(districts)
+        # with open("district","wb") as f:
+        #     pickle.dump(Dencoder,f)
+        #
+        # markets=[ 'Annigeri', 'Bailahongal', 'Bellary', 'Byadagi', 'Devadurga', 'Dharwar', 'Gadag', 'Gokak', 'Haveri', 'Hirekerur', 'Hoovinahadagali', 'Hubli (Amaragol)', 'Kalagategi', 'Kottur', 'Kudchi', 'Kundagol', 'Laxmeshwar', 'Lingasugur', 'Manvi', 'Market Name', 'Nargunda', 'Raichur', 'Ramdurga', 'Ranebennur', 'Rona', 'Sankeshwar', 'Savanur', 'Shiggauv', 'Sindhanur', 'Sirguppa', 'Soundati' ]
+        # Mencoder=LabelEncoder()
+        # Mencoder.fit(markets)
+        # with open("markets-enc.pkl","wb") as f:
+        #     pickle.dump(Mencoder,f);
+        #
+        # varieties=[ 'Aka-1 (Unginned)', 'F-1054', 'GCH', 'H-4(A) 27mm FIne', 'Hampi (Ginned)', 'Jayadhar', 'LD-327', 'LH-1556', 'MCU 5', 'N-44', 'Other', 'R-51 (Ginned)', 'Suyodhar (Ginned)', 'Varalakshmi (Ginned)', 'Variety' ]
+        # Vencoder=LabelEncoder()
+        # Vencoder.fit(varieties)
+        # with open("variety-enc.pkl","wb") as f:
+        #     pickle.dump(Vencoder,f)
 
         
 
 
         # Inconsiderate LabelEncoders
-        districtEncodes={
-                'Belagaum':'0',
-                'Bidar':'1',
-                'Dharwad':'2',
-                'Gadag':'3',
-                'Haveri':'4'
-                }
-        marketEncodes={
-                 'Belgaum':'0',
-                 'Dharwar':'1',
-                 'Gadag':'2', 
-                 'Haveri':'3', 
-                 'Hubli (Amaragol)':'4', 
-                 'Ranebennur':'5' 
-                }
-        varietyEncodes={
-                'Pusa-Red':'0',
-                'White':'1',
-                'Puna':'2',
-                'Telagi':'3',
-                'Onion':'4',
-                'Other':'5',
-                'Local':'6'
-                }
+        # districtEncodes={
+        #         'Belagaum':'0',
+        #         'Bidar':'1',
+        #         'Dharwad':'2',
+        #         'Gadag':'3',
+        #         'Haveri':'4'
+        #         }
+        # marketEncodes={
+        #          'Belgaum':'0',
+        #          'Dharwar':'1',
+        #          'Gadag':'2', 
+        #          'Haveri':'3', 
+        #          'Hubli (Amaragol)':'4', 
+        #          'Ranebennur':'5' 
+        #         }
+        # varietyEncodes={
+        #         'Pusa-Red':'0',
+        #         'White':'1',
+        #         'Puna':'2',
+        #         'Telagi':'3',
+        #         'Onion':'4',
+        #         'Other':'5',
+        #         'Local':'6'
+        #         }
+
         # Parse features
-        district = districtEncodes[features[0]]
-        market = marketEncodes[features[1]]
-        variety = varietyEncodes[features[2]]
+        with open("district-enc.pkl","rb") as f:
+           Dencoder=pickle.load(f)
+        with open("markets-enc.pkl","rb") as f:
+            Mencoder=pickle.load(f)
+        with open("variety-enc.pkl","rb") as f:
+            Vencoder=pickle.load(f)
+        district = int(Dencoder.transform([features[0]])[0])
+        market = int(Mencoder.transform([features[1]])[0])
+        variety = int(Vencoder.transform([features[2]])[0])
         year = int(features[3])
         month = int(features[4])
         rainfall_minus1 = float(features[5])
@@ -172,33 +192,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# import pickle
-# import pandas as pd 
-# import numpy as np 
-# import sys 
-# import os 
-# import json 
-# from sklearn.preprocessing import LabelEncoder
-#
-#
-# def load_model(model_path):
-#     try:
-#         with open(model_path,"rb")as file:
-#             model=pickle.load(file)
-#         return model 
-#     except FileNotFoundError:
-#         return None 
-#     except Exception as e:
-#         return None
-#
-# def predictCotton():
-#     model_path=os.path.join(os.path.dirname(__file__),'cotton_model.pkl')
-#     prediction=load_model(model_path);
-#     return prediction
-#
-#
-# def main():
-#    result=predictCotton()
-#    return result
-
